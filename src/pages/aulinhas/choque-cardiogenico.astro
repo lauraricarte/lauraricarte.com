@@ -33,7 +33,7 @@ import Layout from "../../layouts/Layout.astro";
         </button>
         <div class="flex items-center gap-1 text-xs md:text-sm font-medium">
           <input id="slide-input" type="text" value="1" class="w-6 md:w-8 bg-transparent text-center border-b border-transparent hover:border-neutral-500 focus:border-red-400 focus:outline-none transition-colors" />
-          <span>/ <span id="total-slides">34</span></span>
+          <span>/ <span id="total-slides">38</span></span>
         </div>
         <button id="next-btn" class="p-1.5 md:p-2 hover:bg-neutral-700 rounded-full transition-colors">
           <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -82,7 +82,7 @@ import Layout from "../../layouts/Layout.astro";
               <span class="px-3 py-1 bg-neutral-800 rounded-full">NEJM Review 2026</span>
             </div>
             <div class="mt-12 pt-8 border-t border-neutral-800">
-              <p class="text-neutral-500 text-sm">Apresentado por Laura Ricarte <br/> Residente de Clinica Medica UFRR (R2) <br/> R1 de Cardiologia IDPC </p>
+              <p class="text-neutral-500 text-sm">Apresentado por Laura Ricarte <br/> Residente de Clinica Medica UFRR (R2) </p>
             </div>
           </div>
         </section>
@@ -191,8 +191,30 @@ import Layout from "../../layouts/Layout.astro";
           </div>
         </section>
 
-        <!-- Slide 3: Objetivos -->
-        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="3">
+        <!-- Slide 3: Cateter de Swan-Ganz -->
+        <section class="slide flex flex-col items-center justify-center h-full px-4 py-16" data-slide="3">
+          <div class="max-w-7xl mx-auto w-full">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center bg-gradient-to-r from-amber-200 to-orange-300 bg-clip-text text-transparent">Cateter de Swan-Ganz</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+              <!-- Anatomia -->
+              <div class="bg-white rounded-2xl p-3 shadow-lg">
+                <img src="/swan-ganz-anatomia.png" alt="Anatomia do Swan-Ganz" class="w-full h-auto rounded-lg" />
+              </div>
+              <!-- Curvas -->
+              <div class="bg-white rounded-2xl p-3 shadow-lg">
+                <img src="/swan-ganz-curvas.png" alt="Curvas do Swan-Ganz" class="w-full h-auto rounded-lg" />
+              </div>
+              <!-- Inserção -->
+              <div class="bg-white rounded-2xl p-3 shadow-lg">
+                <img src="/swan-ganz-insercao.png" alt="Inserção do Swan-Ganz" class="w-full h-auto rounded-lg" />
+              </div>
+            </div>
+            <p class="text-center text-neutral-400 text-sm mt-4">Monitorização hemodinâmica invasiva para avaliação do choque cardiogênico</p>
+          </div>
+        </section>
+
+        <!-- Slide 4: Objetivos -->
+        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="4">
           <div class="max-w-4xl mx-auto w-full">
             <h2 class="text-4xl font-bold mb-12 text-center">Objetivos de Aprendizagem</h2>
             <div class="grid md:grid-cols-2 gap-6">
@@ -228,8 +250,8 @@ import Layout from "../../layouts/Layout.astro";
           </div>
         </section>
 
-        <!-- Slide 4: Definição -->
-        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="4">
+        <!-- Slide 5: Definição -->
+        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="5">
           <div class="max-w-5xl mx-auto w-full">
             <h2 class="text-4xl font-bold mb-8 text-center">O que e Choque Cardiogênico?</h2>
             <div class="bg-gradient-to-br from-red-500/10 to-red-600/5 border border-red-500/20 rounded-3xl p-8 mb-8">
@@ -259,7 +281,7 @@ import Layout from "../../layouts/Layout.astro";
         </section>
 
         <!-- Slide 4: Critérios Diagnósticos -->
-        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="5">
+        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="6">
           <div class="max-w-5xl mx-auto w-full">
             <h2 class="text-4xl font-bold mb-10 text-center">Critérios Diagnósticos</h2>
             <div class="grid md:grid-cols-2 gap-6">
@@ -337,7 +359,7 @@ import Layout from "../../layouts/Layout.astro";
         </section>
 
         <!-- Slide 5: SUSPECT CS Mnemônico -->
-        <section class="slide flex flex-col items-center justify-start h-full px-8 py-16 overflow-y-auto" data-slide="6">
+        <section class="slide flex flex-col items-center justify-start h-full px-8 py-16 overflow-y-auto" data-slide="7">
           <div class="max-w-5xl mx-auto w-full">
             <h2 class="text-4xl font-bold mb-4 text-center">Mnemônico SUSPECT CS</h2>
             <p class="text-neutral-400 text-center mb-8">Ferramenta para diagnóstico precoce do choque cardiogênico</p>
@@ -396,7 +418,7 @@ import Layout from "../../layouts/Layout.astro";
         </section>
 
         <!-- Slide 6: Etiologias -->
-        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="7">
+        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="8">
           <div class="max-w-5xl mx-auto w-full">
             <h2 class="text-4xl font-bold mb-10 text-center">Etiologias do Choque Cardiogênico</h2>
             <div class="grid md:grid-cols-2 gap-6">
@@ -445,7 +467,7 @@ import Layout from "../../layouts/Layout.astro";
         </section>
 
         <!-- Slide 7: Classificação SCAI -->
-        <section class="slide flex flex-col items-center justify-center h-full px-4" data-slide="8">
+        <section class="slide flex flex-col items-center justify-center h-full px-4" data-slide="9">
           <div class="max-w-7xl mx-auto w-full">
             <h2 class="text-4xl font-bold mb-8 text-center">Classificação SCAI do Choque</h2>
             <div class="overflow-x-auto flex justify-center">
@@ -563,14 +585,14 @@ import Layout from "../../layouts/Layout.astro";
         </section>
 
         <!-- Slide 8: Figura 1 -->
-        <section class="slide flex flex-col items-center justify-center h-full px-4 md:px-8" data-slide="9">
+        <section class="slide flex flex-col items-center justify-center h-full px-4 md:px-8" data-slide="10">
           <div class="max-w-5xl mx-auto w-full flex items-center justify-center">
             <img src="/figura-1-cs.png" alt="Figura 1" class="max-h-[80vh] md:max-h-[85vh] max-w-full w-auto object-contain rounded-lg pointer-events-none select-none" draggable="false" />
           </div>
         </section>
 
         <!-- Slide 9: Fisiopatologia -->
-        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="10">
+        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="11">
           <div class="max-w-5xl mx-auto w-full">
             <h2 class="text-4xl font-bold mb-10 text-center">Fisiopatologia: Espiral Descendente</h2>
             <div class="relative">
@@ -616,11 +638,19 @@ import Layout from "../../layouts/Layout.astro";
                 <p class="text-sm text-neutral-400">Vasodilatação patológica por resposta inflamatória</p>
               </div>
             </div>
+            <div class="mt-6 flex justify-center">
+              <button id="toggle-scai-img" class="px-4 py-2 bg-red-500/20 border border-red-500/40 rounded-full text-sm font-medium text-red-300 hover:bg-red-500/30 transition-all flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+                Ver Classificação SCAI
+              </button>
+            </div>
           </div>
         </section>
 
         <!-- Slide 11: Disfunção Multiorgânica no Choque -->
-        <section class="slide flex flex-col items-center justify-center h-full px-6 md:px-10" data-slide="11">
+        <section class="slide flex flex-col items-center justify-center h-full px-6 md:px-10" data-slide="12">
           <div class="max-w-6xl mx-auto w-full">
             <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">Disfunção Multiorgânica no Choque</h2>
             <p class="text-center text-neutral-400 mb-6 text-sm">Baseado em NEJM 2026 - Thiele & Hassager</p>
@@ -714,7 +744,7 @@ import Layout from "../../layouts/Layout.astro";
         </section>
 
         <!-- Slide 12: Fenótipos e Prognóstico -->
-        <section class="slide flex flex-col items-center justify-center h-full px-6 md:px-10" data-slide="12">
+        <section class="slide flex flex-col items-center justify-center h-full px-6 md:px-10" data-slide="13">
           <div class="max-w-6xl mx-auto w-full">
             <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">Fenótipos e Prognóstico</h2>
 
@@ -825,7 +855,7 @@ import Layout from "../../layouts/Layout.astro";
         </section>
 
         <!-- Slide 13: Avaliação Inicial - Roadmap 24h -->
-        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="13">
+        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="14">
           <div class="max-w-6xl mx-auto w-full">
             <h2 class="text-4xl font-bold mb-8 text-center">Roadmap das Primeiras 24 Horas</h2>
             <div class="relative">
@@ -897,7 +927,7 @@ import Layout from "../../layouts/Layout.astro";
         </section>
 
         <!-- Slide 14: Monitorização Hemodinâmica -->
-        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="14">
+        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="15">
           <div class="max-w-5xl mx-auto w-full">
             <h2 class="text-4xl font-bold mb-6 text-center">Monitorização Hemodinâmica</h2>
             <!-- Botões para tabelas de referência -->
@@ -956,7 +986,7 @@ import Layout from "../../layouts/Layout.astro";
                 </div>
               </div>
               <div>
-                <h3 class="text-xl font-semibold mb-4 text-red-400">Parametros-Chave</h3>
+                <h3 class="text-xl font-semibold mb-4 text-red-400">Valores no Choque Cardiogênico</h3>
                 <div class="space-y-3">
                   <div class="bg-neutral-900/50 border border-neutral-700 rounded-xl p-4">
                     <div class="flex justify-between items-center">
@@ -990,10 +1020,11 @@ import Layout from "../../layouts/Layout.astro";
                   </div>
                   <div class="bg-gradient-to-r from-amber-500/10 to-amber-600/5 border border-amber-500/30 rounded-xl p-4">
                     <div class="flex justify-between items-center">
-                      <span class="font-medium text-amber-300">CPO</span>
-                      <span class="text-amber-400">&lt;0.6 W (prognóstico ruim)</span>
+                      <span class="font-medium text-amber-300">CPO (Cardiac Power Output)</span>
+                      <span class="text-amber-400">&lt;0.6 W</span>
                     </div>
-                    <p class="text-xs text-neutral-500 mt-1">CPO = (IC × PAM) / 451</p>
+                    <p class="text-xs text-neutral-400 mt-2">Potência cardíaca = melhor preditor de mortalidade no CS</p>
+                    <p class="text-xs text-neutral-500 mt-1">CPO = (IC × PAM) / 451 · Normal ~1W</p>
                   </div>
                 </div>
               </div>
@@ -1007,7 +1038,7 @@ import Layout from "../../layouts/Layout.astro";
         </section>
 
         <!-- Slide 15: Manejo Farmacológico - Visão Geral -->
-        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="15">
+        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="16">
           <div class="max-w-5xl mx-auto w-full">
             <h2 class="text-4xl font-bold mb-10 text-center">Manejo Farmacológico</h2>
             <div class="grid md:grid-cols-3 gap-6">
@@ -1062,7 +1093,7 @@ import Layout from "../../layouts/Layout.astro";
         </section>
 
         <!-- Slide 16: Inotrópicos - Mecanismos -->
-        <section class="slide flex flex-col items-center justify-start h-full px-4 md:px-8 py-6 overflow-y-auto" data-slide="16">
+        <section class="slide flex flex-col items-center justify-start h-full px-4 md:px-8 py-6 overflow-y-auto" data-slide="17">
           <div class="max-w-5xl mx-auto w-full">
             <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Inotrópicos: Mecanismos de Ação</h2>
 
@@ -1110,7 +1141,12 @@ import Layout from "../../layouts/Layout.astro";
                       <p class="text-xs text-neutral-500">Aumentam frequência cardíaca</p>
                     </div>
                   </div>
-                  <p class="text-neutral-300 text-sm mb-2">DC = FC × VS (sem melhorar contratilidade)</p>
+                  <p class="text-neutral-300 text-sm mb-3">DC = FC × VS (sem melhorar contratilidade)</p>
+                  <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="px-3 py-1 bg-red-500/20 text-red-300 rounded-full text-xs font-medium">Atropina</span>
+                    <span class="px-3 py-1 bg-red-500/20 text-red-300 rounded-full text-xs font-medium">Isoproterenol</span>
+                    <span class="px-3 py-1 bg-red-500/20 text-red-300 rounded-full text-xs font-medium">Adrenalina</span>
+                  </div>
                   <p class="text-amber-400 text-xs flex items-center gap-1">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
                     Pode aumentar consumo de O₂ miocárdico
@@ -1171,7 +1207,7 @@ import Layout from "../../layouts/Layout.astro";
         </section>
 
         <!-- Slide 17: Algoritmo de Decisão Terapêutica -->
-        <section class="slide flex flex-col items-center justify-start h-full px-4 md:px-8 py-6 overflow-y-auto" data-slide="17">
+        <section class="slide flex flex-col items-center justify-start h-full px-4 md:px-8 py-6 overflow-y-auto" data-slide="18">
           <div class="max-w-5xl mx-auto w-full">
             <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Algoritmo: Terapia Vasoativa</h2>
 
@@ -1270,7 +1306,7 @@ import Layout from "../../layouts/Layout.astro";
         </section>
 
         <!-- Slide 18: Escolha do Agente Vasoativo - Prático -->
-        <section class="slide flex flex-col items-center justify-start h-full px-4 md:px-8 py-6 overflow-y-auto" data-slide="18">
+        <section class="slide flex flex-col items-center justify-start h-full px-4 md:px-8 py-6 overflow-y-auto" data-slide="19">
           <div class="max-w-5xl mx-auto w-full">
             <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">Escolha do Agente: Guia Prático</h2>
 
@@ -1398,7 +1434,7 @@ import Layout from "../../layouts/Layout.astro";
         </section>
 
         <!-- Slide 19: Doses e Preparo dos Agentes Vasoativos -->
-        <section class="slide flex flex-col items-center justify-center h-full px-6 md:px-12" data-slide="19">
+        <section class="slide flex flex-col items-center justify-center h-full px-6 md:px-12" data-slide="20">
           <div class="max-w-6xl mx-auto w-full">
             <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">Vasoativos: Doses e Preparo</h2>
 
@@ -1487,7 +1523,7 @@ import Layout from "../../layouts/Layout.astro";
         </section>
 
         <!-- Slide 20: Vasopressores e Inotrópicos - Detalhes -->
-        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="20">
+        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="21">
           <div class="max-w-6xl mx-auto w-full">
             <h2 class="text-4xl font-bold mb-8 text-center">Agentes Vasoativos: Mecanismos</h2>
             <div class="overflow-x-auto">
@@ -1556,11 +1592,19 @@ import Layout from "../../layouts/Layout.astro";
                 <p class="text-sm text-neutral-400">Estudo NorShock em andamento: PAM 55 vs 65 mmHg</p>
               </div>
             </div>
+            <div class="mt-6 flex justify-center">
+              <button id="toggle-receptors" class="px-4 py-2 bg-purple-500/20 border border-purple-500/40 rounded-full text-sm font-medium text-purple-300 hover:bg-purple-500/30 transition-all flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                </svg>
+                Ver Receptores e Mecanismos
+              </button>
+            </div>
           </div>
         </section>
 
         <!-- Slide 21: Suporte Circulatório Mecânico - Introdução -->
-        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="21">
+        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="22">
           <div class="max-w-5xl mx-auto w-full">
             <h2 class="text-4xl font-bold mb-10 text-center">Suporte Circulatório Mecânico (tMCS)</h2>
             <div class="grid md:grid-cols-2 gap-8 mb-8">
@@ -1613,10 +1657,10 @@ import Layout from "../../layouts/Layout.astro";
         </section>
 
         <!-- Slide 22: Dispositivos de tMCS -->
-        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="22">
+        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="23">
           <div class="max-w-6xl mx-auto w-full">
             <h2 class="text-4xl font-bold mb-8 text-center">Dispositivos de tMCS</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
               <!-- BIA -->
               <div class="bg-neutral-900/50 border border-neutral-700 rounded-xl p-5">
                 <div class="text-center mb-4">
@@ -1693,6 +1737,25 @@ import Layout from "../../layouts/Layout.astro";
                   <p class="text-xs text-neutral-500">Estudos randomizados limitados</p>
                 </div>
               </div>
+              <!-- TandemHeart -->
+              <div class="bg-neutral-900/50 border border-neutral-700 rounded-xl p-5">
+                <div class="text-center mb-4">
+                  <div class="w-16 h-16 bg-rose-500/20 rounded-full mx-auto flex items-center justify-center mb-2">
+                    <span class="text-2xl">TH</span>
+                  </div>
+                  <h3 class="font-bold text-rose-400">TandemHeart</h3>
+                  <p class="text-xs text-neutral-500">AE → Artéria Femoral</p>
+                </div>
+                <ul class="text-xs text-neutral-400 space-y-1">
+                  <li>• Fluxo: até 4 L/min</li>
+                  <li>• Drena sangue do AE</li>
+                  <li>• Bypassa completamente o VE</li>
+                  <li>• Diminui pressões de enchimento</li>
+                </ul>
+                <div class="mt-3 pt-3 border-t border-neutral-700">
+                  <p class="text-xs text-neutral-500">Evidência limitada; uso menos frequente</p>
+                </div>
+              </div>
             </div>
             <!-- Botão para ver figura comparativa -->
             <div class="mt-6 flex justify-center">
@@ -1706,8 +1769,298 @@ import Layout from "../../layouts/Layout.astro";
           </div>
         </section>
 
-        <!-- Slide 23: DanGer Shock Trial -->
-        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="23">
+        <!-- Slide 24: BIA e Impella - Mecanismos Detalhados -->
+        <section class="slide flex flex-col items-center justify-start h-full px-4 md:px-8 py-6 overflow-y-auto" data-slide="24">
+          <div class="max-w-6xl mx-auto w-full">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center">BIA vs Impella: Mecanismos de Ação</h2>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <!-- BIA/IABP -->
+              <div class="bg-gradient-to-br from-blue-500/10 to-blue-600/5 border border-blue-500/30 rounded-2xl p-5">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-14 h-14 bg-blue-500/30 rounded-xl flex items-center justify-center">
+                    <span class="text-2xl font-bold text-blue-300">BIA</span>
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-bold text-blue-400">Balão Intra-Aórtico</h3>
+                    <p class="text-xs text-neutral-500">Contrapulsação</p>
+                  </div>
+                </div>
+
+                <div class="space-y-3 mb-4">
+                  <div class="bg-neutral-900/50 rounded-lg p-3">
+                    <p class="text-sm font-semibold text-blue-300 mb-1">Mecanismo</p>
+                    <p class="text-xs text-neutral-300">Balão na aorta descendente sincronizado com ECG</p>
+                  </div>
+                  <div class="grid grid-cols-2 gap-2">
+                    <div class="bg-neutral-900/50 rounded-lg p-3">
+                      <p class="text-xs font-semibold text-green-400">Infla na DIÁSTOLE</p>
+                      <p class="text-xs text-neutral-400">↑ Perfusão coronariana</p>
+                      <p class="text-xs text-neutral-400">↑ Perfusão sistêmica</p>
+                    </div>
+                    <div class="bg-neutral-900/50 rounded-lg p-3">
+                      <p class="text-xs font-semibold text-amber-400">Desinfla na SÍSTOLE</p>
+                      <p class="text-xs text-neutral-400">↓ Pós-carga (afterload)</p>
+                      <p class="text-xs text-neutral-400">↓ Trabalho do VE</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="space-y-2 mb-4">
+                  <div class="flex justify-between text-sm">
+                    <span class="text-neutral-400">Fluxo adicional:</span>
+                    <span class="text-blue-300 font-medium">0.5-1 L/min</span>
+                  </div>
+                  <div class="flex justify-between text-sm">
+                    <span class="text-neutral-400">Suporte hemodinâmico:</span>
+                    <span class="text-amber-300 font-medium">Limitado</span>
+                  </div>
+                  <div class="flex justify-between text-sm">
+                    <span class="text-neutral-400">Complexidade:</span>
+                    <span class="text-green-300 font-medium">Baixa</span>
+                  </div>
+                </div>
+
+                <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-3">
+                  <p class="text-xs font-semibold text-red-400 mb-1">IABP-SHOCK II (2012)</p>
+                  <p class="text-xs text-neutral-300">Sem benefício na mortalidade em 30 dias no IAM com CS</p>
+                  <p class="text-xs text-neutral-500 mt-1">Ainda usado como ponte ou em combinação com outros dispositivos</p>
+                </div>
+              </div>
+
+              <!-- Impella -->
+              <div class="bg-gradient-to-br from-green-500/10 to-green-600/5 border border-green-500/30 rounded-2xl p-5">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-14 h-14 bg-green-500/30 rounded-xl flex items-center justify-center">
+                    <span class="text-2xl font-bold text-green-300">IMP</span>
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-bold text-green-400">Impella</h3>
+                    <p class="text-xs text-neutral-500">Bomba Microaxial</p>
+                  </div>
+                </div>
+
+                <div class="space-y-3 mb-4">
+                  <div class="bg-neutral-900/50 rounded-lg p-3">
+                    <p class="text-sm font-semibold text-green-300 mb-1">Mecanismo</p>
+                    <p class="text-xs text-neutral-300">Bomba atravessa válvula aórtica: aspira sangue do VE e ejeta na aorta</p>
+                  </div>
+                  <div class="bg-neutral-900/50 rounded-lg p-3">
+                    <p class="text-xs font-semibold text-green-400 mb-2">Efeitos Hemodinâmicos</p>
+                    <ul class="text-xs text-neutral-300 space-y-1">
+                      <li>• <span class="text-green-300">Descarrega diretamente o VE</span> (↓ POAP, ↓ volume diastólico final)</li>
+                      <li>• ↑ Débito cardíaco efetivo</li>
+                      <li>• ↑ Perfusão coronariana (↑ PAM + ↓ pressão VE)</li>
+                      <li>• ↓ Consumo de O₂ miocárdico</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="space-y-2 mb-4">
+                  <p class="text-xs font-semibold text-neutral-400">Modelos e Fluxo:</p>
+                  <div class="grid grid-cols-3 gap-2 text-center">
+                    <div class="bg-neutral-900/50 rounded-lg p-2">
+                      <p class="text-xs font-bold text-green-300">CP</p>
+                      <p class="text-xs text-neutral-400">3-4.3 L/min</p>
+                    </div>
+                    <div class="bg-neutral-900/50 rounded-lg p-2">
+                      <p class="text-xs font-bold text-green-300">5.5</p>
+                      <p class="text-xs text-neutral-400">5-6 L/min</p>
+                    </div>
+                    <div class="bg-neutral-900/50 rounded-lg p-2">
+                      <p class="text-xs font-bold text-amber-300">RP</p>
+                      <p class="text-xs text-neutral-400">VD: 4 L/min</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-green-500/10 border border-green-500/30 rounded-lg p-3">
+                  <p class="text-xs font-semibold text-green-400 mb-1">DanGer Shock (2024)</p>
+                  <p class="text-xs text-neutral-300">↓ 12.7% mortalidade absoluta em STEMI selecionado</p>
+                  <p class="text-xs text-neutral-500 mt-1">HR 0.74 (IC 95%: 0.55-0.99) - Primeiro RCT positivo!</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Comparação rápida -->
+            <div class="mt-6 bg-neutral-800/50 rounded-xl p-4">
+              <p class="text-sm text-center text-neutral-300">
+                <span class="text-blue-400 font-semibold">BIA:</span> Suporte indireto por contrapulsação ·
+                <span class="text-green-400 font-semibold">Impella:</span> Suporte direto com unloading ativo do VE
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 25: VA-ECMO e LV Venting -->
+        <section class="slide flex flex-col items-center justify-start h-full px-4 md:px-8 py-6 overflow-y-auto" data-slide="25">
+          <div class="max-w-6xl mx-auto w-full">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center">VA-ECMO: Suporte Máximo e o Problema do VE</h2>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+              <!-- VA-ECMO Mecanismo -->
+              <div class="bg-gradient-to-br from-purple-500/10 to-purple-600/5 border border-purple-500/30 rounded-2xl p-5">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-14 h-14 bg-purple-500/30 rounded-xl flex items-center justify-center">
+                    <span class="text-xl font-bold text-purple-300">ECMO</span>
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-bold text-purple-400">VA-ECMO</h3>
+                    <p class="text-xs text-neutral-500">Oxigenação por Membrana Extracorpórea</p>
+                  </div>
+                </div>
+
+                <div class="space-y-3">
+                  <div class="bg-neutral-900/50 rounded-lg p-3">
+                    <p class="text-sm font-semibold text-purple-300 mb-1">Mecanismo</p>
+                    <p class="text-xs text-neutral-300">Drena sangue venoso (AD/veia femoral) → Oxigena externamente → Retorna ao sistema arterial (aorta/femoral)</p>
+                  </div>
+
+                  <div class="bg-neutral-900/50 rounded-lg p-3">
+                    <p class="text-xs font-semibold text-purple-400 mb-2">Capacidades</p>
+                    <ul class="text-xs text-neutral-300 space-y-1">
+                      <li>• Suporte circulatório <span class="text-purple-300">completo</span> (5-7 L/min)</li>
+                      <li>• Suporte <span class="text-purple-300">respiratório</span> (oxigenação + remoção CO₂)</li>
+                      <li>• Suporta falência <span class="text-purple-300">biventricular</span></li>
+                      <li>• Independe de ritmo cardíaco</li>
+                    </ul>
+                  </div>
+
+                  <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-3">
+                    <p class="text-xs font-semibold text-red-400 mb-1">ECLS-SHOCK (2023)</p>
+                    <p class="text-xs text-neutral-300">Sem benefício na mortalidade em 30 dias</p>
+                    <p class="text-xs text-neutral-500">Mais complicações (sangramento, isquemia de membro)</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- O Problema do LV -->
+              <div class="bg-gradient-to-br from-red-500/10 to-orange-500/5 border border-red-500/30 rounded-2xl p-5">
+                <h3 class="text-xl font-bold text-red-400 mb-4 flex items-center gap-2">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                  </svg>
+                  O Problema: Distensão do VE
+                </h3>
+
+                <div class="space-y-3">
+                  <div class="bg-neutral-900/50 rounded-lg p-3">
+                    <p class="text-xs text-neutral-300">VA-ECMO retorna sangue na <span class="text-red-400 font-semibold">aorta</span> → <span class="text-red-400 font-semibold">↑ pós-carga</span></p>
+                  </div>
+
+                  <div class="bg-neutral-900/50 rounded-lg p-3">
+                    <p class="text-xs font-semibold text-red-400 mb-2">Consequências no VE doente:</p>
+                    <ul class="text-xs text-neutral-300 space-y-1">
+                      <li>• VE não consegue ejetar contra a pós-carga aumentada</li>
+                      <li>• <span class="text-red-300">Distensão do VE</span> → ↑ tensão de parede</li>
+                      <li>• ↑ Consumo de O₂ miocárdico</li>
+                      <li>• Estase sanguínea → risco de <span class="text-red-300">trombo intracavitário</span></li>
+                      <li>• Edema pulmonar pode piorar</li>
+                    </ul>
+                  </div>
+
+                  <div class="bg-amber-500/10 border border-amber-500/30 rounded-lg p-3">
+                    <p class="text-xs font-semibold text-amber-400 mb-2">Sinais de distensão do VE:</p>
+                    <ul class="text-xs text-neutral-300 space-y-1">
+                      <li>• Ausência de pulsatilidade na linha arterial</li>
+                      <li>• ↑ POAP persistente</li>
+                      <li>• Edema pulmonar progressivo</li>
+                      <li>• Ecocardiograma: VE dilatado, válvula aórtica não abre</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Estratégias de LV Venting -->
+            <div class="bg-gradient-to-br from-cyan-500/10 to-blue-500/5 border border-cyan-500/30 rounded-2xl p-5">
+              <h3 class="text-lg font-bold text-cyan-400 mb-4 text-center">Estratégias de LV Venting (Descompressão)</h3>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div class="bg-neutral-900/50 rounded-lg p-3 text-center">
+                  <p class="text-sm font-bold text-green-400">Impella</p>
+                  <p class="text-xs text-neutral-400 mt-1">"ECMELLA"</p>
+                  <p class="text-xs text-neutral-500">Mais efetivo</p>
+                </div>
+                <div class="bg-neutral-900/50 rounded-lg p-3 text-center">
+                  <p class="text-sm font-bold text-blue-400">BIA</p>
+                  <p class="text-xs text-neutral-400 mt-1">Contrapulsação</p>
+                  <p class="text-xs text-neutral-500">↓ pós-carga</p>
+                </div>
+                <div class="bg-neutral-900/50 rounded-lg p-3 text-center">
+                  <p class="text-sm font-bold text-purple-400">Septostomia</p>
+                  <p class="text-xs text-neutral-400 mt-1">Atrial</p>
+                  <p class="text-xs text-neutral-500">Shunt AE→AD</p>
+                </div>
+                <div class="bg-neutral-900/50 rounded-lg p-3 text-center">
+                  <p class="text-sm font-bold text-amber-400">Vent cirúrgico</p>
+                  <p class="text-xs text-neutral-400 mt-1">Direto no VE/AE</p>
+                  <p class="text-xs text-neutral-500">Invasivo</p>
+                </div>
+              </div>
+              <p class="text-xs text-neutral-500 mt-3 text-center">A necessidade de venting deve ser avaliada rotineiramente em pacientes em VA-ECMO</p>
+            </div>
+
+            <!-- pRVAD -->
+            <div class="mt-6 bg-gradient-to-br from-amber-500/10 to-orange-500/5 border border-amber-500/30 rounded-2xl p-5">
+              <h3 class="text-lg font-bold text-amber-400 mb-4 flex items-center gap-2">
+                <span class="w-10 h-10 bg-amber-500/30 rounded-lg flex items-center justify-center text-sm font-bold">VD</span>
+                pRVAD - Suporte de Ventrículo Direito
+              </h3>
+              <p class="text-sm text-neutral-300 mb-4">Falência de VD ocorre em <span class="text-amber-300 font-semibold">30-40%</span> dos pacientes com CS e é preditor independente de mortalidade</p>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-neutral-900/50 rounded-lg p-4">
+                  <p class="font-semibold text-amber-300 mb-2">Impella RP</p>
+                  <ul class="text-xs text-neutral-400 space-y-1">
+                    <li>• Fluxo: até 4 L/min</li>
+                    <li>• Acesso: veia femoral → AD → AP</li>
+                    <li>• Bomba microaxial (similar ao Impella CP)</li>
+                    <li>• Aprovado para falência VD pós-LVAD ou pós-cardiotomia</li>
+                  </ul>
+                </div>
+                <div class="bg-neutral-900/50 rounded-lg p-4">
+                  <p class="font-semibold text-orange-300 mb-2">Protek Duo</p>
+                  <ul class="text-xs text-neutral-400 space-y-1">
+                    <li>• Fluxo: 4-5 L/min</li>
+                    <li>• Acesso: veia jugular interna</li>
+                    <li>• Cânula duplo-lúmen (AD → AP)</li>
+                    <li>• Pode ser conectado a oxigenador (suporte respiratório)</li>
+                  </ul>
+                </div>
+              </div>
+              <p class="text-xs text-neutral-500 mt-3 text-center">Indicação: Falência VD isolada ou BiV (em combinação com suporte VE)</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 26: Algoritmos de Manejo tMCS -->
+        <section class="slide flex flex-col items-center justify-center h-full px-4 py-16" data-slide="26">
+          <div class="max-w-7xl mx-auto w-full">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center">Algoritmos de Manejo: tMCS por Etiologia</h2>
+            <p class="text-neutral-400 text-center mb-6 text-sm">Clique nas imagens para ampliar</p>
+            <div class="grid md:grid-cols-2 gap-6">
+              <!-- AMI-CS Management -->
+              <div class="bg-neutral-900/50 border border-neutral-700 rounded-2xl p-4 hover:border-blue-500/50 transition-colors cursor-pointer" id="ami-cs-thumb">
+                <h3 class="text-lg font-semibold text-blue-400 mb-3 text-center">AMI-CS Management</h3>
+                <img src="/ami-cs-management.png" alt="AMI-CS Management Algorithm" class="w-full h-auto rounded-lg" />
+                <p class="text-xs text-neutral-500 mt-2 text-center">Adaptado de Mehta A, et al. - ACC 2025</p>
+              </div>
+              <!-- HF-CS Management -->
+              <div class="bg-neutral-900/50 border border-neutral-700 rounded-2xl p-4 hover:border-purple-500/50 transition-colors cursor-pointer" id="hf-cs-thumb">
+                <h3 class="text-lg font-semibold text-purple-400 mb-3 text-center">HF-CS Management</h3>
+                <img src="/hf-cs-management.png" alt="HF-CS Management Algorithm" class="w-full h-auto rounded-lg" />
+                <p class="text-xs text-neutral-500 mt-2 text-center">Adaptado de Mehta A, et al. - ACC 2025</p>
+              </div>
+            </div>
+            <div class="mt-6 p-4 bg-amber-500/10 border border-amber-500/30 rounded-xl">
+              <p class="text-amber-300 text-sm text-center">
+                <strong>Nota:</strong> Escolha do dispositivo depende de: estágio SCAI, fenótipo ventricular (VE/VD/BiV), estratégia de saída e disponibilidade local
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 27: DanGer Shock Trial -->
+        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="27">
           <div class="max-w-5xl mx-auto w-full">
             <h2 class="text-4xl font-bold mb-4 text-center">DanGer Shock Trial (2024)</h2>
             <p class="text-neutral-400 text-center mb-8">O primeiro RCT a demonstrar benefício de mortalidade com tMCS</p>
@@ -1748,8 +2101,8 @@ import Layout from "../../layouts/Layout.astro";
           </div>
         </section>
 
-        <!-- Slide 24: Quando usar tMCS -->
-        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="24">
+        <!-- Slide 28: Quando usar tMCS -->
+        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="28">
           <div class="max-w-5xl mx-auto w-full">
             <h2 class="text-4xl font-bold mb-10 text-center">Seleção de Pacientes para tMCS</h2>
             <div class="grid md:grid-cols-2 gap-8">
@@ -1810,11 +2163,21 @@ import Layout from "../../layouts/Layout.astro";
                 Seleção inadequada pode causar complicações desnecessárias
               </p>
             </div>
+
+            <!-- Botão para ver HeartMate LVAD -->
+            <div class="mt-4 flex justify-center">
+              <button id="toggle-heartmate" class="px-5 py-3 bg-rose-500/20 text-rose-300 rounded-full text-sm font-medium border border-rose-500/30 hover:bg-rose-500/30 transition-all flex items-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+                Ver HeartMate 3 LVAD
+              </button>
+            </div>
           </div>
         </section>
 
-        <!-- Slide 25: Revascularização no AMI-CS -->
-        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="25">
+        <!-- Slide 29: Revascularização no AMI-CS -->
+        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="29">
           <div class="max-w-5xl mx-auto w-full">
             <h2 class="text-4xl font-bold mb-10 text-center">Revascularização no AMI-CS</h2>
             <div class="bg-gradient-to-br from-green-500/10 to-transparent border border-green-500/30 rounded-2xl p-8 mb-8">
@@ -1851,8 +2214,8 @@ import Layout from "../../layouts/Layout.astro";
           </div>
         </section>
 
-        <!-- Slide 26: Centros de Choque -->
-        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="26">
+        <!-- Slide 30: Centros de Choque -->
+        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="30">
           <div class="max-w-5xl mx-auto w-full">
             <h2 class="text-4xl font-bold mb-10 text-center">Niveis de Centros de Choque</h2>
             <div class="relative">
@@ -1939,8 +2302,8 @@ import Layout from "../../layouts/Layout.astro";
           </div>
         </section>
 
-        <!-- Slide 27: Shock Team -->
-        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="27">
+        <!-- Slide 30: Shock Team -->
+        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="31">
           <div class="max-w-5xl mx-auto w-full">
             <h2 class="text-4xl font-bold mb-20 text-center">Shock Team: Abordagem Multidisciplinar </h2>
             <div class="flex justify-center mb-24">
@@ -1986,8 +2349,8 @@ import Layout from "../../layouts/Layout.astro";
           </div>
         </section>
 
-        <!-- Slide 28: Seleção Ideal - Diagrama -->
-        <section class="slide flex flex-col items-center justify-center h-full px-4" data-slide="28">
+        <!-- Slide 31: Seleção Ideal - Diagrama -->
+        <section class="slide flex flex-col items-center justify-center h-full px-4" data-slide="32">
           <div class="max-w-5xl mx-auto w-full">
             <div class="relative flex items-center justify-center" style="height: 580px;">
 
@@ -2074,8 +2437,8 @@ import Layout from "../../layouts/Layout.astro";
           </div>
         </section>
 
-        <!-- Slide 29: Desmame de tMCS -->
-        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="29">
+        <!-- Slide 32: Desmame de tMCS -->
+        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="33">
           <div class="max-w-5xl mx-auto w-full">
             <h2 class="text-4xl font-bold mb-10 text-center">Desmame de tMCS</h2>
             <div class="grid md:grid-cols-3 gap-6 mb-8">
@@ -2128,11 +2491,21 @@ import Layout from "../../layouts/Layout.astro";
                 </div>
               </div>
             </div>
+
+            <!-- Botão para ver tabela de reavaliação -->
+            <div class="mt-6 flex justify-center">
+              <button id="toggle-reassessment" class="px-5 py-3 bg-teal-500/20 text-teal-300 rounded-full text-sm font-medium border border-teal-500/30 hover:bg-teal-500/30 transition-all flex items-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                </svg>
+                Ver Reavaliação Estruturada na UTI
+              </button>
+            </div>
           </div>
         </section>
 
-        <!-- Slide 30: Complicações do CS -->
-        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="30">
+        <!-- Slide 33: Complicações do CS -->
+        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="34">
           <div class="max-w-5xl mx-auto w-full">
             <h2 class="text-4xl font-bold mb-10 text-center">Complicações e Falência Multiorgânica</h2>
             <div class="grid md:grid-cols-3 gap-4">
@@ -2206,8 +2579,8 @@ import Layout from "../../layouts/Layout.astro";
           </div>
         </section>
 
-        <!-- Slide 31: Cuidados Paliativos -->
-        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="31">
+        <!-- Slide 34: Cuidados Paliativos -->
+        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="35">
           <div class="max-w-4xl mx-auto w-full">
             <h2 class="text-4xl font-bold mb-10 text-center">Cuidados Paliativos no CS</h2>
             <div class="bg-gradient-to-br from-purple-500/10 to-transparent border border-purple-500/30 rounded-2xl p-8 mb-8">
@@ -2241,8 +2614,8 @@ import Layout from "../../layouts/Layout.astro";
           </div>
         </section>
 
-        <!-- Slide 32: Key Points Summary -->
-        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="32">
+        <!-- Slide 35: Key Points Summary -->
+        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="36">
           <div class="max-w-5xl mx-auto w-full">
             <h2 class="text-4xl font-bold mb-10 text-center">Pontos-Chave</h2>
             <div class="grid md:grid-cols-2 gap-6">
@@ -2278,8 +2651,8 @@ import Layout from "../../layouts/Layout.astro";
           </div>
         </section>
 
-        <!-- Slide 33: Trials em Andamento -->
-        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="33">
+        <!-- Slide 36: Trials em Andamento -->
+        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="37">
           <div class="max-w-5xl mx-auto w-full">
             <h2 class="text-4xl font-bold mb-8 text-center">Estudos em Andamento</h2>
             <div class="grid md:grid-cols-2 gap-4">
@@ -2316,8 +2689,8 @@ import Layout from "../../layouts/Layout.astro";
           </div>
         </section>
 
-        <!-- Slide 34: Referências e Encerramento -->
-        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="34">
+        <!-- Slide 37: Referências e Encerramento -->
+        <section class="slide flex flex-col items-center justify-center h-full px-8" data-slide="38">
           <div class="max-w-4xl mx-auto w-full text-center">
             <h2 class="text-4xl font-bold mb-8">Obrigada!</h2>
             <div class="mb-12">
@@ -2547,13 +2920,172 @@ import Layout from "../../layouts/Layout.astro";
           <div class="figura4-card">
             <div class="flex justify-between items-center mb-3">
               <h3 class="text-lg font-bold text-cyan-300">Comparação dos Dispositivos de Suporte Circulatório</h3>
-              <button id="close-figura4" class="p-2 rounded-full hover:bg-neutral-700/50 transition-colors">
+              <div class="flex items-center gap-2">
+                <!-- Zoom Controls -->
+                <div class="flex items-center gap-1 bg-neutral-800 rounded-full px-2 py-1">
+                  <button id="figura4-zoom-out" class="p-1 hover:bg-neutral-700 rounded-full transition-colors text-neutral-300" title="Zoom out">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"/>
+                    </svg>
+                  </button>
+                  <span id="figura4-zoom-level" class="text-xs text-neutral-400 w-12 text-center">100%</span>
+                  <button id="figura4-zoom-in" class="p-1 hover:bg-neutral-700 rounded-full transition-colors text-neutral-300" title="Zoom in">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                    </svg>
+                  </button>
+                  <button id="figura4-zoom-reset" class="p-1 hover:bg-neutral-700 rounded-full transition-colors text-neutral-400 text-xs ml-1" title="Reset zoom">
+                    Reset
+                  </button>
+                </div>
+                <button id="close-figura4" class="p-2 rounded-full hover:bg-neutral-700/50 transition-colors">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div id="figura4-img-container" class="figura4-img-container">
+              <img id="figura4-img" src="/figura-4.png" alt="Comparação dos Dispositivos de Suporte Circulatório Mecânico" class="figura4-zoomable-img" />
+            </div>
+            <p class="text-xs text-neutral-500 mt-2 text-center">Use scroll do mouse para zoom · Arraste para mover a imagem</p>
+          </div>
+        </div>
+
+        <!-- Popup SCAI Classification -->
+        <div id="scai-popup" class="scai-popup">
+          <div class="scai-card">
+            <div class="flex justify-end mb-2">
+              <button id="close-scai" class="p-2 rounded-full hover:bg-neutral-700/50 transition-colors">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                 </svg>
               </button>
             </div>
-            <img src="/figura-4.png" alt="Comparação dos Dispositivos de Suporte Circulatório Mecânico" class="max-w-full rounded-lg" />
+            <img src="/scai-classification.png" alt="SCAI Classification of Cardiogenic Shock" class="max-w-full rounded-lg" />
+          </div>
+        </div>
+
+        <!-- Popup Receptores e Mecanismos -->
+        <div id="receptors-popup" class="receptors-popup">
+          <div class="receptors-card">
+            <div class="flex justify-between items-center mb-4">
+              <h3 class="text-lg font-bold text-purple-300">Receptores e Mecanismos de Ação</h3>
+              <button id="close-receptors" class="p-2 rounded-full hover:bg-neutral-700/50 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </button>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm border-collapse">
+                <thead>
+                  <tr class="bg-neutral-800/80">
+                    <th class="px-4 py-3 text-left font-semibold text-purple-300 border-b border-neutral-600">Receptor</th>
+                    <th class="px-4 py-3 text-left font-semibold text-purple-300 border-b border-neutral-600">Localização</th>
+                    <th class="px-4 py-3 text-left font-semibold text-purple-300 border-b border-neutral-600">Efeito</th>
+                    <th class="px-4 py-3 text-left font-semibold text-purple-300 border-b border-neutral-600">Drogas</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-neutral-700/50">
+                    <td class="px-4 py-3 font-bold text-orange-400">α1</td>
+                    <td class="px-4 py-3 text-neutral-300">Vasos (músculo liso)</td>
+                    <td class="px-4 py-3 text-neutral-300">Vasoconstrição → ↑ RVS</td>
+                    <td class="px-4 py-3 text-neutral-400">Noradrenalina, Adrenalina, Fenilefrina</td>
+                  </tr>
+                  <tr class="border-b border-neutral-700/50">
+                    <td class="px-4 py-3 font-bold text-red-400">β1</td>
+                    <td class="px-4 py-3 text-neutral-300">Coração (miócitos)</td>
+                    <td class="px-4 py-3 text-neutral-300">↑ FC (cronotropismo)<br/>↑ Contratilidade (inotropismo)</td>
+                    <td class="px-4 py-3 text-neutral-400">Dobutamina, Adrenalina, Isoproterenol</td>
+                  </tr>
+                  <tr class="border-b border-neutral-700/50">
+                    <td class="px-4 py-3 font-bold text-emerald-400">β2</td>
+                    <td class="px-4 py-3 text-neutral-300">Vasos, brônquios</td>
+                    <td class="px-4 py-3 text-neutral-300">Vasodilatação → ↓ RVS<br/>Broncodilatação</td>
+                    <td class="px-4 py-3 text-neutral-400">Adrenalina, Isoproterenol, Dobutamina</td>
+                  </tr>
+                  <tr class="border-b border-neutral-700/50">
+                    <td class="px-4 py-3 font-bold text-cyan-400">PDE-3</td>
+                    <td class="px-4 py-3 text-neutral-300">Coração e vasos</td>
+                    <td class="px-4 py-3 text-neutral-300">Inibe PDE-3 → ↑ AMPc<br/>Inotropismo + Vasodilatação</td>
+                    <td class="px-4 py-3 text-neutral-400">Milrinona</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-bold text-blue-400">V1</td>
+                    <td class="px-4 py-3 text-neutral-300">Vasos (músculo liso)</td>
+                    <td class="px-4 py-3 text-neutral-300">Vasoconstrição intensa<br/>(independente de catecolaminas)</td>
+                    <td class="px-4 py-3 text-neutral-400">Vasopressina</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="text-xs text-neutral-500 mt-4 text-center">PDE-3 = Fosfodiesterase 3 · AMPc = AMP cíclico · RVS = Resistência Vascular Sistêmica</p>
+          </div>
+        </div>
+
+        <!-- Popup HeartMate LVAD -->
+        <div id="heartmate-popup" class="heartmate-popup">
+          <div class="heartmate-card">
+            <div class="flex justify-between items-center mb-2">
+              <h3 class="text-lg font-bold text-rose-300">HeartMate 3 LVAD</h3>
+              <button id="close-heartmate" class="p-2 rounded-full hover:bg-neutral-700/50 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </button>
+            </div>
+            <img src="/heartmate-lvad.png" alt="HeartMate 3 LVAD" class="max-w-full rounded-lg" />
+            <p class="text-xs text-neutral-500 mt-2 text-center">HeartMate 3 LVAD com bomba no espaço pericárdico, driveline modulável e controlador externo</p>
+          </div>
+        </div>
+
+        <!-- Popup AMI-CS Management -->
+        <div id="ami-cs-popup" class="cs-management-popup">
+          <div class="cs-management-card">
+            <div class="flex justify-between items-center mb-2">
+              <h3 class="text-lg font-bold text-blue-300">AMI-CS Management</h3>
+              <button id="close-ami-cs" class="p-2 rounded-full hover:bg-neutral-700/50 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </button>
+            </div>
+            <img src="/ami-cs-management.png" alt="AMI-CS Management Algorithm" class="max-w-full rounded-lg" />
+            <p class="text-xs text-neutral-500 mt-2 text-center">Adaptado de Mehta A, et al. - ACC Expert Consensus 2025</p>
+          </div>
+        </div>
+
+        <!-- Popup HF-CS Management -->
+        <div id="hf-cs-popup" class="cs-management-popup">
+          <div class="cs-management-card">
+            <div class="flex justify-between items-center mb-2">
+              <h3 class="text-lg font-bold text-purple-300">HF-CS Management</h3>
+              <button id="close-hf-cs" class="p-2 rounded-full hover:bg-neutral-700/50 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </button>
+            </div>
+            <img src="/hf-cs-management.png" alt="HF-CS Management Algorithm" class="max-w-full rounded-lg" />
+            <p class="text-xs text-neutral-500 mt-2 text-center">Adaptado de Mehta A, et al. - ACC Expert Consensus 2025</p>
+          </div>
+        </div>
+
+        <!-- Popup Reassessment Table -->
+        <div id="reassessment-popup" class="reassessment-popup">
+          <div class="reassessment-card">
+            <div class="flex justify-between items-center mb-2">
+              <h3 class="text-lg font-bold text-teal-300">Reavaliação Estruturada na UTI</h3>
+              <button id="close-reassessment" class="p-2 rounded-full hover:bg-neutral-700/50 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </button>
+            </div>
+            <img src="/cs-reassessment-table.png" alt="Structured Reassessment of Patients With CS in the ICU" class="max-w-full rounded-lg" />
+            <p class="text-xs text-neutral-500 mt-2 text-center">ACC Expert Consensus 2025 - Table 3</p>
           </div>
         </div>
 
@@ -2603,110 +3135,110 @@ import Layout from "../../layouts/Layout.astro";
   }
 
   /* ===== FULLSCREEN - SLIDES 16, 17, 18 - ENHANCED LAYOUT ===== */
-  #presentation:fullscreen [data-slide="16"],
-  #presentation:-webkit-full-screen [data-slide="16"],
   #presentation:fullscreen [data-slide="17"],
   #presentation:-webkit-full-screen [data-slide="17"],
   #presentation:fullscreen [data-slide="18"],
-  #presentation:-webkit-full-screen [data-slide="18"] {
+  #presentation:-webkit-full-screen [data-slide="18"],
+  #presentation:fullscreen [data-slide="19"],
+  #presentation:-webkit-full-screen [data-slide="19"] {
     justify-content: center !important;
     padding: 3rem 2rem !important;
   }
 
-  #presentation:fullscreen [data-slide="16"] h2,
-  #presentation:-webkit-full-screen [data-slide="16"] h2,
   #presentation:fullscreen [data-slide="17"] h2,
   #presentation:-webkit-full-screen [data-slide="17"] h2,
   #presentation:fullscreen [data-slide="18"] h2,
-  #presentation:-webkit-full-screen [data-slide="18"] h2 {
+  #presentation:-webkit-full-screen [data-slide="18"] h2,
+  #presentation:fullscreen [data-slide="19"] h2,
+  #presentation:-webkit-full-screen [data-slide="19"] h2 {
     font-size: 2.5rem !important;
     margin-bottom: 2rem !important;
   }
 
-  #presentation:fullscreen [data-slide="16"] h3,
-  #presentation:-webkit-full-screen [data-slide="16"] h3,
   #presentation:fullscreen [data-slide="17"] h3,
-  #presentation:-webkit-full-screen [data-slide="17"] h3 {
+  #presentation:-webkit-full-screen [data-slide="17"] h3,
+  #presentation:fullscreen [data-slide="18"] h3,
+  #presentation:-webkit-full-screen [data-slide="18"] h3 {
     font-size: 1.5rem !important;
   }
 
-  #presentation:fullscreen [data-slide="16"] h4,
-  #presentation:-webkit-full-screen [data-slide="16"] h4,
-  #presentation:fullscreen [data-slide="18"] h4,
-  #presentation:-webkit-full-screen [data-slide="18"] h4 {
+  #presentation:fullscreen [data-slide="17"] h4,
+  #presentation:-webkit-full-screen [data-slide="17"] h4,
+  #presentation:fullscreen [data-slide="19"] h4,
+  #presentation:-webkit-full-screen [data-slide="19"] h4 {
     font-size: 1.125rem !important;
   }
 
-  #presentation:fullscreen [data-slide="16"] p,
-  #presentation:-webkit-full-screen [data-slide="16"] p,
   #presentation:fullscreen [data-slide="17"] p,
   #presentation:-webkit-full-screen [data-slide="17"] p,
   #presentation:fullscreen [data-slide="18"] p,
-  #presentation:-webkit-full-screen [data-slide="18"] p {
+  #presentation:-webkit-full-screen [data-slide="18"] p,
+  #presentation:fullscreen [data-slide="19"] p,
+  #presentation:-webkit-full-screen [data-slide="19"] p {
     font-size: 1rem !important;
   }
 
-  #presentation:fullscreen [data-slide="16"] .text-xs,
-  #presentation:-webkit-full-screen [data-slide="16"] .text-xs,
   #presentation:fullscreen [data-slide="17"] .text-xs,
   #presentation:-webkit-full-screen [data-slide="17"] .text-xs,
   #presentation:fullscreen [data-slide="18"] .text-xs,
-  #presentation:-webkit-full-screen [data-slide="18"] .text-xs {
+  #presentation:-webkit-full-screen [data-slide="18"] .text-xs,
+  #presentation:fullscreen [data-slide="19"] .text-xs,
+  #presentation:-webkit-full-screen [data-slide="19"] .text-xs {
     font-size: 0.9rem !important;
   }
 
-  #presentation:fullscreen [data-slide="16"] .text-sm,
-  #presentation:-webkit-full-screen [data-slide="16"] .text-sm,
   #presentation:fullscreen [data-slide="17"] .text-sm,
   #presentation:-webkit-full-screen [data-slide="17"] .text-sm,
   #presentation:fullscreen [data-slide="18"] .text-sm,
-  #presentation:-webkit-full-screen [data-slide="18"] .text-sm {
+  #presentation:-webkit-full-screen [data-slide="18"] .text-sm,
+  #presentation:fullscreen [data-slide="19"] .text-sm,
+  #presentation:-webkit-full-screen [data-slide="19"] .text-sm {
     font-size: 1rem !important;
   }
 
-  #presentation:fullscreen [data-slide="16"] .grid,
-  #presentation:-webkit-full-screen [data-slide="16"] .grid,
   #presentation:fullscreen [data-slide="17"] .grid,
   #presentation:-webkit-full-screen [data-slide="17"] .grid,
   #presentation:fullscreen [data-slide="18"] .grid,
-  #presentation:-webkit-full-screen [data-slide="18"] .grid {
+  #presentation:-webkit-full-screen [data-slide="18"] .grid,
+  #presentation:fullscreen [data-slide="19"] .grid,
+  #presentation:-webkit-full-screen [data-slide="19"] .grid {
     gap: 2rem !important;
   }
 
-  #presentation:fullscreen [data-slide="16"] .rounded-2xl,
-  #presentation:-webkit-full-screen [data-slide="16"] .rounded-2xl,
   #presentation:fullscreen [data-slide="17"] .rounded-2xl,
   #presentation:-webkit-full-screen [data-slide="17"] .rounded-2xl,
   #presentation:fullscreen [data-slide="18"] .rounded-2xl,
-  #presentation:-webkit-full-screen [data-slide="18"] .rounded-2xl {
+  #presentation:-webkit-full-screen [data-slide="18"] .rounded-2xl,
+  #presentation:fullscreen [data-slide="19"] .rounded-2xl,
+  #presentation:-webkit-full-screen [data-slide="19"] .rounded-2xl {
     padding: 1.5rem !important;
   }
 
-  #presentation:fullscreen [data-slide="16"] .max-w-5xl,
-  #presentation:-webkit-full-screen [data-slide="16"] .max-w-5xl,
   #presentation:fullscreen [data-slide="17"] .max-w-5xl,
   #presentation:-webkit-full-screen [data-slide="17"] .max-w-5xl,
   #presentation:fullscreen [data-slide="18"] .max-w-5xl,
-  #presentation:-webkit-full-screen [data-slide="18"] .max-w-5xl {
+  #presentation:-webkit-full-screen [data-slide="18"] .max-w-5xl,
+  #presentation:fullscreen [data-slide="19"] .max-w-5xl,
+  #presentation:-webkit-full-screen [data-slide="19"] .max-w-5xl {
     max-width: 72rem !important;
   }
 
-  #presentation:fullscreen [data-slide="16"] .w-12,
-  #presentation:-webkit-full-screen [data-slide="16"] .w-12,
-  #presentation:fullscreen [data-slide="17"] .w-14,
-  #presentation:-webkit-full-screen [data-slide="17"] .w-14 {
+  #presentation:fullscreen [data-slide="17"] .w-12,
+  #presentation:-webkit-full-screen [data-slide="17"] .w-12,
+  #presentation:fullscreen [data-slide="18"] .w-14,
+  #presentation:-webkit-full-screen [data-slide="18"] .w-14 {
     width: 4rem !important;
     height: 4rem !important;
   }
 
-  #presentation:fullscreen [data-slide="18"] span.rounded-full,
-  #presentation:-webkit-full-screen [data-slide="18"] span.rounded-full {
+  #presentation:fullscreen [data-slide="19"] span.rounded-full,
+  #presentation:-webkit-full-screen [data-slide="19"] span.rounded-full {
     padding: 0.5rem 1rem !important;
     font-size: 0.95rem !important;
   }
 
-  #presentation:fullscreen [data-slide="18"] span.rounded,
-  #presentation:-webkit-full-screen [data-slide="18"] span.rounded {
+  #presentation:fullscreen [data-slide="19"] span.rounded,
+  #presentation:-webkit-full-screen [data-slide="19"] span.rounded {
     padding: 0.5rem 0.75rem !important;
     font-size: 0.875rem !important;
   }
@@ -2872,360 +3404,360 @@ import Layout from "../../layouts/Layout.astro";
   /* ===== SLIDES 16, 17, 18 - LIGHT MODE COMPLETO ===== */
 
   /* Gradient titles - make them visible in light mode */
-  .presentation-light [data-slide="16"] h2.bg-gradient-to-r,
   .presentation-light [data-slide="17"] h2.bg-gradient-to-r,
-  .presentation-light [data-slide="18"] h2.bg-gradient-to-r {
+  .presentation-light [data-slide="18"] h2.bg-gradient-to-r,
+  .presentation-light [data-slide="19"] h2.bg-gradient-to-r {
     background: linear-gradient(to right, #7c3aed, #db2777) !important;
     -webkit-background-clip: text !important;
     background-clip: text !important;
     color: transparent !important;
   }
 
-  .presentation-light [data-slide="17"] h2.bg-gradient-to-r {
+  .presentation-light [data-slide="18"] h2.bg-gradient-to-r {
     background: linear-gradient(to right, #2563eb, #0891b2) !important;
     -webkit-background-clip: text !important;
     background-clip: text !important;
   }
 
-  .presentation-light [data-slide="18"] h2.bg-gradient-to-r {
+  .presentation-light [data-slide="19"] h2.bg-gradient-to-r {
     background: linear-gradient(to right, #d97706, #ea580c) !important;
     -webkit-background-clip: text !important;
     background-clip: text !important;
   }
 
   /* Dark backgrounds become light */
-  .presentation-light [data-slide="16"] .bg-neutral-900\/80,
   .presentation-light [data-slide="17"] .bg-neutral-900\/80,
   .presentation-light [data-slide="18"] .bg-neutral-900\/80,
-  .presentation-light [data-slide="16"] .bg-neutral-900\/90,
+  .presentation-light [data-slide="19"] .bg-neutral-900\/80,
   .presentation-light [data-slide="17"] .bg-neutral-900\/90,
-  .presentation-light [data-slide="18"] .bg-neutral-900\/90 {
+  .presentation-light [data-slide="18"] .bg-neutral-900\/90,
+  .presentation-light [data-slide="19"] .bg-neutral-900\/90 {
     background: rgba(255, 255, 255, 0.95) !important;
     border-color: rgba(0, 0, 0, 0.15) !important;
   }
 
   /* Text colors - neutral */
-  .presentation-light [data-slide="16"] .text-neutral-200,
   .presentation-light [data-slide="17"] .text-neutral-200,
-  .presentation-light [data-slide="18"] .text-neutral-200 {
+  .presentation-light [data-slide="18"] .text-neutral-200,
+  .presentation-light [data-slide="19"] .text-neutral-200 {
     color: #171717 !important;
   }
 
-  .presentation-light [data-slide="16"] .text-neutral-300,
   .presentation-light [data-slide="17"] .text-neutral-300,
-  .presentation-light [data-slide="18"] .text-neutral-300 {
+  .presentation-light [data-slide="18"] .text-neutral-300,
+  .presentation-light [data-slide="19"] .text-neutral-300 {
     color: #404040 !important;
   }
 
-  .presentation-light [data-slide="16"] .text-neutral-400,
   .presentation-light [data-slide="17"] .text-neutral-400,
-  .presentation-light [data-slide="18"] .text-neutral-400 {
+  .presentation-light [data-slide="18"] .text-neutral-400,
+  .presentation-light [data-slide="19"] .text-neutral-400 {
     color: #525252 !important;
   }
 
-  .presentation-light [data-slide="16"] .text-neutral-500,
   .presentation-light [data-slide="17"] .text-neutral-500,
-  .presentation-light [data-slide="18"] .text-neutral-500 {
+  .presentation-light [data-slide="18"] .text-neutral-500,
+  .presentation-light [data-slide="19"] .text-neutral-500 {
     color: #737373 !important;
   }
 
   /* Purple colors */
-  .presentation-light [data-slide="16"] .text-purple-400,
   .presentation-light [data-slide="17"] .text-purple-400,
-  .presentation-light [data-slide="18"] .text-purple-400 {
+  .presentation-light [data-slide="18"] .text-purple-400,
+  .presentation-light [data-slide="19"] .text-purple-400 {
     color: #7c3aed !important;
   }
 
-  .presentation-light [data-slide="16"] .text-purple-300,
   .presentation-light [data-slide="17"] .text-purple-300,
-  .presentation-light [data-slide="18"] .text-purple-300 {
+  .presentation-light [data-slide="18"] .text-purple-300,
+  .presentation-light [data-slide="19"] .text-purple-300 {
     color: #8b5cf6 !important;
   }
 
-  .presentation-light [data-slide="16"] .border-purple-500\/30,
   .presentation-light [data-slide="17"] .border-purple-500\/30,
-  .presentation-light [data-slide="18"] .border-purple-500\/30 {
+  .presentation-light [data-slide="18"] .border-purple-500\/30,
+  .presentation-light [data-slide="19"] .border-purple-500\/30 {
     border-color: rgba(124, 58, 237, 0.4) !important;
   }
 
-  .presentation-light [data-slide="18"] .bg-purple-500\/15,
-  .presentation-light [data-slide="18"] .bg-purple-500\/30 {
+  .presentation-light [data-slide="19"] .bg-purple-500\/15,
+  .presentation-light [data-slide="19"] .bg-purple-500\/30 {
     background: rgba(124, 58, 237, 0.15) !important;
   }
 
   /* Pink colors */
-  .presentation-light [data-slide="16"] .text-pink-400,
   .presentation-light [data-slide="17"] .text-pink-400,
-  .presentation-light [data-slide="18"] .text-pink-400 {
+  .presentation-light [data-slide="18"] .text-pink-400,
+  .presentation-light [data-slide="19"] .text-pink-400 {
     color: #db2777 !important;
   }
 
   /* Blue colors */
-  .presentation-light [data-slide="16"] .text-blue-400,
   .presentation-light [data-slide="17"] .text-blue-400,
-  .presentation-light [data-slide="18"] .text-blue-400 {
+  .presentation-light [data-slide="18"] .text-blue-400,
+  .presentation-light [data-slide="19"] .text-blue-400 {
     color: #2563eb !important;
   }
 
-  .presentation-light [data-slide="16"] .text-blue-300,
   .presentation-light [data-slide="17"] .text-blue-300,
-  .presentation-light [data-slide="18"] .text-blue-300 {
+  .presentation-light [data-slide="18"] .text-blue-300,
+  .presentation-light [data-slide="19"] .text-blue-300 {
     color: #3b82f6 !important;
   }
 
-  .presentation-light [data-slide="16"] .border-blue-500\/30,
   .presentation-light [data-slide="17"] .border-blue-500\/30,
-  .presentation-light [data-slide="18"] .border-blue-500\/30 {
+  .presentation-light [data-slide="18"] .border-blue-500\/30,
+  .presentation-light [data-slide="19"] .border-blue-500\/30 {
     border-color: rgba(59, 130, 246, 0.4) !important;
   }
 
-  .presentation-light [data-slide="16"] .bg-gradient-to-br.from-blue-500\/10,
   .presentation-light [data-slide="17"] .bg-gradient-to-br.from-blue-500\/10,
-  .presentation-light [data-slide="18"] .bg-gradient-to-br.from-blue-500\/15 {
+  .presentation-light [data-slide="18"] .bg-gradient-to-br.from-blue-500\/10,
+  .presentation-light [data-slide="19"] .bg-gradient-to-br.from-blue-500\/15 {
     background: linear-gradient(to bottom right, rgba(59, 130, 246, 0.12), rgba(59, 130, 246, 0.05)) !important;
   }
 
   /* Cyan colors */
-  .presentation-light [data-slide="16"] .text-cyan-400,
   .presentation-light [data-slide="17"] .text-cyan-400,
-  .presentation-light [data-slide="18"] .text-cyan-400 {
+  .presentation-light [data-slide="18"] .text-cyan-400,
+  .presentation-light [data-slide="19"] .text-cyan-400 {
     color: #0891b2 !important;
   }
 
   /* Red colors */
-  .presentation-light [data-slide="16"] .text-red-400,
   .presentation-light [data-slide="17"] .text-red-400,
-  .presentation-light [data-slide="18"] .text-red-400 {
+  .presentation-light [data-slide="18"] .text-red-400,
+  .presentation-light [data-slide="19"] .text-red-400 {
     color: #dc2626 !important;
   }
 
-  .presentation-light [data-slide="16"] .text-red-300,
   .presentation-light [data-slide="17"] .text-red-300,
-  .presentation-light [data-slide="18"] .text-red-300 {
+  .presentation-light [data-slide="18"] .text-red-300,
+  .presentation-light [data-slide="19"] .text-red-300 {
     color: #ef4444 !important;
   }
 
-  .presentation-light [data-slide="16"] .border-red-500\/30,
   .presentation-light [data-slide="17"] .border-red-500\/30,
-  .presentation-light [data-slide="18"] .border-red-500\/30 {
+  .presentation-light [data-slide="18"] .border-red-500\/30,
+  .presentation-light [data-slide="19"] .border-red-500\/30 {
     border-color: rgba(239, 68, 68, 0.4) !important;
   }
 
-  .presentation-light [data-slide="17"] .border-red-500\/50 {
+  .presentation-light [data-slide="18"] .border-red-500\/50 {
     border-color: rgba(239, 68, 68, 0.5) !important;
   }
 
-  .presentation-light [data-slide="16"] .bg-gradient-to-br.from-red-500\/10,
   .presentation-light [data-slide="17"] .bg-gradient-to-br.from-red-500\/10,
-  .presentation-light [data-slide="18"] .bg-gradient-to-br.from-red-500\/15 {
+  .presentation-light [data-slide="18"] .bg-gradient-to-br.from-red-500\/10,
+  .presentation-light [data-slide="19"] .bg-gradient-to-br.from-red-500\/15 {
     background: linear-gradient(to bottom right, rgba(239, 68, 68, 0.12), rgba(239, 68, 68, 0.05)) !important;
   }
 
-  .presentation-light [data-slide="17"] .bg-red-500\/10,
-  .presentation-light [data-slide="18"] .bg-red-500\/10 {
+  .presentation-light [data-slide="18"] .bg-red-500\/10,
+  .presentation-light [data-slide="19"] .bg-red-500\/10 {
     background: rgba(239, 68, 68, 0.12) !important;
   }
 
   /* Orange colors */
-  .presentation-light [data-slide="16"] .text-orange-400,
   .presentation-light [data-slide="17"] .text-orange-400,
-  .presentation-light [data-slide="18"] .text-orange-400 {
+  .presentation-light [data-slide="18"] .text-orange-400,
+  .presentation-light [data-slide="19"] .text-orange-400 {
     color: #ea580c !important;
   }
 
-  .presentation-light [data-slide="16"] .text-orange-300,
   .presentation-light [data-slide="17"] .text-orange-300,
-  .presentation-light [data-slide="18"] .text-orange-300 {
+  .presentation-light [data-slide="18"] .text-orange-300,
+  .presentation-light [data-slide="19"] .text-orange-300 {
     color: #f97316 !important;
   }
 
-  .presentation-light [data-slide="16"] .text-orange-200,
   .presentation-light [data-slide="17"] .text-orange-200,
-  .presentation-light [data-slide="18"] .text-orange-200 {
+  .presentation-light [data-slide="18"] .text-orange-200,
+  .presentation-light [data-slide="19"] .text-orange-200 {
     color: #c2410c !important;
   }
 
-  .presentation-light [data-slide="16"] .border-orange-500\/40,
   .presentation-light [data-slide="17"] .border-orange-500\/40,
-  .presentation-light [data-slide="18"] .border-orange-500\/30 {
+  .presentation-light [data-slide="18"] .border-orange-500\/40,
+  .presentation-light [data-slide="19"] .border-orange-500\/30 {
     border-color: rgba(249, 115, 22, 0.5) !important;
   }
 
-  .presentation-light [data-slide="16"] .bg-gradient-to-br.from-orange-500\/15,
   .presentation-light [data-slide="17"] .bg-gradient-to-br.from-orange-500\/15,
-  .presentation-light [data-slide="18"] .bg-gradient-to-br.from-orange-500\/15 {
+  .presentation-light [data-slide="18"] .bg-gradient-to-br.from-orange-500\/15,
+  .presentation-light [data-slide="19"] .bg-gradient-to-br.from-orange-500\/15 {
     background: linear-gradient(to bottom right, rgba(249, 115, 22, 0.15), rgba(249, 115, 22, 0.05)) !important;
   }
 
-  .presentation-light [data-slide="18"] .bg-orange-500\/10 {
+  .presentation-light [data-slide="19"] .bg-orange-500\/10 {
     background: rgba(249, 115, 22, 0.12) !important;
   }
 
   /* Emerald/Green colors */
-  .presentation-light [data-slide="16"] .text-emerald-400,
   .presentation-light [data-slide="17"] .text-emerald-400,
-  .presentation-light [data-slide="18"] .text-emerald-400 {
+  .presentation-light [data-slide="18"] .text-emerald-400,
+  .presentation-light [data-slide="19"] .text-emerald-400 {
     color: #059669 !important;
   }
 
-  .presentation-light [data-slide="16"] .text-emerald-300,
   .presentation-light [data-slide="17"] .text-emerald-300,
-  .presentation-light [data-slide="18"] .text-emerald-300 {
+  .presentation-light [data-slide="18"] .text-emerald-300,
+  .presentation-light [data-slide="19"] .text-emerald-300 {
     color: #10b981 !important;
   }
 
-  .presentation-light [data-slide="16"] .text-emerald-200,
   .presentation-light [data-slide="17"] .text-emerald-200,
-  .presentation-light [data-slide="18"] .text-emerald-200 {
+  .presentation-light [data-slide="18"] .text-emerald-200,
+  .presentation-light [data-slide="19"] .text-emerald-200 {
     color: #047857 !important;
   }
 
-  .presentation-light [data-slide="16"] .text-green-400,
   .presentation-light [data-slide="17"] .text-green-400,
-  .presentation-light [data-slide="18"] .text-green-400 {
+  .presentation-light [data-slide="18"] .text-green-400,
+  .presentation-light [data-slide="19"] .text-green-400 {
     color: #16a34a !important;
   }
 
-  .presentation-light [data-slide="16"] .text-green-300,
   .presentation-light [data-slide="17"] .text-green-300,
-  .presentation-light [data-slide="18"] .text-green-300 {
+  .presentation-light [data-slide="18"] .text-green-300,
+  .presentation-light [data-slide="19"] .text-green-300 {
     color: #22c55e !important;
   }
 
-  .presentation-light [data-slide="16"] .border-emerald-500\/40,
   .presentation-light [data-slide="17"] .border-emerald-500\/40,
-  .presentation-light [data-slide="18"] .border-emerald-500\/40 {
+  .presentation-light [data-slide="18"] .border-emerald-500\/40,
+  .presentation-light [data-slide="19"] .border-emerald-500\/40 {
     border-color: rgba(16, 185, 129, 0.5) !important;
   }
 
-  .presentation-light [data-slide="17"] .border-emerald-500\/50 {
+  .presentation-light [data-slide="18"] .border-emerald-500\/50 {
     border-color: rgba(16, 185, 129, 0.5) !important;
   }
 
-  .presentation-light [data-slide="16"] .bg-gradient-to-br.from-emerald-500\/15,
   .presentation-light [data-slide="17"] .bg-gradient-to-br.from-emerald-500\/15,
-  .presentation-light [data-slide="18"] .bg-gradient-to-br.from-emerald-500\/15 {
+  .presentation-light [data-slide="18"] .bg-gradient-to-br.from-emerald-500\/15,
+  .presentation-light [data-slide="19"] .bg-gradient-to-br.from-emerald-500\/15 {
     background: linear-gradient(to bottom right, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.05)) !important;
   }
 
-  .presentation-light [data-slide="17"] .bg-emerald-500\/10,
-  .presentation-light [data-slide="18"] .bg-emerald-500\/10 {
+  .presentation-light [data-slide="18"] .bg-emerald-500\/10,
+  .presentation-light [data-slide="19"] .bg-emerald-500\/10 {
     background: rgba(16, 185, 129, 0.12) !important;
   }
 
-  .presentation-light [data-slide="18"] .border-emerald-500\/30 {
+  .presentation-light [data-slide="19"] .border-emerald-500\/30 {
     border-color: rgba(16, 185, 129, 0.4) !important;
   }
 
   /* Amber colors */
-  .presentation-light [data-slide="16"] .text-amber-400,
   .presentation-light [data-slide="17"] .text-amber-400,
-  .presentation-light [data-slide="18"] .text-amber-400 {
+  .presentation-light [data-slide="18"] .text-amber-400,
+  .presentation-light [data-slide="19"] .text-amber-400 {
     color: #d97706 !important;
   }
 
-  .presentation-light [data-slide="16"] .text-amber-300,
   .presentation-light [data-slide="17"] .text-amber-300,
-  .presentation-light [data-slide="18"] .text-amber-300 {
+  .presentation-light [data-slide="18"] .text-amber-300,
+  .presentation-light [data-slide="19"] .text-amber-300 {
     color: #f59e0b !important;
   }
 
-  .presentation-light [data-slide="17"] .bg-amber-500\/10,
-  .presentation-light [data-slide="18"] .bg-amber-500\/10 {
+  .presentation-light [data-slide="18"] .bg-amber-500\/10,
+  .presentation-light [data-slide="19"] .bg-amber-500\/10 {
     background: rgba(245, 158, 11, 0.12) !important;
   }
 
-  .presentation-light [data-slide="17"] .border-amber-500\/30,
-  .presentation-light [data-slide="18"] .border-amber-500\/30 {
+  .presentation-light [data-slide="18"] .border-amber-500\/30,
+  .presentation-light [data-slide="19"] .border-amber-500\/30 {
     border-color: rgba(245, 158, 11, 0.4) !important;
   }
 
-  .presentation-light [data-slide="18"] .bg-gradient-to-br.from-amber-500\/15 {
+  .presentation-light [data-slide="19"] .bg-gradient-to-br.from-amber-500\/15 {
     background: linear-gradient(to bottom right, rgba(245, 158, 11, 0.15), rgba(245, 158, 11, 0.05)) !important;
   }
 
   /* Background gradients to light */
-  .presentation-light [data-slide="16"] .bg-gradient-to-br,
   .presentation-light [data-slide="17"] .bg-gradient-to-br,
-  .presentation-light [data-slide="18"] .bg-gradient-to-br {
+  .presentation-light [data-slide="18"] .bg-gradient-to-br,
+  .presentation-light [data-slide="19"] .bg-gradient-to-br {
     border-color: rgba(0, 0, 0, 0.1) !important;
   }
 
   /* Blur glow effects - make more subtle in light mode */
-  .presentation-light [data-slide="16"] .blur-xl,
   .presentation-light [data-slide="17"] .blur-xl,
   .presentation-light [data-slide="18"] .blur-xl,
-  .presentation-light [data-slide="16"] .blur-2xl,
+  .presentation-light [data-slide="19"] .blur-xl,
   .presentation-light [data-slide="17"] .blur-2xl,
   .presentation-light [data-slide="18"] .blur-2xl,
-  .presentation-light [data-slide="16"] .blur-lg,
+  .presentation-light [data-slide="19"] .blur-2xl,
   .presentation-light [data-slide="17"] .blur-lg,
-  .presentation-light [data-slide="18"] .blur-lg {
+  .presentation-light [data-slide="18"] .blur-lg,
+  .presentation-light [data-slide="19"] .blur-lg {
     opacity: 0.5;
   }
 
   /* Shadow boxes */
-  .presentation-light [data-slide="16"] .shadow-lg,
   .presentation-light [data-slide="17"] .shadow-lg,
-  .presentation-light [data-slide="18"] .shadow-lg {
+  .presentation-light [data-slide="18"] .shadow-lg,
+  .presentation-light [data-slide="19"] .shadow-lg {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1) !important;
   }
 
   /* Colored shadow effects - lighter */
-  .presentation-light [data-slide="16"] .shadow-blue-500\/20,
-  .presentation-light [data-slide="17"] .shadow-blue-500\/20 {
+  .presentation-light [data-slide="17"] .shadow-blue-500\/20,
+  .presentation-light [data-slide="18"] .shadow-blue-500\/20 {
     box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.15) !important;
   }
 
-  .presentation-light [data-slide="16"] .shadow-red-500\/20,
   .presentation-light [data-slide="17"] .shadow-red-500\/20,
-  .presentation-light [data-slide="17"] .shadow-red-500\/30 {
+  .presentation-light [data-slide="18"] .shadow-red-500\/20,
+  .presentation-light [data-slide="18"] .shadow-red-500\/30 {
     box-shadow: 0 10px 15px -3px rgba(239, 68, 68, 0.15) !important;
   }
 
-  .presentation-light [data-slide="16"] .shadow-emerald-500\/20,
   .presentation-light [data-slide="17"] .shadow-emerald-500\/20,
-  .presentation-light [data-slide="17"] .shadow-emerald-500\/30 {
+  .presentation-light [data-slide="18"] .shadow-emerald-500\/20,
+  .presentation-light [data-slide="18"] .shadow-emerald-500\/30 {
     box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.15) !important;
   }
 
   /* Icon boxes - lighter backgrounds */
-  .presentation-light [data-slide="16"] .bg-gradient-to-br.from-blue-500\/30,
-  .presentation-light [data-slide="17"] .bg-gradient-to-br.from-blue-500\/30 {
+  .presentation-light [data-slide="17"] .bg-gradient-to-br.from-blue-500\/30,
+  .presentation-light [data-slide="18"] .bg-gradient-to-br.from-blue-500\/30 {
     background: linear-gradient(to bottom right, rgba(59, 130, 246, 0.25), rgba(59, 130, 246, 0.15)) !important;
   }
 
-  .presentation-light [data-slide="16"] .bg-gradient-to-br.from-red-500\/30,
-  .presentation-light [data-slide="17"] .bg-gradient-to-br.from-red-500,
-  .presentation-light [data-slide="17"] .bg-gradient-to-br.from-red-500\/30 {
+  .presentation-light [data-slide="17"] .bg-gradient-to-br.from-red-500\/30,
+  .presentation-light [data-slide="18"] .bg-gradient-to-br.from-red-500,
+  .presentation-light [data-slide="18"] .bg-gradient-to-br.from-red-500\/30 {
     background: linear-gradient(to bottom right, rgba(239, 68, 68, 0.3), rgba(249, 115, 22, 0.2)) !important;
   }
 
-  .presentation-light [data-slide="16"] .bg-gradient-to-br.from-emerald-500\/30,
-  .presentation-light [data-slide="17"] .bg-gradient-to-br.from-emerald-500,
-  .presentation-light [data-slide="17"] .bg-gradient-to-br.from-emerald-500\/30 {
+  .presentation-light [data-slide="17"] .bg-gradient-to-br.from-emerald-500\/30,
+  .presentation-light [data-slide="18"] .bg-gradient-to-br.from-emerald-500,
+  .presentation-light [data-slide="18"] .bg-gradient-to-br.from-emerald-500\/30 {
     background: linear-gradient(to bottom right, rgba(16, 185, 129, 0.3), rgba(20, 184, 166, 0.2)) !important;
   }
 
-  .presentation-light [data-slide="16"] .bg-orange-500\/30,
-  .presentation-light [data-slide="18"] .bg-orange-500\/30 {
+  .presentation-light [data-slide="17"] .bg-orange-500\/30,
+  .presentation-light [data-slide="19"] .bg-orange-500\/30 {
     background: rgba(249, 115, 22, 0.25) !important;
   }
 
-  .presentation-light [data-slide="16"] .bg-emerald-500\/30,
-  .presentation-light [data-slide="18"] .bg-emerald-500\/30 {
+  .presentation-light [data-slide="17"] .bg-emerald-500\/30,
+  .presentation-light [data-slide="19"] .bg-emerald-500\/30 {
     background: rgba(16, 185, 129, 0.25) !important;
   }
 
-  .presentation-light [data-slide="18"] .bg-red-500\/30 {
+  .presentation-light [data-slide="19"] .bg-red-500\/30 {
     background: rgba(239, 68, 68, 0.25) !important;
   }
 
-  .presentation-light [data-slide="18"] .bg-blue-500\/30 {
+  .presentation-light [data-slide="19"] .bg-blue-500\/30 {
     background: rgba(59, 130, 246, 0.25) !important;
   }
 
-  .presentation-light [data-slide="18"] .bg-amber-500\/30 {
+  .presentation-light [data-slide="19"] .bg-amber-500\/30 {
     background: rgba(245, 158, 11, 0.25) !important;
   }
 
@@ -3320,14 +3852,26 @@ import Layout from "../../layouts/Layout.astro";
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-    overflow: auto;
+    overflow: hidden;
   }
 
-  .figura4-card img {
+  .figura4-img-container {
     width: 100%;
-    height: auto;
-    max-height: 80vh;
-    object-fit: contain;
+    height: 70vh;
+    overflow: auto;
+    cursor: grab;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .figura4-img-container:active {
+    cursor: grabbing;
+  }
+
+  .figura4-zoomable-img {
+    transform-origin: 0 0;
+    transition: transform 0.1s ease-out;
+    min-width: 100%;
   }
 
   .presentation-dark .figura4-card {
@@ -3344,11 +3888,241 @@ import Layout from "../../layouts/Layout.astro";
     color: #0891b2;
   }
 
+  .scai-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .scai-popup.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .scai-card {
+    max-width: 95vw;
+    max-height: 90vh;
+    width: 1000px;
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    overflow: auto;
+  }
+
+  .scai-card img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+  }
+
+  .presentation-dark .scai-card {
+    background: rgba(23, 23, 23, 0.98);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+  }
+
+  .presentation-light .scai-card {
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid rgba(239, 68, 68, 0.5);
+  }
+
+  .receptors-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .receptors-popup.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .receptors-card {
+    max-width: 95vw;
+    max-height: 90vh;
+    width: 900px;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    overflow: auto;
+  }
+
+  .presentation-dark .receptors-card {
+    background: rgba(23, 23, 23, 0.98);
+    border: 1px solid rgba(168, 85, 247, 0.4);
+  }
+
+  .presentation-light .receptors-card {
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid rgba(168, 85, 247, 0.5);
+  }
+
+  .presentation-light .receptors-card h3 {
+    color: #7c3aed;
+  }
+
+  .presentation-light .receptors-card th {
+    color: #7c3aed;
+    background: rgba(243, 244, 246, 0.8);
+  }
+
+  .presentation-light .receptors-card td {
+    color: #374151;
+  }
+
+  .heartmate-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .heartmate-popup.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .heartmate-card {
+    max-width: 95vw;
+    max-height: 90vh;
+    width: 700px;
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    overflow: auto;
+  }
+
+  .heartmate-card img {
+    width: 100%;
+    height: auto;
+    max-height: 75vh;
+    object-fit: contain;
+  }
+
+  .presentation-dark .heartmate-card {
+    background: rgba(23, 23, 23, 0.98);
+    border: 1px solid rgba(244, 63, 94, 0.4);
+  }
+
+  .presentation-light .heartmate-card {
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid rgba(244, 63, 94, 0.5);
+  }
+
+  .presentation-light .heartmate-card h3 {
+    color: #e11d48;
+  }
+
+  .cs-management-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .cs-management-popup.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .cs-management-card {
+    max-width: 95vw;
+    max-height: 90vh;
+    width: 1100px;
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    overflow: auto;
+  }
+
+  .cs-management-card img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+  }
+
+  .presentation-dark .cs-management-card {
+    background: rgba(23, 23, 23, 0.98);
+    border: 1px solid rgba(99, 102, 241, 0.4);
+  }
+
+  .presentation-light .cs-management-card {
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid rgba(99, 102, 241, 0.5);
+  }
+
+  .reassessment-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .reassessment-popup.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .reassessment-card {
+    max-width: 95vw;
+    max-height: 90vh;
+    width: 700px;
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    overflow: auto;
+  }
+
+  .reassessment-card img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+  }
+
+  .presentation-dark .reassessment-card {
+    background: rgba(23, 23, 23, 0.98);
+    border: 1px solid rgba(20, 184, 166, 0.4);
+  }
+
+  .presentation-light .reassessment-card {
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid rgba(20, 184, 166, 0.5);
+  }
+
   .normal-values-card,
   .ventricular-card,
   .shock-table-popup-card,
   .papi-card,
-  .figura4-card {
+  .figura4-card,
+  .scai-card,
+  .receptors-card,
+  .heartmate-card,
+  .cs-management-card,
+  .reassessment-card {
     cursor: move;
     user-select: none;
   }
@@ -3357,7 +4131,12 @@ import Layout from "../../layouts/Layout.astro";
   .ventricular-card.dragging,
   .shock-table-popup-card.dragging,
   .papi-card.dragging,
-  .figura4-card.dragging {
+  .figura4-card.dragging,
+  .scai-card.dragging,
+  .receptors-card.dragging,
+  .heartmate-card.dragging,
+  .cs-management-card.dragging,
+  .reassessment-card.dragging {
     cursor: grabbing;
     opacity: 0.95;
   }
@@ -4100,32 +4879,32 @@ import Layout from "../../layouts/Layout.astro";
       gap: 0.5rem !important;
     }
 
-    /* Venn diagram - slide 28 */
-    [data-slide="28"] .relative {
+    /* Venn diagram - slide 29 */
+    [data-slide="30"] .relative {
       transform: scale(0.6) !important;
       transform-origin: top center !important;
     }
 
-    /* Pyramid - slide 26 */
-    [data-slide="26"] .w-48 {
+    /* Pyramid - slide 27 */
+    [data-slide="28"] .w-48 {
       width: 8rem !important;
     }
 
-    [data-slide="26"] .w-72 {
+    [data-slide="28"] .w-72 {
       width: 12rem !important;
     }
 
-    [data-slide="26"] .w-96 {
+    [data-slide="28"] .w-96 {
       width: 16rem !important;
     }
 
-    /* Shock team circle - slide 27 */
-    [data-slide="27"] .w-32 {
+    /* Shock team circle - slide 28 */
+    [data-slide="29"] .w-32 {
       width: 5rem !important;
       height: 5rem !important;
     }
 
-    [data-slide="27"] .absolute.bg-neutral-800 {
+    [data-slide="29"] .absolute.bg-neutral-800 {
       font-size: 0.6rem !important;
       padding: 0.25rem 0.5rem !important;
     }
@@ -4609,21 +5388,113 @@ import Layout from "../../layouts/Layout.astro";
   const figura4Popup = document.getElementById('figura4-popup');
   const closeFigura4Btn = document.getElementById('close-figura4');
   const figura4Card = figura4Popup?.querySelector('.figura4-card') as HTMLElement;
+  const figura4Img = document.getElementById('figura4-img') as HTMLImageElement;
+  const figura4Container = document.getElementById('figura4-img-container') as HTMLElement;
+  const figura4ZoomIn = document.getElementById('figura4-zoom-in');
+  const figura4ZoomOut = document.getElementById('figura4-zoom-out');
+  const figura4ZoomReset = document.getElementById('figura4-zoom-reset');
+  const figura4ZoomLevel = document.getElementById('figura4-zoom-level');
+
+  let figura4Zoom = 1;
+  const ZOOM_STEP = 0.25;
+  const MIN_ZOOM = 0.5;
+  const MAX_ZOOM = 4;
+
+  function updateFigura4Zoom() {
+    if (figura4Img) {
+      figura4Img.style.transform = `scale(${figura4Zoom})`;
+    }
+    if (figura4ZoomLevel) {
+      figura4ZoomLevel.textContent = `${Math.round(figura4Zoom * 100)}%`;
+    }
+  }
 
   function showFigura4() {
     figura4Popup?.classList.add('show');
+    figura4Zoom = 1;
+    updateFigura4Zoom();
+    if (figura4Container) {
+      figura4Container.scrollLeft = 0;
+      figura4Container.scrollTop = 0;
+    }
   }
 
   function hideFigura4() {
     figura4Popup?.classList.remove('show');
   }
 
-  closeFigura4Btn?.addEventListener('click', hideFigura4);
-
-  // Drag para Figura 4
-  figura4Card?.addEventListener('mousedown', (e) => {
-    startDrag(e, figura4Popup!, figura4Card!, '#close-figura4');
+  figura4ZoomIn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (figura4Zoom < MAX_ZOOM) {
+      figura4Zoom = Math.min(figura4Zoom + ZOOM_STEP, MAX_ZOOM);
+      updateFigura4Zoom();
+    }
   });
+
+  figura4ZoomOut?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (figura4Zoom > MIN_ZOOM) {
+      figura4Zoom = Math.max(figura4Zoom - ZOOM_STEP, MIN_ZOOM);
+      updateFigura4Zoom();
+    }
+  });
+
+  figura4ZoomReset?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    figura4Zoom = 1;
+    updateFigura4Zoom();
+    if (figura4Container) {
+      figura4Container.scrollLeft = 0;
+      figura4Container.scrollTop = 0;
+    }
+  });
+
+  // Zoom com scroll do mouse
+  figura4Container?.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    if (e.deltaY < 0 && figura4Zoom < MAX_ZOOM) {
+      figura4Zoom = Math.min(figura4Zoom + ZOOM_STEP, MAX_ZOOM);
+    } else if (e.deltaY > 0 && figura4Zoom > MIN_ZOOM) {
+      figura4Zoom = Math.max(figura4Zoom - ZOOM_STEP, MIN_ZOOM);
+    }
+    updateFigura4Zoom();
+  });
+
+  // Drag para mover imagem dentro do container
+  let isDraggingImg = false;
+  let imgStartX = 0;
+  let imgStartY = 0;
+  let imgScrollLeft = 0;
+  let imgScrollTop = 0;
+
+  figura4Container?.addEventListener('mousedown', (e) => {
+    isDraggingImg = true;
+    imgStartX = e.pageX - figura4Container.offsetLeft;
+    imgStartY = e.pageY - figura4Container.offsetTop;
+    imgScrollLeft = figura4Container.scrollLeft;
+    imgScrollTop = figura4Container.scrollTop;
+  });
+
+  figura4Container?.addEventListener('mouseleave', () => {
+    isDraggingImg = false;
+  });
+
+  figura4Container?.addEventListener('mouseup', () => {
+    isDraggingImg = false;
+  });
+
+  figura4Container?.addEventListener('mousemove', (e) => {
+    if (!isDraggingImg) return;
+    e.preventDefault();
+    const x = e.pageX - figura4Container.offsetLeft;
+    const y = e.pageY - figura4Container.offsetTop;
+    const walkX = (x - imgStartX) * 1.5;
+    const walkY = (y - imgStartY) * 1.5;
+    figura4Container.scrollLeft = imgScrollLeft - walkX;
+    figura4Container.scrollTop = imgScrollTop - walkY;
+  });
+
+  closeFigura4Btn?.addEventListener('click', hideFigura4);
 
   // Botão para abrir figura 4 (Slide 20)
   document.querySelectorAll('.figura4-btn').forEach(btn => {
@@ -4631,6 +5502,162 @@ import Layout from "../../layouts/Layout.astro";
       e.stopPropagation();
       showFigura4();
     });
+  });
+
+  // ===== SCAI POPUP (Slide 11) =====
+  const scaiPopup = document.getElementById('scai-popup');
+  const closeScaiBtn = document.getElementById('close-scai');
+  const scaiCard = scaiPopup?.querySelector('.scai-card') as HTMLElement;
+  const toggleScaiBtn = document.getElementById('toggle-scai-img');
+
+  function showScai() {
+    scaiPopup?.classList.add('show');
+  }
+
+  function hideScai() {
+    scaiPopup?.classList.remove('show');
+  }
+
+  toggleScaiBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    showScai();
+  });
+
+  closeScaiBtn?.addEventListener('click', hideScai);
+
+  // Drag para SCAI
+  scaiCard?.addEventListener('mousedown', (e) => {
+    startDrag(e, scaiPopup!, scaiCard!, '#close-scai');
+  });
+
+  // ===== RECEPTORS POPUP (Slide 21) =====
+  const receptorsPopup = document.getElementById('receptors-popup');
+  const closeReceptorsBtn = document.getElementById('close-receptors');
+  const receptorsCard = receptorsPopup?.querySelector('.receptors-card') as HTMLElement;
+  const toggleReceptorsBtn = document.getElementById('toggle-receptors');
+
+  function showReceptors() {
+    receptorsPopup?.classList.add('show');
+  }
+
+  function hideReceptors() {
+    receptorsPopup?.classList.remove('show');
+  }
+
+  toggleReceptorsBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    showReceptors();
+  });
+
+  closeReceptorsBtn?.addEventListener('click', hideReceptors);
+
+  // Drag para Receptors
+  receptorsCard?.addEventListener('mousedown', (e) => {
+    startDrag(e, receptorsPopup!, receptorsCard!, '#close-receptors');
+  });
+
+  // ===== HEARTMATE POPUP (Slide 24) =====
+  const heartmatePopup = document.getElementById('heartmate-popup');
+  const closeHeartmateBtn = document.getElementById('close-heartmate');
+  const heartmateCard = heartmatePopup?.querySelector('.heartmate-card') as HTMLElement;
+  const toggleHeartmateBtn = document.getElementById('toggle-heartmate');
+
+  function showHeartmate() {
+    heartmatePopup?.classList.add('show');
+  }
+
+  function hideHeartmate() {
+    heartmatePopup?.classList.remove('show');
+  }
+
+  toggleHeartmateBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    showHeartmate();
+  });
+
+  closeHeartmateBtn?.addEventListener('click', hideHeartmate);
+
+  // Drag para Heartmate
+  heartmateCard?.addEventListener('mousedown', (e) => {
+    startDrag(e, heartmatePopup!, heartmateCard!, '#close-heartmate');
+  });
+
+  // ===== AMI-CS POPUP (Slide 26) =====
+  const amiCsPopup = document.getElementById('ami-cs-popup');
+  const closeAmiCsBtn = document.getElementById('close-ami-cs');
+  const amiCsCard = amiCsPopup?.querySelector('.cs-management-card') as HTMLElement;
+  const amiCsThumb = document.getElementById('ami-cs-thumb');
+
+  function showAmiCs() {
+    amiCsPopup?.classList.add('show');
+  }
+
+  function hideAmiCs() {
+    amiCsPopup?.classList.remove('show');
+  }
+
+  amiCsThumb?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    showAmiCs();
+  });
+
+  closeAmiCsBtn?.addEventListener('click', hideAmiCs);
+
+  // Drag para AMI-CS
+  amiCsCard?.addEventListener('mousedown', (e) => {
+    startDrag(e, amiCsPopup!, amiCsCard!, '#close-ami-cs');
+  });
+
+  // ===== HF-CS POPUP (Slide 26) =====
+  const hfCsPopup = document.getElementById('hf-cs-popup');
+  const closeHfCsBtn = document.getElementById('close-hf-cs');
+  const hfCsCard = hfCsPopup?.querySelector('.cs-management-card') as HTMLElement;
+  const hfCsThumb = document.getElementById('hf-cs-thumb');
+
+  function showHfCs() {
+    hfCsPopup?.classList.add('show');
+  }
+
+  function hideHfCs() {
+    hfCsPopup?.classList.remove('show');
+  }
+
+  hfCsThumb?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    showHfCs();
+  });
+
+  closeHfCsBtn?.addEventListener('click', hideHfCs);
+
+  // Drag para HF-CS
+  hfCsCard?.addEventListener('mousedown', (e) => {
+    startDrag(e, hfCsPopup!, hfCsCard!, '#close-hf-cs');
+  });
+
+  // ===== REASSESSMENT POPUP (Slide 29) =====
+  const reassessmentPopup = document.getElementById('reassessment-popup');
+  const closeReassessmentBtn = document.getElementById('close-reassessment');
+  const reassessmentCard = reassessmentPopup?.querySelector('.reassessment-card') as HTMLElement;
+  const toggleReassessmentBtn = document.getElementById('toggle-reassessment');
+
+  function showReassessment() {
+    reassessmentPopup?.classList.add('show');
+  }
+
+  function hideReassessment() {
+    reassessmentPopup?.classList.remove('show');
+  }
+
+  toggleReassessmentBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    showReassessment();
+  });
+
+  closeReassessmentBtn?.addEventListener('click', hideReassessment);
+
+  // Drag para Reassessment
+  reassessmentCard?.addEventListener('mousedown', (e) => {
+    startDrag(e, reassessmentPopup!, reassessmentCard!, '#close-reassessment');
   });
 
   // ===== BOTÕES DO SLIDE 12 (E SLIDE 2) =====
@@ -4674,6 +5701,24 @@ import Layout from "../../layouts/Layout.astro";
       }
       if (papiPopup?.classList.contains('show')) {
         hidePapi();
+      }
+      if (scaiPopup?.classList.contains('show')) {
+        hideScai();
+      }
+      if (receptorsPopup?.classList.contains('show')) {
+        hideReceptors();
+      }
+      if (heartmatePopup?.classList.contains('show')) {
+        hideHeartmate();
+      }
+      if (amiCsPopup?.classList.contains('show')) {
+        hideAmiCs();
+      }
+      if (hfCsPopup?.classList.contains('show')) {
+        hideHfCs();
+      }
+      if (reassessmentPopup?.classList.contains('show')) {
+        hideReassessment();
       }
     }
   });
