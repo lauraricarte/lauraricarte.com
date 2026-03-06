@@ -1,0 +1,2628 @@
+---
+import "../../styles/base.css";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="Métodos Diagnósticos para DAC - Apresentação Médica"
+  description="Apresentação sobre métodos diagnósticos para doença arterial coronariana baseada nas diretrizes SBC 2025 e ESC 2024"
+  noindex={true}
+>
+  <main id="main-presentation" class="presentation-dark min-h-screen overflow-hidden">
+    <!-- Slide Container -->
+    <div id="presentation" class="relative w-full h-screen">
+
+      <!-- Progress Bar -->
+      <div class="fs-ui fixed top-0 left-0 w-full h-1 bg-neutral-800 z-50">
+        <div id="progress-bar" class="h-full bg-gradient-to-r from-blue-500 to-cyan-500 transition-all duration-300" style="width: 0%"></div>
+      </div>
+
+      <!-- Back to Aulinhas -->
+      <a href="/aulinhas" class="fs-ui fixed top-3 md:top-6 left-3 md:left-6 z-50 p-2 md:p-3 bg-neutral-900/90 backdrop-blur-sm hover:bg-neutral-700 rounded-full border border-neutral-700 transition-colors text-cyan-300 hover:text-cyan-200">
+        <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+      </a>
+
+      <!-- Navigation -->
+      <div class="fs-ui fixed bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 md:gap-4 bg-neutral-900/90 backdrop-blur-sm px-4 md:px-6 py-2 md:py-3 rounded-full border border-neutral-700">
+        <button id="prev-btn" class="p-1.5 md:p-2 hover:bg-neutral-700 rounded-full transition-colors disabled:opacity-30" disabled>
+          <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        <div class="flex items-center gap-1 text-xs md:text-sm font-medium">
+          <input id="slide-input" type="text" value="1" class="w-6 md:w-8 bg-transparent text-center border-b border-transparent hover:border-neutral-500 focus:border-blue-400 focus:outline-none transition-colors" />
+          <span>/ <span id="total-slides">39</span></span>
+        </div>
+        <button id="next-btn" class="p-1.5 md:p-2 hover:bg-neutral-700 rounded-full transition-colors">
+          <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Theme Toggle Button -->
+      <button id="theme-btn" class="fs-ui fixed top-3 md:top-6 right-14 md:right-20 z-50 p-2 md:p-3 bg-neutral-900/90 backdrop-blur-sm hover:bg-neutral-700 rounded-full border border-neutral-700 transition-colors" title="Alternar tema">
+        <svg id="theme-icon-dark" class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+        </svg>
+        <svg id="theme-icon-light" class="w-4 h-4 md:w-5 md:h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+        </svg>
+      </button>
+
+      <!-- Fullscreen Button -->
+      <button id="fullscreen-btn" class="fs-ui fixed top-3 md:top-6 right-3 md:right-6 z-50 p-2 md:p-3 bg-neutral-900/90 backdrop-blur-sm hover:bg-neutral-700 rounded-full border border-neutral-700 transition-colors">
+        <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/>
+        </svg>
+      </button>
+
+      <!-- SLIDES -->
+      <div id="slides-container" class="w-full h-full">
+
+        <!-- Slide 1: Titulo -->
+        <section class="slide active flex flex-col items-center justify-center h-full px-8 text-center" data-slide="1">
+          <div class="max-w-5xl mx-auto">
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-400 text-sm font-medium mb-8">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+              </svg>
+              Medicina Nuclear
+            </div>
+            <h1 class="text-4xl md:text-7xl pb-2 font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-cyan-200 bg-clip-text text-transparent">
+              Métodos Diagnósticos para Doença Arterial Coronariana
+            </h1>
+            <p class="text-xl md:text-2xl text-neutral-300 mb-8">
+              Abordagem Baseada em Evidências
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 text-sm text-neutral-400">
+              <span class="px-3 py-1 bg-neutral-800 rounded-full">Diretriz SBC 2025</span>
+              <span class="px-3 py-1 bg-neutral-800 rounded-full">ESC Guidelines 2024</span>
+            </div>
+            <div class="mt-12 pt-8 border-t border-neutral-800">
+              <p class="text-neutral-500 text-sm">Apresentado por Laura Ricarte <br/> Residente de Cardiologia — Instituto Dante Pazzanese de Cardiologia</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 2: Objetivos -->
+        <section class="slide flex flex-col items-center justify-center h-full px-4 md:px-8 py-6 md:py-8 overflow-y-auto" data-slide="2">
+          <div class="max-w-4xl mx-auto w-full">
+            <h2 class="text-4xl font-bold mb-12 text-center">Objetivos de Aprendizagem</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="bg-neutral-900/50 border border-neutral-700 rounded-2xl p-6 hover:border-blue-500/50 transition-colors">
+                <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4">
+                  <span class="text-2xl font-bold text-blue-400">1</span>
+                </div>
+                <h3 class="text-lg font-semibold mb-2">Estimar Probabilidade</h3>
+                <p class="text-neutral-400 text-sm">Aplicar modelos de probabilidade clínica pré-teste para DAC obstrutiva (RF-CL)</p>
+              </div>
+              <div class="bg-neutral-900/50 border border-neutral-700 rounded-2xl p-6 hover:border-blue-500/50 transition-colors">
+                <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4">
+                  <span class="text-2xl font-bold text-blue-400">2</span>
+                </div>
+                <h3 class="text-lg font-semibold mb-2">Escolher o Exame</h3>
+                <p class="text-neutral-400 text-sm">Selecionar o método diagnóstico adequado conforme a probabilidade clínica</p>
+              </div>
+              <div class="bg-neutral-900/50 border border-neutral-700 rounded-2xl p-6 hover:border-blue-500/50 transition-colors">
+                <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4">
+                  <span class="text-2xl font-bold text-blue-400">3</span>
+                </div>
+                <h3 class="text-lg font-semibold mb-2">Interpretar Resultados</h3>
+                <p class="text-neutral-400 text-sm">Reconhecer critérios de alto risco em cada modalidade diagnóstica</p>
+              </div>
+              <div class="bg-neutral-900/50 border border-neutral-700 rounded-2xl p-6 hover:border-blue-500/50 transition-colors">
+                <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4">
+                  <span class="text-2xl font-bold text-blue-400">4</span>
+                </div>
+                <h3 class="text-lg font-semibold mb-2">Integrar Evidências</h3>
+                <p class="text-neutral-400 text-sm">Comparar recomendações SBC 2025 e ESC 2024 na prática clínica</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 3: O que é Síndrome Coronariana Crônica? -->
+        <section class="slide flex flex-col items-center justify-start md:justify-center h-full px-4 md:px-8 py-6 md:py-8 overflow-y-auto" data-slide="3">
+          <div class="max-w-5xl mx-auto w-full">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">O que é Síndrome Coronariana Crônica?</h2>
+            <div class="bg-gradient-to-br from-blue-500/10 to-cyan-600/5 border border-blue-500/20 rounded-3xl p-6 md:p-8 mb-5">
+              <p class="text-lg md:text-xl text-center leading-relaxed">
+                Apresentações clínicas que surgem por <span class="text-blue-400 font-semibold">alterações estruturais e/ou funcionais</span> das artérias coronárias e/ou da <span class="text-blue-400 font-semibold">microcirculação</span>, levando a <span class="text-cyan-400 font-semibold">mismatch transitório e reversível</span> entre demanda e oferta miocárdica de oxigênio, resultando em <span class="text-blue-400 font-semibold">hipoperfusão (isquemia)</span>.
+              </p>
+              <p class="text-center text-neutral-400 text-sm mt-3">
+                Geralmente provocada por esforço, emoção ou outro estresse — pode se manifestar como <span class="text-neutral-300">angina, desconforto torácico, dispneia</span> ou ser <span class="text-neutral-300">assintomática</span>.
+              </p>
+              <p class="text-center text-neutral-500 text-xs mt-3">— ESC Guidelines 2024</p>
+            </div>
+            <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-4 mb-5">
+              <p class="text-amber-200 text-sm text-center">
+                <span class="font-semibold">Doença</span> = patologia coronariana subjacente &nbsp;|&nbsp; <span class="font-semibold">Síndrome</span> = apresentação clínica. Embora estáveis por longos períodos, as doenças coronarianas crônicas são <span class="font-semibold">frequentemente progressivas</span> e podem desestabilizar a qualquer momento com o desenvolvimento de uma SCA.
+              </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-4">
+              <div class="bg-neutral-900/50 rounded-xl p-5 text-center">
+                <div class="text-3xl font-bold text-blue-400 mb-2">6 cenários</div>
+                <p class="text-neutral-400 text-sm">Apresentações clínicas da SCC (ESC 2024)</p>
+                <button id="btn-cenarios-scc" class="mt-2 px-3 py-1 bg-blue-500/20 border border-blue-500/40 rounded-full text-blue-300 text-xs font-medium hover:bg-blue-500/30 transition-all cursor-pointer">Ver cenários</button>
+              </div>
+              <div class="bg-neutral-900/50 rounded-xl p-5 text-center">
+                <div class="text-3xl font-bold text-cyan-400 mb-2">70%</div>
+                <p class="text-neutral-400 text-sm">Dos cateterismos sem DAC obstrutiva (ANOCA)</p>
+              </div>
+              <div class="bg-neutral-900/50 rounded-xl p-5 text-center">
+                <div class="text-3xl font-bold text-blue-400 mb-2">10-15%</div>
+                <p class="text-neutral-400 text-sm">Dos pacientes com angina típica</p>
+              </div>
+            </div>
+          </div>
+          <div id="cenarios-scc" class="slide-popup hidden">
+            <div class="slide-popup-backdrop"></div>
+            <div class="slide-popup-content slide-popup-content--wide">
+              <button class="slide-popup-close">&times;</button>
+              <h4 class="text-blue-300 font-semibold text-center mb-3">6 Cenários Clínicos da SCC — ESC 2024</h4>
+              <div class="grid md:grid-cols-2 gap-3">
+                <div class="bg-neutral-800/50 border border-blue-500/20 rounded-xl p-3">
+                  <p class="text-blue-300 font-medium text-sm mb-1">1. Suspeita de DAC</p>
+                  <p class="text-neutral-400 text-xs">Pacientes com sintomas estáveis de angina e/ou dispneia</p>
+                </div>
+                <div class="bg-neutral-800/50 border border-cyan-500/20 rounded-xl p-3">
+                  <p class="text-cyan-300 font-medium text-sm mb-1">2. DAC obstrutiva recém-diagnosticada</p>
+                  <p class="text-neutral-400 text-xs">Início de terapia após confirmação diagnóstica</p>
+                </div>
+                <div class="bg-neutral-800/50 border border-violet-500/20 rounded-xl p-3">
+                  <p class="text-violet-300 font-medium text-sm mb-1">3. Sintomas novos ou piora</p>
+                  <p class="text-neutral-400 text-xs">Pacientes com DAC conhecida e mudança do padrão sintomático</p>
+                </div>
+                <div class="bg-neutral-800/50 border border-amber-500/20 rounded-xl p-3">
+                  <p class="text-amber-300 font-medium text-sm mb-1">4. Pós-revascularização</p>
+                  <p class="text-neutral-400 text-xs">Acompanhamento após ICP ou CABG</p>
+                </div>
+                <div class="bg-neutral-800/50 border border-green-500/20 rounded-xl p-3">
+                  <p class="text-green-300 font-medium text-sm mb-1">5. IC e suspeita de DAC</p>
+                  <p class="text-neutral-400 text-xs">Insuficiência cardíaca com etiologia coronariana possível</p>
+                </div>
+                <div class="bg-neutral-800/50 border border-red-500/20 rounded-xl p-3">
+                  <p class="text-red-300 font-medium text-sm mb-1">6. Assintomáticos com DAC incidental</p>
+                  <p class="text-neutral-400 text-xs">DAC detectada em screening ou exame por outra indicação</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 4: Cascata Isquêmica -->
+        <section class="slide flex flex-col items-center justify-start md:justify-center h-full px-4 md:px-8 py-6 md:py-8 overflow-y-auto" data-slide="4">
+          <div class="max-w-4xl mx-auto w-full">
+            <h2 class="text-3xl md:text-4xl font-bold mb-2 text-center bg-gradient-to-r from-blue-300 to-cyan-300 bg-clip-text text-transparent">A Cascata Isquêmica</h2>
+            <p class="text-neutral-400 text-center mb-6 text-sm">Por que a perfusão miocárdica detecta isquemia antes dos outros métodos?</p>
+            <div class="flex flex-col items-center gap-2 mb-6">
+              <!-- Step 1 -->
+              <div class="w-full max-w-lg bg-neutral-900/50 border-2 border-violet-500/50 rounded-2xl p-4 text-center">
+                <div class="flex items-center justify-center gap-2 mb-1">
+                  <span class="px-2 py-0.5 bg-violet-500/20 text-violet-400 text-xs font-bold rounded">1 - MAIS PRECOCE</span>
+                </div>
+                <p class="text-lg font-bold text-violet-400">Hipoperfusão Miocárdica</p>
+                <p class="text-neutral-400 text-xs mt-1">Detectada por: SPECT, PET, RMC perfusão</p>
+              </div>
+              <!-- Arrow -->
+              <svg class="w-6 h-6 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+              <!-- Step 2 -->
+              <div class="w-full max-w-lg bg-neutral-900/50 border border-blue-500/30 rounded-2xl p-4 text-center">
+                <div class="flex items-center justify-center gap-2 mb-1">
+                  <span class="px-2 py-0.5 bg-blue-500/20 text-blue-400 text-xs font-bold rounded">2</span>
+                </div>
+                <p class="text-lg font-bold text-blue-300">Disfunção Diastólica → Alteração da Contratilidade Segmentar</p>
+                <p class="text-neutral-400 text-xs mt-1">Detectada por: Eco estresse, RMC dobutamina</p>
+              </div>
+              <!-- Arrow -->
+              <svg class="w-6 h-6 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+              <!-- Step 3 -->
+              <div class="w-full max-w-lg bg-neutral-900/50 border border-amber-500/30 rounded-2xl p-4 text-center">
+                <div class="flex items-center justify-center gap-2 mb-1">
+                  <span class="px-2 py-0.5 bg-amber-500/20 text-amber-400 text-xs font-bold rounded">3</span>
+                </div>
+                <p class="text-lg font-bold text-amber-300">Alterações Eletrocardiográficas</p>
+                <p class="text-neutral-400 text-xs mt-1">Detectada por: TE, monitorização</p>
+              </div>
+              <!-- Arrow -->
+              <svg class="w-6 h-6 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+              <!-- Step 4 -->
+              <div class="w-full max-w-lg bg-neutral-900/50 border border-red-500/30 rounded-2xl p-4 text-center">
+                <div class="flex items-center justify-center gap-2 mb-1">
+                  <span class="px-2 py-0.5 bg-red-500/20 text-red-400 text-xs font-bold rounded">4</span>
+                </div>
+                <p class="text-lg font-bold text-red-300">Angina / Sintomas</p>
+                <p class="text-neutral-400 text-xs mt-1">Detectada por: Anamnese</p>
+              </div>
+            </div>
+            <div class="p-4 bg-violet-500/10 border border-violet-500/30 rounded-xl">
+              <p class="text-violet-400 text-center text-sm">
+                A perfusão miocárdica é a <strong>manifestação mais precoce</strong> da cascata isquêmica — base racional da medicina nuclear na detecção de DAC
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 5: Fluxograma - 4 Steps ESC 2024 -->
+        <section class="slide flex flex-col items-center justify-start md:justify-center h-full px-4 md:px-8 py-6 md:py-8 overflow-y-auto" data-slide="5">
+          <div class="max-w-5xl mx-auto w-full">
+            <h2 class="text-3xl md:text-4xl font-bold mb-2 text-center">Manejo Escalonado da SCC Suspeita</h2>
+            <p class="text-neutral-400 text-center mb-6 text-sm">Stepwise approach — ESC Guidelines 2024</p>
+
+            <!-- Flowchart -->
+            <div class="flex flex-col items-center gap-1">
+              <!-- Step 1 -->
+              <div class="w-full max-w-3xl bg-gradient-to-r from-blue-500/10 to-blue-600/5 border-2 border-blue-500/40 rounded-2xl p-4">
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 bg-blue-500/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <span class="text-xl font-bold text-blue-300">1</span>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-lg font-bold text-blue-300">Avaliação Clínica Inicial</h3>
+                    <p class="text-neutral-400 text-sm mt-1">Anamnese &bull; Exame físico &bull; ECG 12D &bull; Laboratório &bull; Rx tórax<sup>a</sup> &bull; PFP<sup>a</sup></p>
+                  </div>
+                  <div class="flex flex-col gap-1 flex-shrink-0">
+                    <span class="px-2 py-0.5 bg-red-500/20 text-red-400 text-xs rounded text-center">SCA? → Emergência</span>
+                    <span class="px-2 py-0.5 bg-neutral-800 text-neutral-400 text-xs rounded text-center">Causa não-cardíaca? → Tratar</span>
+                  </div>
+                </div>
+              </div>
+
+              <svg class="w-6 h-8 text-blue-500/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+
+              <!-- Step 2 -->
+              <div class="w-full max-w-3xl bg-gradient-to-r from-cyan-500/10 to-cyan-600/5 border-2 border-cyan-500/40 rounded-2xl p-4">
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 bg-cyan-500/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <span class="text-xl font-bold text-cyan-300">2</span>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-lg font-bold text-cyan-300">Avaliação Complementar</h3>
+                    <p class="text-neutral-400 text-sm mt-1">Ecocardiograma repouso &bull; Estimar probabilidade clínica (RF-CL) &bull; TE<sup>b</sup> &bull; CACS<sup>b</sup></p>
+                  </div>
+                  <div class="flex flex-col gap-1 flex-shrink-0">
+                    <span class="px-2 py-0.5 bg-green-500/20 text-green-400 text-xs rounded text-center">≤5%? → Diferir testes</span>
+                    <span class="px-2 py-0.5 bg-neutral-800 text-neutral-400 text-xs rounded text-center">Comorbidade grave? → Tratar</span>
+                  </div>
+                </div>
+              </div>
+
+              <svg class="w-6 h-8 text-cyan-500/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+
+              <!-- Step 3 -->
+              <div class="w-full max-w-3xl bg-gradient-to-r from-violet-500/10 to-violet-600/5 border-2 border-violet-500/40 rounded-2xl p-4">
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 bg-violet-500/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <span class="text-xl font-bold text-violet-300">3</span>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-lg font-bold text-violet-300">Confirmação Diagnóstica e Estratificação de Risco</h3>
+                    <p class="text-neutral-400 text-sm mt-1">
+                      <span class="text-violet-400">Baixa-Mod (>5-50%):</span> AngioTC &nbsp;|&nbsp;
+                      <span class="text-violet-400">Mod-Alta (>15-85%):</span> Imagem funcional &nbsp;|&nbsp;
+                      <span class="text-violet-400">Muito alta (>85%):</span> ICA + FFR/iFR
+                    </p>
+                  </div>
+                </div>
+                <div class="mt-2 ml-16 flex flex-wrap gap-2">
+                  <span class="px-2 py-0.5 bg-violet-500/15 text-violet-400 text-xs rounded">SPECT/PET</span>
+                  <span class="px-2 py-0.5 bg-violet-500/15 text-violet-400 text-xs rounded">Eco estresse</span>
+                  <span class="px-2 py-0.5 bg-violet-500/15 text-violet-400 text-xs rounded">RMC</span>
+                  <span class="px-2 py-0.5 bg-violet-500/15 text-violet-400 text-xs rounded">CCTA</span>
+                  <span class="px-2 py-0.5 bg-violet-500/15 text-violet-400 text-xs rounded">FFR-CT</span>
+                  <span class="px-2 py-0.5 bg-amber-500/15 text-amber-400 text-xs rounded">Considerar ANOCA/INOCA</span>
+                </div>
+              </div>
+
+              <svg class="w-6 h-8 text-violet-500/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+
+              <!-- Step 4 -->
+              <div class="w-full max-w-3xl bg-gradient-to-r from-emerald-500/10 to-emerald-600/5 border-2 border-emerald-500/40 rounded-2xl p-4">
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 bg-emerald-500/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <span class="text-xl font-bold text-emerald-300">4</span>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-lg font-bold text-emerald-300">Terapia Inicial</h3>
+                    <p class="text-neutral-400 text-sm mt-1">Mudança de estilo de vida &bull; Medicamentos modificadores de prognóstico &bull; Antianginosos &bull; Revascularização</p>
+                  </div>
+                  <span class="px-2 py-0.5 bg-emerald-500/20 text-emerald-400 text-xs rounded flex-shrink-0">Se alto risco ou refratário</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footnotes -->
+            <div class="mt-4 text-neutral-500 text-xs text-center space-y-0.5">
+              <p><sup>a</sup> Em pacientes selecionados &nbsp;&nbsp;<sup>b</sup> Considerar também espasmo coronariano ou disfunção microvascular</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 6: Stepwise Approach (ESC 2024 - Figure 2) -->
+        <section class="slide flex flex-col items-center justify-center h-full px-4 md:px-8 py-6 md:py-8" data-slide="6">
+          <div class="max-w-4xl mx-auto w-full text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">Stepwise Approach — ESC 2024</h2>
+            <p class="text-neutral-400 text-sm mb-4">Figure 2: Manejo escalonado de indivíduos com SCC suspeita</p>
+            <img src="/stepwise-approach-esc.png" alt="Stepwise approach to the initial management of individuals with suspected CCS - ESC 2024 Figure 2" class="mx-auto rounded-xl max-h-[70vh] w-auto" style="pointer-events: auto;" />
+          </div>
+        </section>
+
+        <!-- Slide 7: Step 1 — Avaliação Clínica Inicial -->
+        <section class="slide flex flex-col items-center justify-start md:justify-center h-full px-4 md:px-8 py-6 md:py-8 overflow-y-auto" data-slide="7">
+          <div class="max-w-5xl mx-auto w-full">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 bg-blue-500/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                <span class="text-lg font-bold text-blue-300">1</span>
+              </div>
+              <h2 class="text-3xl md:text-4xl font-bold">Step 1 — Avaliação Clínica Inicial</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4 mb-5">
+              <!-- Anamnese -->
+              <div class="bg-neutral-900/50 border border-blue-500/20 rounded-2xl p-5">
+                <h3 class="text-lg font-semibold text-blue-300 mb-3">Anamnese Detalhada</h3>
+                <ul class="text-neutral-300 text-sm space-y-2">
+                  <li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">&#9654;</span> Tipo, localização, duração, gatilhos e fatores de alívio</li>
+                  <li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">&#9654;</span> Equivalentes anginosos: dispneia, dor em braço/mandíbula, fadiga</li>
+                  <li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">&#9654;</span> Fatores de risco CV: DM, HAS, DLP, tabagismo, HF precoce</li>
+                  <li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">&#9654;</span> Comorbidades: DRC, DPOC, DAP</li>
+                </ul>
+                <div class="mt-3 px-3 py-1.5 bg-blue-500/10 rounded-lg">
+                  <p class="text-blue-400 text-xs"><strong>Classe I · C</strong> — Avaliação detalhada dos sintomas é recomendada</p>
+                </div>
+              </div>
+
+              <!-- Exame Físico -->
+              <div class="bg-neutral-900/50 border border-blue-500/20 rounded-2xl p-5">
+                <h3 class="text-lg font-semibold text-blue-300 mb-3">Exame Físico</h3>
+                <ul class="text-neutral-300 text-sm space-y-2">
+                  <li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">&#9654;</span> PA e IMC</li>
+                  <li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">&#9654;</span> Ausculta cardíaca → valvopatias, B3/B4</li>
+                  <li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">&#9654;</span> Pulsos periféricos → DAP assintomática</li>
+                  <li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">&#9654;</span> Sopros carotídeos e femorais</li>
+                  <li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">&#9654;</span> Sinais de tireopatia, doença renal, diabetes</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4">
+              <!-- ECG -->
+              <div class="bg-neutral-900/50 border border-blue-500/20 rounded-2xl p-5">
+                <h3 class="text-lg font-semibold text-blue-300 mb-3">ECG 12 Derivações</h3>
+                <ul class="text-neutral-300 text-sm space-y-2">
+                  <li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">&#9654;</span> Q patológico → IAM prévio</li>
+                  <li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">&#9654;</span> BRE, bloqueio AV → sugere doença estrutural</li>
+                  <li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">&#9654;</span> Alteração ST dinâmica durante dor → isquemia ativa</li>
+                  <li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">&#9654;</span> FA associada à SCC não é rara</li>
+                </ul>
+                <div class="mt-3 px-3 py-1.5 bg-blue-500/10 rounded-lg">
+                  <p class="text-blue-400 text-xs"><strong>Classe I · C</strong> — ECG recomendado em todos com dor torácica</p>
+                </div>
+              </div>
+
+              <!-- Laboratório -->
+              <div class="bg-neutral-900/50 border border-blue-500/20 rounded-2xl p-5">
+                <h3 class="text-lg font-semibold text-blue-300 mb-3">Exames Laboratoriais</h3>
+                <ul class="text-neutral-300 text-sm space-y-2">
+                  <li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">&#9654;</span> Perfil lipídico c/ LDL-C <span class="text-neutral-500">(Classe I · A)</span></li>
+                  <li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">&#9654;</span> Hemograma <span class="text-neutral-500">(Classe I · B)</span></li>
+                  <li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">&#9654;</span> Creatinina + TFG <span class="text-neutral-500">(Classe I · B)</span></li>
+                  <li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">&#9654;</span> HbA1c e/ou glicemia jejum <span class="text-neutral-500">(Classe I · B)</span></li>
+                  <li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">&#9654;</span> Função tireoidiana <span class="text-neutral-500">(Classe I · B)</span></li>
+                  <li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">&#9654;</span> PCR-us e/ou fibrinogênio <span class="text-neutral-500">(IIa · B)</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 7: Step 2 — Avaliação Complementar -->
+        <section class="slide flex flex-col items-center justify-start md:justify-center h-full px-4 md:px-8 py-6 md:py-8 overflow-y-auto" data-slide="8">
+          <div class="max-w-5xl mx-auto w-full">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 bg-cyan-500/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                <span class="text-lg font-bold text-cyan-300">2</span>
+              </div>
+              <h2 class="text-3xl md:text-4xl font-bold">Step 2 — Avaliação Complementar</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4 mb-5">
+              <!-- Ecocardiograma -->
+              <div class="bg-neutral-900/50 border border-cyan-500/20 rounded-2xl p-5">
+                <h3 class="text-lg font-semibold text-cyan-300 mb-3">Ecocardiograma em Repouso</h3>
+                <ul class="text-neutral-300 text-sm space-y-2">
+                  <li class="flex items-start gap-2"><span class="text-cyan-400 mt-0.5">&#9654;</span> <strong>Função sistólica VE (FEVE)</strong> — maior preditor de sobrevida a longo prazo</li>
+                  <li class="flex items-start gap-2"><span class="text-cyan-400 mt-0.5">&#9654;</span> Alteração segmentar → IAM prévio?</li>
+                  <li class="flex items-start gap-2"><span class="text-cyan-400 mt-0.5">&#9654;</span> Valvopatias (estenose aórtica como causa de angina)</li>
+                  <li class="flex items-start gap-2"><span class="text-cyan-400 mt-0.5">&#9654;</span> <strong>Disfunção diastólica</strong> — sinal precoce de isquemia e de disfunção microvascular</li>
+                </ul>
+                <div class="mt-2 px-3 py-1.5 bg-neutral-800/50 rounded-lg">
+                  <p class="text-neutral-400 text-xs"><strong class="text-cyan-400">RMC como alternativa:</strong> quando eco inconclusivo (mesmo com contraste). Avalia função global/regional, cicatriz (realce tardio com gadolínio) e perfusão sob estresse.</p>
+                </div>
+                <div class="mt-2 px-3 py-1.5 bg-cyan-500/10 rounded-lg">
+                  <p class="text-cyan-400 text-xs"><strong>Classe I · C</strong> — Recomendado em todos com SCC suspeita</p>
+                </div>
+              </div>
+
+              <!-- Probabilidade Clínica -->
+              <div class="bg-neutral-900/50 border border-cyan-500/20 rounded-2xl p-5">
+                <h3 class="text-lg font-semibold text-cyan-300 mb-3">Estimar Probabilidade Clínica (RF-CL)</h3>
+                <ul class="text-neutral-300 text-sm space-y-2">
+                  <li class="flex items-start gap-2"><span class="text-cyan-400 mt-0.5">&#9654;</span> Integra: sintomas + idade + sexo + fatores de risco</li>
+                  <li class="flex items-start gap-2"><span class="text-cyan-400 mt-0.5">&#9654;</span> Categoriza em faixas de probabilidade</li>
+                  <li class="flex items-start gap-2"><span class="text-cyan-400 mt-0.5">&#9654;</span> <strong>≤5%:</strong> diferir testes adicionais</li>
+                  <li class="flex items-start gap-2"><span class="text-cyan-400 mt-0.5">&#9654;</span> <strong>>5-15%:</strong> CACS pode reclassificar</li>
+                  <li class="flex items-start gap-2"><span class="text-cyan-400 mt-0.5">&#9654;</span> <strong>>15%:</strong> prosseguir ao Step 3</li>
+                </ul>
+                <div class="mt-3 px-3 py-1.5 bg-cyan-500/10 rounded-lg">
+                  <p class="text-cyan-400 text-xs"><strong>Classe I · B</strong> — Usar modelo RF-CL é recomendado</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4">
+              <!-- CACS -->
+              <div class="bg-neutral-900/50 border border-cyan-500/20 rounded-2xl p-5">
+                <h3 class="text-lg font-semibold text-cyan-300 mb-3">Escore de Cálcio Coronariano (CACS)</h3>
+                <ul class="text-neutral-300 text-sm space-y-2">
+                  <li class="flex items-start gap-2"><span class="text-cyan-400 mt-0.5">&#9654;</span> <strong>CACS = 0:</strong> VPN >95% para DAC obstrutiva</li>
+                  <li class="flex items-start gap-2"><span class="text-cyan-400 mt-0.5">&#9654;</span> Reclassifica pacientes de probabilidade baixa (>5-15%)</li>
+                  <li class="flex items-start gap-2"><span class="text-cyan-400 mt-0.5">&#9654;</span> Jovens: 58% com DAC obstrutiva têm CACS = 0</li>
+                </ul>
+                <div class="mt-3 px-3 py-1.5 bg-cyan-500/10 rounded-lg">
+                  <p class="text-cyan-400 text-xs"><strong>IIa · B</strong> — Considerar CACS na probabilidade baixa (>5-15%)</p>
+                </div>
+              </div>
+
+              <!-- TE -->
+              <div class="bg-neutral-900/50 border border-cyan-500/20 rounded-2xl p-5">
+                <h3 class="text-lg font-semibold text-cyan-300 mb-3">Teste Ergométrico (TE)</h3>
+                <ul class="text-neutral-300 text-sm space-y-2">
+                  <li class="flex items-start gap-2"><span class="text-cyan-400 mt-0.5">&#9654;</span> Pode reclassificar na probabilidade baixa</li>
+                  <li class="flex items-start gap-2"><span class="text-cyan-400 mt-0.5">&#9654;</span> Reproduz sintomas → valor prognóstico</li>
+                  <li class="flex items-start gap-2"><span class="text-cyan-400 mt-0.5">&#9654;</span> Inferior à CCTA na acurácia diagnóstica</li>
+                  <li class="flex items-start gap-2"><span class="text-cyan-400 mt-0.5">&#9654;</span> Mais eventos adversos que estratégia com CCTA</li>
+                </ul>
+                <div class="mt-3 px-3 py-1.5 bg-amber-500/10 rounded-lg">
+                  <p class="text-amber-400 text-xs"><strong>IIb · C</strong> — Considerar TE na probabilidade baixa (>5-15%)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 9: Ecocardiografia Transtorácica -->
+        <section class="slide flex flex-col items-center justify-start md:justify-center h-full px-4 md:px-8 py-6 md:py-8 overflow-y-auto" data-slide="9">
+          <div class="max-w-5xl mx-auto w-full">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">Ecocardiografia Transtorácica em Repouso</h2>
+            <div class="bg-gradient-to-br from-blue-500/10 to-cyan-600/5 border border-blue-500/20 rounded-2xl p-6 mb-6">
+              <p class="text-lg text-center text-blue-300 font-medium">Modalidade de primeira linha na avaliação de DAC subclínica ou manifesta — Classe I</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+              <div class="bg-neutral-900/50 border border-neutral-700 rounded-2xl p-5">
+                <h4 class="font-semibold text-blue-400 mb-3">O que avalia</h4>
+                <ul class="text-neutral-400 text-sm space-y-2">
+                  <li class="flex items-start gap-2">
+                    <svg class="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    FEVE (Simpson biplano / 3D)
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Função segmentar (WMSI)
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Strain longitudinal global (GLS)
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Função diastólica
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Diagnósticos diferenciais (valvopatias, cardiomiopatias)
+                  </li>
+                </ul>
+              </div>
+              <div class="bg-neutral-900/50 border border-neutral-700 rounded-2xl p-5">
+                <h4 class="font-semibold text-cyan-400 mb-3">Pontos-chave</h4>
+                <ul class="text-neutral-400 text-sm space-y-2">
+                  <li class="flex items-start gap-2">
+                    <svg class="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+                    Sem radiação, amplamente disponível
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+                    Avalia complicações mecânicas
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+                    Não detecta isquemia (só alterações estruturais)
+                  </li>
+                </ul>
+                <div class="mt-4 p-3 bg-amber-500/10 border border-amber-500/30 rounded-lg">
+                  <p class="text-amber-300 text-xs"><strong>GLS &lt; 16%</strong> = disfunção subclínica (valor normal: -18 a -22%)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 16: Escore de Cálcio -->
+        <section class="slide flex flex-col items-center justify-start md:justify-center h-full px-4 md:px-8 py-6 md:py-8 overflow-y-auto" data-slide="10">
+          <div class="max-w-5xl mx-auto w-full">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">Escore de Cálcio Coronário (CACS)</h2>
+            <div class="bg-gradient-to-br from-blue-500/10 to-cyan-600/5 border border-blue-500/20 rounded-2xl p-5 mb-6 text-center">
+              <p class="text-blue-300 font-medium text-lg">Papel: Reclassificação de Risco Cardiovascular</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+              <div class="bg-neutral-900/50 border border-green-500/30 rounded-2xl p-5">
+                <div class="text-center mb-3">
+                  <span class="text-4xl font-bold text-green-400">CACS = 0</span>
+                </div>
+                <p class="text-neutral-400 text-sm text-center">VPN &gt;95% para DAC obstrutiva</p>
+                <p class="text-neutral-400 text-sm text-center mt-2">Modelo CACS-CL reclassifica <span class="text-green-400 font-semibold">54%</span> dos pacientes para probabilidade muito baixa</p>
+              </div>
+              <div class="bg-neutral-900/50 border border-neutral-700 rounded-2xl p-5">
+                <h4 class="font-semibold text-blue-400 mb-3">Recomendações</h4>
+                <ul class="text-neutral-400 text-sm space-y-2">
+                  <li><span class="text-cyan-400 font-medium">IIa (ESC 2024):</span> grupo de probabilidade baixa para reclassificação</li>
+                  <li><span class="text-blue-400 font-medium">Classe I (SBC 2025):</span> assintomáticos de risco intermediário</li>
+                </ul>
+              </div>
+            </div>
+            <div class="p-4 bg-cyan-500/10 border border-cyan-500/30 rounded-xl mb-4">
+              <p class="text-cyan-300 text-sm">
+                <strong>CACS-CL (CACS + RF-CL):</strong> modelo com maior potencial para diferir testes cardíacos. Reclassifica <span class="text-cyan-400 font-semibold">54%</span> dos indivíduos como probabilidade muito baixa (vs 38% com RF-CL isolado). Superior a outros modelos de predição clínica em prever IAM e morte no seguimento.
+              </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="p-3 bg-amber-500/10 border border-amber-500/30 rounded-xl">
+                <p class="text-amber-300 text-sm">
+                  <strong>Cautela:</strong> pacientes &lt;40 anos — 58% com DAC obstrutiva têm CACS = 0
+                </p>
+              </div>
+              <div class="p-3 bg-red-500/10 border border-red-500/30 rounded-xl">
+                <p class="text-red-300 text-sm">
+                  <strong>Classe III (SBC):</strong> NÃO usar em sintomáticos para excluir DAC
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 8: Teste Ergométrico -->
+        <section class="slide flex flex-col items-center justify-start md:justify-center h-full px-4 md:px-8 py-6 md:py-8 overflow-y-auto" data-slide="11">
+          <div class="max-w-5xl mx-auto w-full">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">Teste Ergométrico</h2>
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+              <div class="bg-neutral-900/50 rounded-xl p-5 text-center">
+                <div class="text-3xl font-bold text-amber-400 mb-1">58%</div>
+                <p class="text-neutral-400 text-sm">Sensibilidade</p>
+              </div>
+              <div class="bg-neutral-900/50 rounded-xl p-5 text-center">
+                <div class="text-3xl font-bold text-amber-400 mb-1">62%</div>
+                <p class="text-neutral-400 text-sm">Especificidade</p>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+              <div class="bg-neutral-900/50 border border-green-500/30 rounded-2xl p-5">
+                <h4 class="font-semibold text-green-400 mb-3">Quando indicar</h4>
+                <ul class="text-neutral-400 text-sm space-y-2">
+                  <li class="flex items-start gap-2"><span class="text-green-400">I</span> Avaliação prognóstica (capacidade funcional)</li>
+                  <li class="flex items-start gap-2"><span class="text-yellow-400">IIb</span> Probabilidade baixa quando CCTA/funcional indisponíveis</li>
+                </ul>
+              </div>
+              <div class="bg-neutral-900/50 border border-red-500/30 rounded-2xl p-5">
+                <h4 class="font-semibold text-red-400 mb-3">Classe III (NÃO indicar)</h4>
+                <ul class="text-neutral-400 text-sm space-y-1">
+                  <li>BRE, marcapasso</li>
+                  <li>Pré-excitação ventricular</li>
+                  <li>Depressão ST ≥1mm em repouso</li>
+                  <li>Uso de digital</li>
+                </ul>
+              </div>
+            </div>
+            <div class="bg-neutral-900/50 border border-neutral-700 rounded-xl p-4 mb-4">
+              <h4 class="font-semibold text-blue-300 mb-2">Escore de Duke</h4>
+              <p class="text-neutral-400 text-sm mb-2">Tempo (min) - (5 × desvio ST mm) - (4 × índice angina)</p>
+              <div class="flex flex-wrap gap-2 text-xs">
+                <span class="px-2 py-1 bg-green-500/20 text-green-400 rounded">≥5: Baixo risco</span>
+                <span class="px-2 py-1 bg-amber-500/20 text-amber-400 rounded">-10 a +4: Moderado</span>
+                <span class="px-2 py-1 bg-red-500/20 text-red-400 rounded">< -10: Alto risco</span>
+              </div>
+            </div>
+            <div class="p-3 bg-red-500/10 border border-red-500/30 rounded-xl">
+              <p class="text-red-300 text-center text-sm">
+                <strong>ESC 2024:</strong> NÃO recomendado como teste diagnóstico se CCTA ou imagem funcional disponíveis (Classe III)
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 6: Probabilidade Clínica Pré-Teste (RF-CL) -->
+        <section class="slide flex flex-col items-center justify-start md:justify-center h-full px-4 md:px-8 py-6 md:py-8 overflow-y-auto" data-slide="12">
+          <div class="max-w-5xl mx-auto w-full">
+            <h2 class="text-3xl md:text-4xl font-bold mb-2 text-center">Probabilidade Clínica Pré-Teste</h2>
+            <p class="text-neutral-400 text-center mb-6 text-sm">Modelo RF-CL (Risk Factor-weighted Clinical Likelihood) — ESC 2024</p>
+            <div class="grid md:grid-cols-3 gap-4 mb-6">
+              <div class="bg-neutral-900/50 border border-blue-500/30 rounded-2xl p-5">
+                <div class="w-10 h-10 bg-blue-500/20 rounded-xl flex items-center justify-center mb-3">
+                  <span class="text-lg font-bold text-blue-400">1</span>
+                </div>
+                <h4 class="font-semibold text-blue-300 mb-2">Symptom Score (0-3)</h4>
+                <p class="text-neutral-400 text-sm">Classificação da dor torácica: 0 (não anginosa) a 3 (angina típica)</p>
+              </div>
+              <div class="bg-neutral-900/50 border border-blue-500/30 rounded-2xl p-5">
+                <div class="w-10 h-10 bg-blue-500/20 rounded-xl flex items-center justify-center mb-3">
+                  <span class="text-lg font-bold text-blue-400">2</span>
+                </div>
+                <h4 class="font-semibold text-blue-300 mb-2">Fatores de Risco (0-5)</h4>
+                <ul class="text-neutral-400 text-sm space-y-1">
+                  <li>HF precoce de DAC</li>
+                  <li>Tabagismo</li>
+                  <li>Dislipidemia</li>
+                  <li>Hipertensão arterial</li>
+                  <li>Diabetes mellitus</li>
+                </ul>
+              </div>
+              <div class="bg-neutral-900/50 border border-blue-500/30 rounded-2xl p-5">
+                <div class="w-10 h-10 bg-blue-500/20 rounded-xl flex items-center justify-center mb-3">
+                  <span class="text-lg font-bold text-blue-400">3</span>
+                </div>
+                <h4 class="font-semibold text-blue-300 mb-2">Idade + Sexo</h4>
+                <p class="text-neutral-400 text-sm">A prevalência de DAC aumenta com a idade e é maior em homens para a mesma faixa etária</p>
+              </div>
+            </div>
+            <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-6">
+              <span class="px-3 py-1.5 bg-green-500/20 border border-green-500/30 rounded-full text-green-400 text-xs md:text-sm font-medium">≤5% Muito baixa</span>
+              <span class="px-3 py-1.5 bg-yellow-500/20 border border-yellow-500/40 rounded-full text-yellow-400 text-xs md:text-sm font-medium">>5-15% Baixa</span>
+              <span class="px-3 py-1.5 bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-xs md:text-sm font-medium">>15-50% Moderada</span>
+              <span class="px-3 py-1.5 bg-orange-500/20 border border-orange-500/40 rounded-full text-orange-400 text-xs md:text-sm font-medium">>50-85% Alta</span>
+              <span class="px-3 py-1.5 bg-red-500/20 border border-red-500/30 rounded-full text-red-400 text-xs md:text-sm font-medium">>85% Muito alta</span>
+            </div>
+            <div class="p-4 bg-cyan-500/10 border border-cyan-500/30 rounded-xl">
+              <p class="text-cyan-300 text-center text-sm">
+                <strong>Impacto:</strong> RF-CL triplica o número de pacientes na categoria muito baixa vs modelo antigo (<span class="font-semibold">38% vs 12%</span>)
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 10: Tabela RF-CL (ESC 2024 - Figure 4) -->
+        <section class="slide flex flex-col items-center justify-center h-full px-4 md:px-8 py-6 md:py-8" data-slide="13">
+          <div class="max-w-4xl mx-auto w-full text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">Modelo RF-CL — Tabela de Probabilidade</h2>
+            <p class="text-neutral-400 text-sm mb-4">Risk Factor-weighted Clinical Likelihood of obstructive CAD — ESC 2024</p>
+            <img src="/rf-cl-table.png" alt="Tabela RF-CL: Symptom score, fatores de risco, idade e sexo para estimar probabilidade clínica de DAC obstrutiva" class="mx-auto rounded-xl max-h-[70vh] w-auto" style="pointer-events: auto;" />
+          </div>
+        </section>
+
+        <!-- Slide 7: Conduta por Probabilidade Clínica -->
+        <section class="slide flex flex-col items-center justify-start md:justify-center h-full px-4 md:px-8 py-6 md:py-8 overflow-y-auto" data-slide="14">
+          <div class="max-w-5xl mx-auto w-full">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Algoritmo Diagnóstico por Probabilidade Clínica</h2>
+            <div class="space-y-3">
+              <div class="flex flex-col md:flex-row items-stretch md:items-center gap-3 bg-neutral-900/50 rounded-xl p-4 border-l-4 border-green-500">
+                <div class="md:w-48 flex-shrink-0">
+                  <span class="px-3 py-1 bg-green-500/20 rounded-full text-green-400 text-sm font-medium">Muito baixa (≤5%)</span>
+                </div>
+                <div class="flex-1 text-neutral-300 text-sm">Sem necessidade de novos testes diagnósticos</div>
+                <span class="px-2 py-0.5 bg-neutral-800 rounded text-neutral-400 text-xs font-mono flex-shrink-0">Classe I · C</span>
+              </div>
+              <div class="flex flex-col md:flex-row items-stretch md:items-center gap-3 bg-neutral-900/50 rounded-xl p-4 border-l-4 border-yellow-500">
+                <div class="md:w-48 flex-shrink-0">
+                  <span class="px-3 py-1 bg-yellow-500/20 rounded-full text-yellow-400 text-sm font-medium">Baixa (>5-15%)</span>
+                </div>
+                <div class="flex-1 text-neutral-300 text-sm">Ajustar com Escore de Cálcio <span class="text-neutral-500">(IIa, B)</span> ± Teste Ergométrico <span class="text-neutral-500">(IIb, B)</span></div>
+                <span class="px-2 py-0.5 bg-neutral-800 rounded text-neutral-400 text-xs font-mono flex-shrink-0">IIa-IIb · B</span>
+              </div>
+              <div class="flex flex-col md:flex-row items-stretch md:items-center gap-3 bg-neutral-900/50 rounded-xl p-4 border-l-4 border-cyan-500">
+                <div class="md:w-48 flex-shrink-0">
+                  <span class="px-3 py-1 bg-cyan-500/20 rounded-full text-cyan-400 text-sm font-medium">Baixa-Mod. (>5-50%)</span>
+                </div>
+                <div class="flex-1 text-neutral-300 text-sm">AngioTC de Coronárias (CCTA)</div>
+                <span class="px-2 py-0.5 bg-neutral-800 rounded text-neutral-400 text-xs font-mono flex-shrink-0">Classe I · A</span>
+              </div>
+              <div class="flex flex-col md:flex-row items-stretch md:items-center gap-3 bg-neutral-900/50 rounded-xl p-4 border-l-4 border-blue-500">
+                <div class="md:w-48 flex-shrink-0">
+                  <span class="px-3 py-1 bg-blue-500/20 rounded-full text-blue-400 text-sm font-medium">Mod.-Alta (>15-85%)</span>
+                </div>
+                <div class="flex-1 text-neutral-300 text-sm">Imagem Funcional (Eco estresse, SPECT, <span class="text-blue-300 font-medium">PET preferível</span>, RMC)</div>
+                <span class="px-2 py-0.5 bg-neutral-800 rounded text-neutral-400 text-xs font-mono flex-shrink-0">Classe I · B</span>
+              </div>
+              <div class="flex flex-col md:flex-row items-stretch md:items-center gap-3 bg-neutral-900/50 rounded-xl p-4 border-l-4 border-red-500">
+                <div class="md:w-48 flex-shrink-0">
+                  <span class="px-3 py-1 bg-red-500/20 rounded-full text-red-400 text-sm font-medium">Muito alta (>85%)</span>
+                </div>
+                <div class="flex-1 text-neutral-300 text-sm">Cineangiocoronariografia com FFR/iFR</div>
+                <span class="px-2 py-0.5 bg-neutral-800 rounded text-neutral-400 text-xs font-mono flex-shrink-0">Classe I · C</span>
+              </div>
+            </div>
+            <div class="text-center mt-4">
+              <button id="btn-conduta-prob-img" class="px-4 py-2 bg-cyan-500/20 border border-cyan-500/40 rounded-full text-cyan-300 text-sm font-medium hover:bg-cyan-500/30 transition-all cursor-pointer">&#128202; Ver fluxograma ESC 2024</button>
+            </div>
+            <div id="conduta-prob-img" class="slide-popup hidden">
+              <div class="slide-popup-backdrop"></div>
+              <div class="slide-popup-content">
+                <button class="slide-popup-close">&times;</button>
+                <img src="/rf-cl-firstline-test-esc.png" alt="RF-CL First-line Test — ESC 2024" class="max-h-[85vh] w-auto rounded-xl shadow-2xl" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 8: Step 3 — Confirmação Diagnóstica (Visão Geral) -->
+        <section class="slide flex flex-col items-center justify-start md:justify-center h-full px-4 md:px-8 py-6 md:py-8 overflow-y-auto" data-slide="15">
+          <div class="max-w-5xl mx-auto w-full">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 bg-violet-500/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                <span class="text-lg font-bold text-violet-300">3</span>
+              </div>
+              <h2 class="text-3xl md:text-4xl font-bold">Step 3 — Confirmação Diagnóstica</h2>
+            </div>
+            <p class="text-neutral-400 text-center mb-6">Escolha do teste guiada pela probabilidade clínica, disponibilidade local e características do paciente</p>
+
+            <div class="grid md:grid-cols-3 gap-4 mb-5">
+              <!-- Anatomical -->
+              <div class="bg-neutral-900/50 border border-violet-500/30 rounded-2xl p-5">
+                <div class="text-center mb-3">
+                  <span class="px-3 py-1 bg-violet-500/20 text-violet-400 text-sm font-medium rounded-full">Anatômico</span>
+                </div>
+                <h4 class="text-lg font-semibold text-violet-300 text-center mb-3">AngioTC Coronárias</h4>
+                <ul class="text-neutral-300 text-sm space-y-1.5">
+                  <li>&#8226; Prob. baixa-moderada (>5-50%)</li>
+                  <li>&#8226; Identifica placas não obstrutivas</li>
+                  <li>&#8226; Avalia características de placa</li>
+                  <li>&#8226; Pode combinar com FFR-CT</li>
+                </ul>
+                <div class="mt-3 px-3 py-1.5 bg-violet-500/10 rounded-lg text-center">
+                  <p class="text-violet-400 text-xs"><strong>Classe I · A</strong></p>
+                </div>
+              </div>
+
+              <!-- Functional -->
+              <div class="bg-neutral-900/50 border border-violet-500/30 rounded-2xl p-5">
+                <div class="text-center mb-3">
+                  <span class="px-3 py-1 bg-violet-500/20 text-violet-400 text-sm font-medium rounded-full">Funcional</span>
+                </div>
+                <h4 class="text-lg font-semibold text-violet-300 text-center mb-3">Imagem Funcional</h4>
+                <ul class="text-neutral-300 text-sm space-y-1.5">
+                  <li>&#8226; Prob. moderada-alta (>15-85%)</li>
+                  <li>&#8226; SPECT, PET, Eco estresse, RMC</li>
+                  <li>&#8226; Quantifica extensão da isquemia</li>
+                  <li>&#8226; PET é preferível (ESC 2024)</li>
+                </ul>
+                <p class="text-cyan-400 text-xs mt-2 italic">1ª linha se deseja avaliar isquemia, viabilidade ou doença microvascular</p>
+                <div class="mt-3 px-3 py-1.5 bg-violet-500/10 rounded-lg text-center">
+                  <p class="text-violet-400 text-xs"><strong>Classe I · B</strong></p>
+                </div>
+              </div>
+
+              <!-- Invasive -->
+              <div class="bg-neutral-900/50 border border-violet-500/30 rounded-2xl p-5">
+                <div class="text-center mb-3">
+                  <span class="px-3 py-1 bg-violet-500/20 text-violet-400 text-sm font-medium rounded-full">Invasivo</span>
+                </div>
+                <h4 class="text-lg font-semibold text-violet-300 text-center mb-3">Angiografia Invasiva</h4>
+                <ul class="text-neutral-300 text-sm space-y-1.5">
+                  <li>&#8226; Prob. muito alta (>85%)</li>
+                  <li>&#8226; Suspeita de DAC de alto risco</li>
+                  <li>&#8226; Isquemia miocárdica severa</li>
+                  <li>&#8226; Complementar com FFR/iFR</li>
+                </ul>
+                <div class="mt-3 px-3 py-1.5 bg-violet-500/10 rounded-lg text-center">
+                  <p class="text-violet-400 text-xs"><strong>Classe I · C</strong></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-4 bg-amber-500/10 border border-amber-500/30 rounded-xl">
+              <p class="text-amber-200 text-center text-sm">
+                <strong>Se sintomas persistem sem DAC obstrutiva →</strong> considerar doença microvascular e/ou vasoespasmo (<span class="font-semibold">ANOCA/INOCA</span>)
+              </p>
+            </div>
+          </div>
+        </section>
+
+
+
+
+        <!-- Slide 10: Ecocardiografia sob Estresse -->
+        <section class="slide flex flex-col items-center justify-start md:justify-center h-full px-4 md:px-8 py-6 md:py-8 overflow-y-auto" data-slide="16">
+          <div class="max-w-5xl mx-auto w-full">
+            <h2 class="text-3xl md:text-4xl font-bold mb-3 text-center">Ecocardiografia sob Estresse</h2>
+            <div class="bg-gradient-to-br from-blue-500/10 to-cyan-600/5 border border-blue-500/20 rounded-xl p-4 mb-4">
+              <p class="text-neutral-300 text-sm text-center">Detecta isquemia por <span class="text-blue-400 font-semibold">alterações da contratilidade segmentar (RWTA)</span> durante estresse. A isquemia inicia no subendocárdio, que contribui com >50% do espessamento sistólico — precipitando hipocinesia no território da artéria estenosada.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-3 mb-4">
+              <div class="bg-neutral-900/50 rounded-xl p-4 text-center">
+                <div class="text-2xl font-bold text-blue-400 mb-1">85-90%</div>
+                <p class="text-neutral-400 text-xs">Acurácia diagnóstica</p>
+              </div>
+              <div class="bg-neutral-900/50 rounded-xl p-4 text-center">
+                <div class="text-2xl font-bold text-cyan-400 mb-1">93-100%</div>
+                <p class="text-neutral-400 text-xs">Valor Preditivo Negativo</p>
+              </div>
+              <div class="bg-neutral-900/50 rounded-xl p-4 text-center">
+                <div class="text-2xl font-bold text-green-400 mb-1">Classe I</div>
+                <p class="text-neutral-400 text-xs">PPT moderada-alta</p>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+              <div class="bg-neutral-900/50 border border-neutral-700 rounded-2xl p-5">
+                <h4 class="font-semibold text-blue-400 mb-3">Tipos de Estresse</h4>
+                <ul class="text-neutral-400 text-sm space-y-2">
+                  <li><span class="text-blue-300 font-medium">Exercício:</span> mais fisiológico, preferível</li>
+                  <li><span class="text-blue-300 font-medium">Dobutamina:</span> quando exercício impossível</li>
+                  <li><span class="text-blue-300 font-medium">Vasodilatadores:</span> dipiridamol, adenosina</li>
+                </ul>
+              </div>
+              <div class="bg-neutral-900/50 border border-neutral-700 rounded-2xl p-5">
+                <h4 class="font-semibold text-cyan-400 mb-3">Vantagens</h4>
+                <ul class="text-neutral-400 text-sm space-y-2">
+                  <li>Sem radiação ionizante</li>
+                  <li>Amplamente disponível</li>
+                  <li>Baixo custo relativo</li>
+                  <li>Avalia função valvar sob esforço</li>
+                </ul>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="p-3 bg-blue-500/10 border border-blue-500/30 rounded-xl">
+                <p class="text-blue-300 text-sm">
+                  <strong>NOVO 2024:</strong> contraste com microbolhas para perfusão miocárdica (Classe I)
+                </p>
+              </div>
+              <div class="p-3 bg-red-500/10 border border-red-500/30 rounded-xl">
+                <p class="text-red-300 text-sm">
+                  <strong>Alto risco:</strong> ≥3/16 segmentos com hipocinesia induzida pelo estresse
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 11: SPECT -->
+        <section class="slide flex flex-col items-center justify-start md:justify-center h-full px-4 md:px-8 py-6 md:py-8 overflow-y-auto" data-slide="17">
+          <div class="max-w-5xl mx-auto w-full">
+            <h2 class="text-3xl md:text-4xl font-bold mb-3 text-center bg-gradient-to-r from-blue-300 to-cyan-300 bg-clip-text text-transparent">Cintilografia de Perfusão Miocárdica — SPECT</h2>
+            <div class="bg-gradient-to-br from-blue-500/10 to-cyan-600/5 border border-blue-500/20 rounded-xl p-4 mb-4">
+              <p class="text-neutral-300 text-sm text-center">Produz imagens da <span class="text-blue-400 font-semibold">retenção regional do radiotraçador</span>, refletindo o fluxo sanguíneo miocárdico relativo. A hipoperfusão é caracterizada por <span class="text-cyan-400 font-semibold">captação reduzida durante estresse/vasodilatação</span> comparada ao repouso.</p>
+              <div class="flex flex-wrap justify-center gap-3 mt-3">
+                <span class="px-3 py-1.5 bg-green-500/20 border border-green-500/30 rounded-full text-green-400 text-xs font-medium">+ fluxo → + captação do radiofármaco</span>
+                <span class="px-3 py-1.5 bg-red-500/20 border border-red-500/30 rounded-full text-red-400 text-xs font-medium">− fluxo → − captação do radiofármaco</span>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+              <div class="bg-neutral-900/50 border border-blue-500/30 rounded-2xl p-5">
+                <h4 class="font-semibold text-blue-400 mb-3">Protocolo</h4>
+                <ul class="text-neutral-400 text-sm space-y-2">
+                  <li><span class="text-blue-300 font-medium">Radiotraçador:</span> <sup>99m</sup>Tc-sestamibi ou tetrofosmina</li>
+                  <li><span class="text-blue-300 font-medium">Protocolo:</span> Repouso + Estresse (exercício ou farmacológico)</li>
+                  <li><span class="text-blue-300 font-medium">Câmeras CZT:</span> menor radiação, quantificação absoluta do MBF</li>
+                </ul>
+              </div>
+              <div class="bg-neutral-900/50 border border-cyan-500/30 rounded-2xl p-5">
+                <h4 class="font-semibold text-cyan-400 mb-3">Valor Prognóstico</h4>
+                <ul class="text-neutral-400 text-sm space-y-2">
+                  <li><span class="text-cyan-300 font-medium">VPN 99%</span> para exame normal</li>
+                  <li><span class="text-red-400 font-medium">Isquemia ≥10% do VE</span> = alto risco → considerar revascularização</li>
+                  <li><span class="text-green-400 font-medium">Classe I</span> (SBC 2025) para PPT moderada-alta</li>
+                </ul>
+              </div>
+            </div>
+            <div class="bg-neutral-900/50 border border-neutral-700 rounded-2xl p-5 mb-4">
+              <h4 class="font-semibold text-blue-300 mb-3">Vantagens do SPECT</h4>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div class="text-center">
+                  <div class="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  </div>
+                  <p class="text-neutral-400 text-xs">Insuficiência renal</p>
+                </div>
+                <div class="text-center">
+                  <div class="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  </div>
+                  <p class="text-neutral-400 text-xs">Arritmias</p>
+                </div>
+                <div class="text-center">
+                  <div class="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  </div>
+                  <p class="text-neutral-400 text-xs">Obesidade</p>
+                </div>
+                <div class="text-center">
+                  <div class="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  </div>
+                  <p class="text-neutral-400 text-xs">Dispositivos cardíacos</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-3 bg-amber-500/10 border border-amber-500/30 rounded-xl">
+              <p class="text-amber-300 text-sm text-center">
+                <strong>Limitação:</strong> SPECT detecta diferenças <em>relativas</em> de perfusão, não fluxo absoluto — pode subestimar doença difusa ou multiarterial (<span class="font-semibold">balanced ischemia</span>)
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 12: SPECT — Valor Prognóstico e Marcadores de Risco -->
+        <section class="slide flex flex-col items-center justify-start md:justify-center h-full px-4 md:px-8 py-6 md:py-8 overflow-y-auto" data-slide="18">
+          <div class="max-w-5xl mx-auto w-full">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center bg-gradient-to-r from-blue-300 to-cyan-300 bg-clip-text text-transparent">SPECT — Valor Prognóstico e Marcadores de Risco</h2>
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+              <div class="bg-neutral-900/50 border border-blue-500/30 rounded-2xl p-5">
+                <h4 class="font-semibold text-blue-400 mb-3">Carga Isquêmica</h4>
+                <ul class="text-neutral-400 text-sm space-y-2">
+                  <li>A extensão da isquemia é um dos preditores mais importantes do benefício da revascularização</li>
+                  <li><span class="text-red-400 font-medium">Isquemia &gt;10-12% do VE:</span> benefício da revascularização sobre TMO (Hachamovitch et al.)</li>
+                  <li><span class="text-green-400 font-medium">Isquemia &lt;5%:</span> sem benefício da revascularização</li>
+                </ul>
+              </div>
+              <div class="bg-neutral-900/50 border border-cyan-500/30 rounded-2xl p-5">
+                <h4 class="font-semibold text-cyan-400 mb-3">Sistema de Escores</h4>
+                <ul class="text-neutral-400 text-sm space-y-2">
+                  <li><span class="text-cyan-300 font-medium">SSS</span> (Summed Stress Score) — escore de estresse</li>
+                  <li><span class="text-cyan-300 font-medium">SRS</span> (Summed Rest Score) — escore de repouso</li>
+                  <li><span class="text-cyan-300 font-medium">SDS</span> (Summed Difference Score) — isquemia reversível</li>
+                </ul>
+              </div>
+            </div>
+            <div class="bg-neutral-900/50 border border-red-500/30 rounded-2xl p-5 mb-4">
+              <h4 class="font-semibold text-red-400 mb-3">Marcadores Adicionais de Alto Risco</h4>
+              <div class="grid md:grid-cols-2 gap-3 text-neutral-400 text-sm">
+                <div class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+                  Dilatação transitória do VE (TID) durante o estresse
+                </div>
+                <div class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+                  Captação pulmonar aumentada
+                </div>
+                <div class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+                  Queda da FEVE pós-estresse (gated-SPECT)
+                </div>
+                <div class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+                  Todos associados a DAC multiarterial grave
+                </div>
+              </div>
+            </div>
+            <div class="bg-neutral-900/50 border border-neutral-700 rounded-2xl p-5 mb-4">
+              <h4 class="font-semibold text-blue-300 mb-3">Dados de Sharir et al.</h4>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-green-500/10 border border-green-500/30 rounded-xl p-3 text-center">
+                  <p class="text-green-400 font-bold text-lg">FE ≥51% + isquemia &lt;5%</p>
+                  <p class="text-neutral-400 text-sm">Eventos ~2.3%</p>
+                </div>
+                <div class="bg-red-500/10 border border-red-500/30 rounded-xl p-3 text-center">
+                  <p class="text-red-400 font-bold text-lg">FE &lt;50% + isquemia &gt;10%</p>
+                  <p class="text-neutral-400 text-sm">Eventos ~39.8%</p>
+                </div>
+              </div>
+            </div>
+            <p class="text-neutral-500 text-center text-xs">Hachamovitch et al., Circulation 2003 | Sharir et al., Circulation 1999</p>
+            <div class="text-center mt-4">
+              <button id="btn-spect-exemplo" class="px-4 py-2 bg-blue-500/20 border border-blue-500/40 rounded-full text-blue-300 text-sm font-medium hover:bg-blue-500/30 transition-all cursor-pointer">&#128444; Ver exemplo de exame</button>
+            </div>
+            <div id="spect-exemplo" class="slide-popup hidden">
+              <div class="slide-popup-backdrop"></div>
+              <div class="slide-popup-content">
+                <button class="slide-popup-close">&times;</button>
+                <img src="/spect-prognostico-exemplo.png" alt="Exemplo SPECT — SSS, SRS, SDS" class="max-h-[85vh] w-auto rounded-xl shadow-2xl" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 13: SPECT CZT — Quantificação de Fluxo na Prática Brasileira -->
+        <section class="slide flex flex-col items-center justify-start md:justify-center h-full px-4 md:px-8 py-6 md:py-8 overflow-y-auto" data-slide="19">
+          <div class="max-w-5xl mx-auto w-full">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center bg-gradient-to-r from-blue-300 to-cyan-300 bg-clip-text text-transparent">SPECT CZT — Quantificação de Fluxo na Prática Brasileira</h2>
+            <div class="bg-gradient-to-br from-cyan-500/10 to-blue-500/5 border border-cyan-500/20 rounded-2xl p-5 mb-6 text-center">
+              <p class="text-cyan-300 font-medium">Com PET cardíaco indisponível no Brasil, o SPECT CZT é a alternativa mais próxima para quantificação absoluta do <strong>FSM</strong> (Fluxo Sanguíneo Miocárdico) e <strong>RFM</strong> (Reserva de Fluxo Miocárdico)</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+              <div class="bg-neutral-900/50 border border-blue-500/30 rounded-2xl p-5">
+                <h4 class="font-semibold text-blue-400 mb-3">Vantagens sobre SPECT Convencional</h4>
+                <ul class="text-neutral-400 text-sm space-y-2">
+                  <li class="flex items-start gap-2">
+                    <svg class="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Detector de semicondutor CZT (cádmio-zinco-telúrio)
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Aquisição dinâmica → cálculo absoluto do <strong class="text-blue-300">FSM</strong> (Fluxo Sanguíneo Miocárdico) e <strong class="text-blue-300">RFM</strong> (Reserva de Fluxo Miocárdico)
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Menor dose de radiação
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Tempo de aquisição reduzido
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Maior acurácia diagnóstica (especialmente multiarteriais)
+                  </li>
+                </ul>
+              </div>
+              <div class="bg-neutral-900/50 border border-cyan-500/30 rounded-2xl p-5">
+                <h4 class="font-semibold text-cyan-400 mb-3">Correlação com PET</h4>
+                <p class="text-neutral-400 text-sm mb-3">Boa correlação dos valores de <strong class="text-cyan-300">FSM</strong> e <strong class="text-cyan-300">RFM</strong> com PET (<sup>15</sup>O-H₂O e <sup>13</sup>N-Amônia)</p>
+                <p class="text-neutral-500 text-xs mb-4">Acampa et al. J Nucl Cardiol 2021; Panjer et al. J Nucl Cardiol 2022</p>
+                <div class="p-3 bg-green-500/10 border border-green-500/30 rounded-lg">
+                  <p class="text-green-300 text-sm"><strong>Radiotraçador:</strong> utiliza <sup>99m</sup>Tc amplamente disponível</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-3 bg-amber-500/10 border border-amber-500/30 rounded-xl">
+              <p class="text-amber-300 text-center text-sm">
+                <strong>Limitação:</strong> A maioria dos estudos ainda é de centros únicos com amostras pequenas
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 14: PET-CT -->
+        <section class="slide flex flex-col items-center justify-start md:justify-center h-full px-4 md:px-8 py-6 md:py-8 overflow-y-auto" data-slide="20">
+          <div class="max-w-5xl mx-auto w-full">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center bg-gradient-to-r from-cyan-300 to-blue-300 bg-clip-text text-transparent">PET-CT — Padrão-Ouro para Perfusão Miocárdica</h2>
+            <div class="bg-gradient-to-br from-cyan-500/10 to-blue-500/5 border border-cyan-500/20 rounded-2xl p-4 mb-4 text-center">
+              <p class="text-cyan-300 font-medium text-sm">Explicitamente preferido sobre SPECT pela ESC 2024 (Classe I, NE B)</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+              <div class="bg-neutral-900/50 border border-blue-500/30 rounded-2xl p-5">
+                <h4 class="font-semibold text-blue-400 mb-3">Radiotraçadores</h4>
+                <ul class="text-neutral-400 text-sm space-y-1">
+                  <li><span class="text-blue-300">&#8226;</span> <sup>82</sup>Rb (Rubídio-82) — gerador</li>
+                  <li><span class="text-blue-300">&#8226;</span> <sup>13</sup>N-Amônia — cíclotron</li>
+                  <li><span class="text-blue-300">&#8226;</span> <sup>15</sup>O-H₂O — cíclotron (padrão-ouro)</li>
+                </ul>
+                <p class="text-amber-400 text-xs mt-2">Meia-vida de minutos → produção <em>ad hoc</em> para cada exame</p>
+              </div>
+              <div class="bg-neutral-900/50 border border-cyan-500/30 rounded-2xl p-5">
+                <h4 class="font-semibold text-cyan-400 mb-3">Vantagens Exclusivas</h4>
+                <ol class="text-neutral-400 text-sm space-y-1">
+                  <li><span class="text-cyan-300 font-bold">1.</span> Quantificação absoluta do fluxo (mL/min/g) — sem aumentar radiação ou tempo</li>
+                  <li><span class="text-cyan-300 font-bold">2.</span> Detecção de isquemia balanceada multiarterial</li>
+                  <li><span class="text-cyan-300 font-bold">3.</span> Avaliação de disfunção microvascular (RFC &lt;2.0)</li>
+                  <li><span class="text-cyan-300 font-bold">4.</span> Menor dose de radiação e qualidade de imagem superior vs SPECT</li>
+                  <li><span class="text-cyan-300 font-bold">5.</span> Superior a outras modalidades funcionais em comparações head-to-head</li>
+                </ol>
+              </div>
+            </div>
+            <div class="bg-neutral-900/50 border border-blue-500/20 rounded-xl p-4 mb-4">
+              <p class="text-neutral-300 text-sm text-center">Correção de atenuação obrigatória → PET sempre combinado com TC sem contraste. Protocolo: repouso + estresse farmacológico (dipiridamol, adenosina, regadenoson) ou dobutamina. Medidas rotineiras: <span class="text-cyan-400 font-semibold">MBF hiperemia, MBF repouso, reserva de fluxo (MFR) e reserva relativa</span> — valor diagnóstico e prognóstico adicional.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-3">
+              <div class="p-3 bg-blue-500/10 border border-blue-500/30 rounded-xl">
+                <p class="text-blue-300 text-sm"><strong>CACS</strong> da TC de atenuação = mandatório (Classe I)</p>
+              </div>
+              <div class="p-3 bg-green-500/10 border border-green-500/30 rounded-xl">
+                <p class="text-green-300 text-sm"><strong>MFR baixo</strong> prediz mortalidade e identifica benefício de revascularização precoce</p>
+              </div>
+              <div class="p-3 bg-amber-500/10 border border-amber-500/30 rounded-xl">
+                <p class="text-amber-300 text-sm"><strong>Limitação Brasil:</strong> indisponibilidade de radiofármacos PET cardíacos</p>
+              </div>
+            </div>
+            <div class="mt-3 p-3 bg-red-500/10 border border-red-500/30 rounded-xl">
+              <p class="text-red-300 text-center text-sm">
+                <strong>MFR &lt;2.0</strong> (geral) ou <strong>&lt;2.5</strong> (sem DAC obstrutiva) = anormal
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 15: CCTA -->
+        <section class="slide flex flex-col items-center justify-start md:justify-center h-full px-4 md:px-8 py-6 md:py-8 overflow-y-auto" data-slide="21">
+          <div class="max-w-5xl mx-auto w-full">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">Angiotomografia de Coronárias (CCTA)</h2>
+            <div class="bg-gradient-to-br from-blue-500/10 to-cyan-600/5 border border-blue-500/20 rounded-2xl p-4 mb-4 text-center">
+              <p class="text-blue-300 font-medium">Alto VPN — excelente para DESCARTAR DAC | Classe I, NE A (probabilidade >5-50%)</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+              <div class="bg-neutral-900/50 border border-blue-500/30 rounded-2xl p-5">
+                <h4 class="font-semibold text-blue-400 mb-3">Evidência: SCOT-HEART</h4>
+                <p class="text-neutral-400 text-sm mb-2">CCTA reduziu morte CV / IAM em 5 anos:</p>
+                <div class="flex items-center gap-3">
+                  <span class="text-2xl font-bold text-red-400">3.9%</span>
+                  <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                  <span class="text-2xl font-bold text-green-400">2.3%</span>
+                </div>
+              </div>
+              <div class="bg-neutral-900/50 border border-cyan-500/30 rounded-2xl p-5">
+                <h4 class="font-semibold text-cyan-400 mb-3">Características de Placa Adversa</h4>
+                <ul class="text-neutral-400 text-sm space-y-1">
+                  <li>Baixa atenuação (placa lipídica)</li>
+                  <li>Remodelamento positivo</li>
+                  <li>Sinal do anel de guardanapo (napkin-ring)</li>
+                  <li>Calcificações pontuais (spotty)</li>
+                </ul>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-neutral-900/50 border border-neutral-700 rounded-xl p-4">
+                <h4 class="font-semibold text-blue-300 mb-2 text-sm">FFR-CT (IIb, NE B)</h4>
+                <p class="text-neutral-400 text-xs">Avaliação funcional sem uso de fios — análise computacional da hemodinâmica coronariana</p>
+              </div>
+              <div class="bg-neutral-900/50 border border-red-500/30 rounded-xl p-4">
+                <h4 class="font-semibold text-red-400 mb-2 text-sm">Limitações</h4>
+                <p class="text-neutral-400 text-xs">Calcificação extensa, FA, obesidade severa, DRC (eGFR &lt;30 mL/min)</p>
+              </div>
+            </div>
+            <div class="mt-4 p-3 bg-red-500/10 border border-red-500/30 rounded-xl">
+              <p class="text-red-300 text-center text-sm">
+                <strong>Alto risco:</strong> TCA ≥50%, 3 vasos ≥70%, DA proximal
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 17: RMC -->
+        <section class="slide flex flex-col items-center justify-start md:justify-center h-full px-4 md:px-8 py-6 md:py-8 overflow-y-auto" data-slide="22">
+          <div class="max-w-5xl mx-auto w-full">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">Ressonância Magnética Cardiovascular</h2>
+            <div class="grid md:grid-cols-3 gap-4 mb-4">
+              <div class="bg-neutral-900/50 border border-blue-500/30 rounded-2xl p-5 text-center">
+                <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+                  <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                </div>
+                <h4 class="font-semibold text-blue-300 mb-2">Perfusão</h4>
+                <p class="text-neutral-400 text-xs">Adenosina / Dipiridamol — detecção de isquemia</p>
+              </div>
+              <div class="bg-neutral-900/50 border border-cyan-500/30 rounded-2xl p-5 text-center">
+                <div class="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+                  <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                </div>
+                <h4 class="font-semibold text-cyan-300 mb-2">Contratilidade</h4>
+                <p class="text-neutral-400 text-xs">Dobutamina — avaliação de reserva contrátil</p>
+              </div>
+              <div class="bg-neutral-900/50 border border-purple-500/30 rounded-2xl p-5 text-center">
+                <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+                  <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                </div>
+                <h4 class="font-semibold text-purple-300 mb-2">Viabilidade</h4>
+                <p class="text-neutral-400 text-xs">Realce tardio com gadolínio (LGE) — padrão-ouro</p>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+              <div class="bg-neutral-900/50 border border-neutral-700 rounded-xl p-4">
+                <h4 class="font-semibold text-blue-400 mb-2">Capacidades</h4>
+                <ul class="text-neutral-400 text-sm space-y-1">
+                  <li><span class="text-blue-300">&#8226;</span> Detecção de isquemia, fibrose/necrose e viabilidade</li>
+                  <li><span class="text-blue-300">&#8226;</span> <strong class="text-blue-300">Padrão-ouro</strong> para função global e segmentar biventricular</li>
+                  <li><span class="text-blue-300">&#8226;</span> Alta resolução espacial → defeitos subendocárdicos (INOCA)</li>
+                  <li><span class="text-blue-300">&#8226;</span> Avalia aneurismas, pseudoaneurismas e área infartada pós-IAM</li>
+                  <li><span class="text-blue-300">&#8226;</span> Exame normal: &lt;1% eventos/ano</li>
+                </ul>
+              </div>
+              <div class="bg-neutral-900/50 border border-neutral-700 rounded-xl p-4">
+                <h4 class="font-semibold text-red-400 mb-2">Limitações</h4>
+                <ul class="text-neutral-400 text-sm space-y-1">
+                  <li>Claustrofobia</li>
+                  <li>Aquisição prolongada</li>
+                  <li>Dispositivos não condicionais</li>
+                  <li>Gadolínio contraindicado se TFG &lt;30</li>
+                </ul>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 mb-3">
+              <div class="p-3 bg-green-500/10 border border-green-500/30 rounded-xl">
+                <p class="text-green-300 text-center text-sm">
+                  <strong>RMC com estresse farmacológico:</strong> maior acurácia diagnóstica vs cintilografia e eco estresse (SBC 2025)
+                </p>
+              </div>
+              <div class="p-3 bg-red-500/10 border border-red-500/30 rounded-xl">
+                <p class="text-red-300 text-center text-sm">
+                  <strong>Alto risco:</strong> ≥2 segmentos com defeito de perfusão OU ≥3 segmentos com alteração à dobutamina
+                </p>
+              </div>
+            </div>
+            <div class="text-center mt-3">
+              <button id="btn-rmc-perfusao" class="px-4 py-2 bg-purple-500/20 border border-purple-500/40 rounded-full text-purple-300 text-sm font-medium hover:bg-purple-500/30 transition-all cursor-pointer">&#128270; Como funciona a perfusão por RMC?</button>
+            </div>
+            <div id="rmc-perfusao" class="slide-popup hidden">
+              <div class="slide-popup-backdrop"></div>
+              <div class="slide-popup-content slide-popup-content--wide">
+                <button class="slide-popup-close">&times;</button>
+                <h4 class="text-purple-300 font-semibold text-center mb-3">Mecanismo da Perfusão Miocárdica por RMC</h4>
+                <div class="grid md:grid-cols-2 gap-3">
+                  <div class="bg-neutral-800/50 border border-blue-500/20 rounded-xl p-3">
+                    <p class="text-blue-300 font-medium text-sm mb-1">Protocolo</p>
+                    <p class="text-neutral-400 text-xs leading-relaxed">Imagens obtidas em <strong class="text-neutral-300">estresse</strong> (dipiridamol/adenosina) e <strong class="text-neutral-300">repouso</strong> com infusão de gadolínio. Realce tardio analisado junto à perfusão — áreas de IM prévio podem ter defeito perfusional e <em>não</em> são consideradas isquemia.</p>
+                  </div>
+                  <div class="bg-neutral-800/50 border border-cyan-500/20 rounded-xl p-3">
+                    <p class="text-cyan-300 font-medium text-sm mb-1">Fisiologia</p>
+                    <p class="text-neutral-400 text-xs leading-relaxed">Vasodilatadores causam hiperemia → resistência da microcirculação se equaliza → perfusão torna-se proporcional à área de secção e resistência das <strong class="text-neutral-300">coronárias epicárdicas</strong>. Territórios com estenoses ≥50% mostram heterogeneidade de fluxo = defeito de perfusão.</p>
+                  </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-3 mt-3">
+                  <div class="bg-neutral-800/50 border border-green-500/20 rounded-xl p-3">
+                    <p class="text-green-300 font-medium text-sm mb-1">INOCA</p>
+                    <p class="text-neutral-400 text-xs leading-relaxed">Detecta defeitos perfusionais associados à doença microvascular <em>sem</em> obstrução epicárdica. Padrão típico: defeitos <strong class="text-neutral-300">subendocárdicos difusos</strong> que não respeitam territórios coronários específicos.</p>
+                  </div>
+                  <div class="bg-neutral-800/50 border border-amber-500/20 rounded-xl p-3">
+                    <p class="text-amber-300 font-medium text-sm mb-1">Atenção</p>
+                    <p class="text-neutral-400 text-xs leading-relaxed">Isquemia extensa (obstrução &gt;90%) pode mostrar déficit perfusional em <strong class="text-amber-300">ambas as fases</strong> (repouso e estresse) — não confundir com fibrose. Reverter estresse com aminofilina antes do repouso.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 18: Viabilidade Miocárdica -->
+        <section class="slide flex flex-col items-center justify-start md:justify-center h-full px-4 md:px-8 py-6 md:py-8 overflow-y-auto" data-slide="23">
+          <div class="max-w-5xl mx-auto w-full">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center bg-gradient-to-r from-blue-300 to-cyan-300 bg-clip-text text-transparent">Viabilidade Miocárdica — Papel da Medicina Nuclear</h2>
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+              <div class="bg-neutral-900/50 border-2 border-cyan-500/50 rounded-2xl p-5">
+                <h4 class="font-bold text-cyan-400 mb-3"><sup>18</sup>F-FDG-PET/CT</h4>
+                <p class="text-neutral-300 text-sm mb-3">Padrão-ouro para avaliação do metabolismo glicolítico (Classe I, SBC)</p>
+                <ul class="text-neutral-400 text-sm space-y-2">
+                  <li class="flex items-start gap-2">
+                    <span class="text-green-400 font-bold">+</span>
+                    <span><span class="text-green-300 font-medium">Mismatch</span> perfusão-metabolismo = miocárdio viável (hibernante)</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-red-400 font-bold">-</span>
+                    <span><span class="text-red-300 font-medium">Match</span> (defeito perfusão + defeito metabólico) = fibrose/necrose</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="bg-neutral-900/50 border-2 border-blue-500/50 rounded-2xl p-5">
+                <h4 class="font-bold text-blue-400 mb-3">SPECT com Tálio-201 (<sup>201</sup>Tl)</h4>
+                <p class="text-neutral-300 text-sm mb-3">Alternativa quando PET indisponível</p>
+                <ul class="text-neutral-400 text-sm space-y-2">
+                  <li class="flex items-start gap-2">
+                    <svg class="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+                    Redistribuição tardia indica viabilidade
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="bg-neutral-900/50 border border-purple-500/30 rounded-2xl p-5 mb-4">
+              <h4 class="font-semibold text-purple-400 mb-1">Algoritmo de Viabilidade (RMC + Nuclear)</h4>
+              <p class="text-neutral-500 text-xs mb-3 text-center"><strong class="text-purple-300">RTM</strong> = Realce Tardio Miocárdico (técnica de RMC com gadolínio)</p>
+              <div class="grid md:grid-cols-3 gap-3">
+                <div class="bg-green-500/10 border border-green-500/30 rounded-xl p-3 text-center">
+                  <p class="text-green-400 font-bold text-sm mb-1">RTM &lt;25%</p>
+                  <p class="text-green-300 text-xs font-medium">Viável</p>
+                  <p class="text-neutral-400 text-xs mt-1">Revascularização + TMO</p>
+                </div>
+                <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-3 text-center">
+                  <p class="text-amber-400 font-bold text-sm mb-1">RTM 25-50%</p>
+                  <p class="text-amber-300 text-xs font-medium">Zona cinzenta</p>
+                  <p class="text-neutral-400 text-xs mt-1">Avaliar reserva metabólica (PET) ou contrátil (eco/RMC dobutamina)</p>
+                </div>
+                <div class="bg-red-500/10 border border-red-500/30 rounded-xl p-3 text-center">
+                  <p class="text-red-400 font-bold text-sm mb-1">RTM &gt;50%</p>
+                  <p class="text-red-300 text-xs font-medium">Não viável</p>
+                  <p class="text-neutral-400 text-xs mt-1">TMO</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-3 bg-blue-500/10 border border-blue-500/30 rounded-xl">
+              <p class="text-blue-300 text-center text-sm">
+                <strong>PARR-2:</strong> benefício da estratégia guiada por PET quando protocolo seguido corretamente
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide: Viabilidade Miocárdica Fluxograma -->
+        <section class="slide flex flex-col items-center justify-center h-full px-4 md:px-8 py-8 md:py-4 overflow-y-auto" data-slide="24">
+          <div class="max-w-5xl mx-auto w-full flex flex-col items-center">
+            <img src="/viabilidade-fluxograma.png" alt="Viabilidade Miocárdica — Cenário Crônico" class="max-h-[85vh] w-auto rounded-xl shadow-2xl" />
+          </div>
+        </section>
+
+        <!-- Slide 19: Cateterismo -->
+        <section class="slide flex flex-col items-center justify-start md:justify-center h-full px-4 md:px-8 py-6 md:py-8 overflow-y-auto" data-slide="25">
+          <div class="max-w-5xl mx-auto w-full">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">Cineangiocoronariografia</h2>
+            <div class="bg-gradient-to-br from-blue-500/10 to-cyan-600/5 border border-blue-500/20 rounded-2xl p-5 mb-6 text-center">
+              <p class="text-blue-300 font-medium text-lg">Padrão-ouro anatômico para avaliação das artérias coronárias</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+              <div class="bg-neutral-900/50 border border-blue-500/30 rounded-2xl p-5">
+                <h4 class="font-semibold text-blue-400 mb-3">Quando Indicar</h4>
+                <ul class="text-neutral-400 text-sm space-y-2">
+                  <li class="flex items-start gap-2">
+                    <svg class="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Probabilidade muito alta (&gt;85%)
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Angina refratária ao tratamento clínico otimizado
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Isquemia moderada-importante em testes não invasivos
+                  </li>
+                </ul>
+              </div>
+              <div class="bg-neutral-900/50 border border-cyan-500/30 rounded-2xl p-5">
+                <h4 class="font-semibold text-cyan-400 mb-3">Aspectos Técnicos</h4>
+                <ul class="text-neutral-400 text-sm space-y-2">
+                  <li><span class="text-green-400 font-medium">Acesso radial</span> preferencial (Classe I, NE A)</li>
+                  <li><span class="text-green-400 font-medium">Complicações:</span> &lt;0.1-0.2% com acesso radial</li>
+                </ul>
+                <div class="mt-3 p-3 bg-amber-500/10 border border-amber-500/30 rounded-lg">
+                  <p class="text-amber-300 text-xs"><strong>Limitações:</strong> luminograma (sem informação sobre placa); lesões intermediárias necessitam avaliação funcional (FFR/iFR)</p>
+                </div>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-neutral-900/50 border border-purple-500/30 rounded-2xl p-4">
+                <h4 class="font-semibold text-purple-400 mb-2">IVUS <span class="text-neutral-500 text-xs font-normal">(Ultrassom Intracoronariano)</span></h4>
+                <ul class="text-neutral-400 text-sm space-y-1.5">
+                  <li><span class="text-purple-300">&#8226;</span> Imagem transversal 360° da parede arterial</li>
+                  <li><span class="text-purple-300">&#8226;</span> Avalia <strong class="text-neutral-300">carga de placa, remodelamento</strong> e área luminal mínima</li>
+                  <li><span class="text-purple-300">&#8226;</span> Guia otimização de stent (expansão, aposição, cobertura)</li>
+                  <li><span class="text-purple-300">&#8226;</span> Melhor penetração que OCT → avalia <strong class="text-neutral-300">lesões de tronco</strong></li>
+                </ul>
+              </div>
+              <div class="bg-neutral-900/50 border border-violet-500/30 rounded-2xl p-4">
+                <h4 class="font-semibold text-violet-400 mb-2">OCT <span class="text-neutral-500 text-xs font-normal">(Tomografia de Coerência Óptica)</span></h4>
+                <ul class="text-neutral-400 text-sm space-y-1.5">
+                  <li><span class="text-violet-300">&#8226;</span> Resolução ~10x superior ao IVUS (~10-20 μm)</li>
+                  <li><span class="text-violet-300">&#8226;</span> Identifica <strong class="text-neutral-300">composição da placa</strong>: capa fibrosa fina, lipídio, trombo, calcificação</li>
+                  <li><span class="text-violet-300">&#8226;</span> Detecta <strong class="text-neutral-300">erosão e ruptura de placa</strong> (MINOCA/SCA)</li>
+                  <li><span class="text-violet-300">&#8226;</span> Limitação: menor penetração e necessita flush de contraste</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 21: Tabela Comparativa -->
+        <section class="slide flex flex-col items-center justify-start md:justify-center h-full px-2 md:px-4 py-6 md:py-8 overflow-y-auto" data-slide="26">
+          <div class="max-w-6xl mx-auto w-full">
+            <h2 class="text-xl md:text-3xl font-bold mb-4 md:mb-6 text-center">Tabela Comparativa dos Métodos</h2>
+            <div class="overflow-x-auto comparison-table-container rounded-2xl">
+              <table class="comparison-table w-full text-sm">
+                <thead>
+                  <tr>
+                    <th class="px-3 py-3 text-left font-semibold">Método</th>
+                    <th class="px-3 py-3 text-left font-semibold">Indicação Principal</th>
+                    <th class="px-3 py-3 text-center font-semibold">Acurácia</th>
+                    <th class="px-3 py-3 text-left font-semibold">Vantagens</th>
+                    <th class="px-3 py-3 text-left font-semibold">Limitações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-row-std">
+                    <td class="px-3 py-2.5 font-medium text-amber-400">TE</td>
+                    <td class="px-3 py-2.5 text-xs">Prognóstico (capacidade funcional)</td>
+                    <td class="px-3 py-2.5 text-center text-xs">58-62%</td>
+                    <td class="px-3 py-2.5 text-xs">Baixo custo, disponível</td>
+                    <td class="px-3 py-2.5 text-xs">Baixa acurácia, Classe III se imagem disponível</td>
+                  </tr>
+                  <tr class="table-row-std">
+                    <td class="px-3 py-2.5 font-medium text-blue-400">Eco Estresse</td>
+                    <td class="px-3 py-2.5 text-xs">PPT moderada-alta</td>
+                    <td class="px-3 py-2.5 text-center text-xs">85-90%</td>
+                    <td class="px-3 py-2.5 text-xs">Sem radiação, baixo custo</td>
+                    <td class="px-3 py-2.5 text-xs">Janela acústica, operador-dependente</td>
+                  </tr>
+                  <tr class="table-row-highlight">
+                    <td class="px-3 py-2.5 font-bold text-cyan-400">SPECT</td>
+                    <td class="px-3 py-2.5 text-xs">PPT moderada-alta</td>
+                    <td class="px-3 py-2.5 text-center text-xs">~85%</td>
+                    <td class="px-3 py-2.5 text-xs">Funciona em DRC, arritmias, obesos</td>
+                    <td class="px-3 py-2.5 text-xs">Radiação, artefatos de atenuação</td>
+                  </tr>
+                  <tr class="table-row-highlight">
+                    <td class="px-3 py-2.5 font-bold text-cyan-400">PET-CT</td>
+                    <td class="px-3 py-2.5 text-xs">PPT moderada-alta (preferível)</td>
+                    <td class="px-3 py-2.5 text-center text-xs">>90%</td>
+                    <td class="px-3 py-2.5 text-xs">Fluxo absoluto, isquemia balanceada</td>
+                    <td class="px-3 py-2.5 text-xs">Custo, disponibilidade de radiofármacos</td>
+                  </tr>
+                  <tr class="table-row-std">
+                    <td class="px-3 py-2.5 font-medium text-blue-400">CCTA</td>
+                    <td class="px-3 py-2.5 text-xs">PPT baixa-moderada</td>
+                    <td class="px-3 py-2.5 text-center text-xs">>95% VPN</td>
+                    <td class="px-3 py-2.5 text-xs">Alto VPN, avalia placa</td>
+                    <td class="px-3 py-2.5 text-xs">Cálcio extenso, FA, DRC</td>
+                  </tr>
+                  <tr class="table-row-std">
+                    <td class="px-3 py-2.5 font-medium text-purple-400">RMC</td>
+                    <td class="px-3 py-2.5 text-xs">PPT moderada-alta, viabilidade</td>
+                    <td class="px-3 py-2.5 text-center text-xs">~90%</td>
+                    <td class="px-3 py-2.5 text-xs">Sem radiação, viabilidade</td>
+                    <td class="px-3 py-2.5 text-xs">Claustrofobia, dispositivos, custo</td>
+                  </tr>
+                  <tr class="table-row-std">
+                    <td class="px-3 py-2.5 font-medium text-red-400">Cinecoronariografia</td>
+                    <td class="px-3 py-2.5 text-xs">PPT muito alta, angina refratária</td>
+                    <td class="px-3 py-2.5 text-center text-xs">Padrão-ouro</td>
+                    <td class="px-3 py-2.5 text-xs">Diagnóstico + terapêutico</td>
+                    <td class="px-3 py-2.5 text-xs">Invasivo, luminograma</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 22: Critérios de Alto Risco -->
+        <section class="slide flex flex-col items-center justify-start md:justify-center h-full px-4 md:px-8 py-6 md:py-8 overflow-y-auto" data-slide="27">
+          <div class="max-w-5xl mx-auto w-full">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">Definição de Alto Risco por Modalidade</h2>
+            <p class="text-red-400 text-center mb-6 text-sm font-medium">Mortalidade cardiovascular &gt;3% ao ano</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+              <div class="bg-neutral-900/50 border border-amber-500/30 rounded-xl p-4">
+                <h4 class="font-semibold text-amber-400 mb-2 text-sm">Teste Ergométrico</h4>
+                <p class="text-2xl font-bold text-white">Duke &lt; -10</p>
+              </div>
+              <div class="bg-neutral-900/50 border border-blue-500/30 rounded-xl p-4">
+                <h4 class="font-semibold text-blue-400 mb-2 text-sm">SPECT / PET</h4>
+                <p class="text-2xl font-bold text-white">Isquemia ≥10% VE</p>
+              </div>
+              <div class="bg-neutral-900/50 border border-cyan-500/30 rounded-xl p-4">
+                <h4 class="font-semibold text-cyan-400 mb-2 text-sm">Eco Estresse</h4>
+                <p class="text-2xl font-bold text-white">≥3/16 segmentos</p>
+              </div>
+              <div class="bg-neutral-900/50 border border-purple-500/30 rounded-xl p-4">
+                <h4 class="font-semibold text-purple-400 mb-2 text-sm">RMC</h4>
+                <p class="text-lg font-bold text-white">≥2 seg. perfusão</p>
+                <p class="text-lg font-bold text-white">≥3 seg. dobutamina</p>
+              </div>
+              <div class="bg-neutral-900/50 border border-red-500/30 rounded-xl p-4">
+                <h4 class="font-semibold text-red-400 mb-2 text-sm">CCTA / Cateterismo</h4>
+                <p class="text-neutral-300 text-sm">TCA ≥50%</p>
+                <p class="text-neutral-300 text-sm">3 vasos proximais</p>
+                <p class="text-neutral-300 text-sm">DA proximal</p>
+              </div>
+              <div class="bg-gradient-to-br from-red-500/10 to-red-600/5 border border-red-500/30 rounded-xl p-4 flex items-center justify-center">
+                <p class="text-red-400 font-bold text-center text-sm">Todos indicam considerar revascularização + TMO</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 23: INOCA / ANOCA -->
+        <section class="slide flex flex-col items-center justify-start md:justify-center h-full px-4 md:px-8 py-6 md:py-8 overflow-y-auto" data-slide="28">
+          <div class="max-w-5xl mx-auto w-full">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center bg-gradient-to-r from-blue-300 to-cyan-300 bg-clip-text text-transparent">INOCA — Isquemia sem Obstrução Coronariana</h2>
+            <div class="bg-gradient-to-br from-blue-500/10 to-cyan-600/5 border border-blue-500/20 rounded-2xl p-5 mb-5">
+              <p class="text-neutral-300 text-center">Prevalência: até <span class="text-blue-400 font-bold text-lg">70%</span> dos cateterismos invasivos não revelam DAC obstrutiva</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+              <div class="bg-neutral-900/50 border border-blue-500/30 rounded-2xl p-5">
+                <h4 class="font-semibold text-blue-400 mb-3">Angina Microvascular (MVA)</h4>
+                <ul class="text-neutral-400 text-sm space-y-2">
+                  <li>FFR &gt;0.80 (sem obstrução epicárdica)</li>
+                  <li>RFC &lt;2.0 (disfunção microvascular)</li>
+                  <li>IMR ≥25 (resistência microvascular elevada)</li>
+                </ul>
+              </div>
+              <div class="bg-neutral-900/50 border border-cyan-500/30 rounded-2xl p-5">
+                <h4 class="font-semibold text-cyan-400 mb-3">Angina Vasoespástica (VSA)</h4>
+                <ul class="text-neutral-400 text-sm space-y-2">
+                  <li>Teste de provocação com acetilcolina</li>
+                  <li>Espasmo epicárdico ou microvascular</li>
+                  <li>Sintomas reproduzidos com alterações ECG</li>
+                </ul>
+              </div>
+            </div>
+            <div class="p-4 bg-blue-500/10 border border-blue-500/30 rounded-xl mb-4">
+              <p class="text-blue-300 text-center text-sm">
+                <strong>ESC 2024:</strong> "A exclusão de estenose epicárdica NÃO mais é a via final dos procedimentos diagnósticos"
+              </p>
+            </div>
+            <div class="p-3 bg-cyan-500/10 border border-cyan-500/30 rounded-xl">
+              <p class="text-cyan-300 text-center text-sm">
+                <strong>ICFT (Invasive Coronary Function Testing):</strong> recomendado Classe I para sintomas persistentes sem obstrução
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 24: Diagnóstico de Doença Microvascular -->
+        <section class="slide flex flex-col items-center justify-start md:justify-center h-full px-4 md:px-8 py-6 md:py-8 overflow-y-auto" data-slide="29">
+          <div class="max-w-5xl mx-auto w-full">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">Diagnóstico de Disfunção Microvascular</h2>
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+              <div class="bg-neutral-900/50 border border-blue-500/30 rounded-2xl p-5">
+                <h4 class="font-semibold text-blue-400 mb-3">Métodos Não Invasivos</h4>
+                <ul class="text-neutral-400 text-sm space-y-2">
+                  <li class="flex items-start gap-2">
+                    <span class="text-cyan-400 font-bold">1.</span>
+                    <span><span class="text-cyan-300 font-medium">PET-CT</span> — padrão-ouro não invasivo: quantifica MBF (mL/min/g) e MFR</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-cyan-400 font-bold">2.</span>
+                    <span><span class="text-cyan-300 font-medium">RMC</span> — perfusão subendocárdica</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-cyan-400 font-bold">3.</span>
+                    <span><span class="text-cyan-300 font-medium">Eco Doppler TT</span> — mede fluxo coronariano, mas <span class="text-amber-400">limitado à ADA</span> e alta variabilidade inter/intra-operador; não diferencia obstrução epicárdica de microvascular</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="bg-neutral-900/50 border border-cyan-500/30 rounded-2xl p-5">
+                <h4 class="font-semibold text-cyan-400 mb-3">Métodos Invasivos</h4>
+                <ul class="text-neutral-400 text-sm space-y-2">
+                  <li class="flex items-start gap-2">
+                    <span class="text-blue-400 font-bold">1.</span>
+                    <span><span class="text-blue-300 font-medium">Adenosina:</span> CFR (reserva de fluxo) e IMR (resistência)</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-blue-400 font-bold">2.</span>
+                    <span><span class="text-blue-300 font-medium">Acetilcolina:</span> teste de provocação de vasoespasmo</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-3">
+              <div class="bg-neutral-900/50 border border-blue-500/30 rounded-xl p-4 text-center">
+                <p class="text-sm text-neutral-400 mb-1">PET: <strong class="text-blue-300">MFR</strong></p>
+                <p class="text-neutral-500 text-xs mb-1">(Myocardial Flow Reserve — Reserva de Fluxo Miocárdico)</p>
+                <p class="text-2xl font-bold text-blue-400">&lt;2.0</p>
+                <p class="text-xs text-red-400">= anormal</p>
+              </div>
+              <div class="bg-neutral-900/50 border border-cyan-500/30 rounded-xl p-4 text-center">
+                <p class="text-sm text-neutral-400 mb-1"><strong class="text-cyan-300">IMR</strong></p>
+                <p class="text-neutral-500 text-xs mb-1">(Index of Microcirculatory Resistance — Índice de Resistência Microvascular)</p>
+                <p class="text-2xl font-bold text-cyan-400">≥25</p>
+                <p class="text-xs text-red-400">= disfunção microvascular</p>
+              </div>
+              <div class="bg-neutral-900/50 border border-purple-500/30 rounded-xl p-4 text-center">
+                <p class="text-sm text-neutral-400 mb-1">MFR sem DAC obstrutiva</p>
+                <p class="text-2xl font-bold text-purple-400">&lt;2.5</p>
+                <p class="text-xs text-red-400">= anormal</p>
+              </div>
+            </div>
+            <div class="mt-4 p-3 bg-blue-500/10 border border-blue-500/20 rounded-xl">
+              <p class="text-neutral-400 text-xs text-center"><strong class="text-blue-300">Conceito:</strong> A microvasculatura determina a resistência vascular → MFR mede a capacidade de vasodilatação máxima (adenosina/regadenoson) e representa diretamente a função de pequenos vasos</p>
+            </div>
+            <div class="mt-3 p-3 bg-amber-500/10 border border-amber-500/20 rounded-xl">
+              <p class="text-amber-400 text-xs text-center">&#9888; Não existem referências definitivas entre modalidades — correlação moderada entre diferentes estimativas de MBF</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide: RF-CL Steps ESC 2024 -->
+        <section class="slide flex flex-col items-center justify-center h-full px-4 md:px-8 py-6 md:py-8 overflow-y-auto" data-slide="30">
+          <div class="max-w-4xl mx-auto w-full flex flex-col items-center">
+            <img src="/rf-cl-steps-esc.png" alt="RF-CL Steps — ESC 2024" class="max-h-[78vh] w-auto rounded-xl shadow-2xl" />
+          </div>
+        </section>
+
+        <!-- Slide: RF-CL First-line Test ESC 2024 -->
+        <section class="slide flex flex-col items-center justify-center h-full px-4 md:px-8 py-8 md:py-4 overflow-y-auto" data-slide="31">
+          <div class="max-w-5xl mx-auto w-full flex flex-col items-center relative">
+            <img src="/rf-cl-firstline-test-esc.png" alt="RF-CL First-line Test — ESC 2024" class="max-h-[80vh] w-auto rounded-xl shadow-2xl" />
+            <button id="btn-lowrisk-info" class="mt-3 px-4 py-2 bg-blue-500/20 border border-blue-500/40 rounded-full text-blue-300 text-sm font-medium hover:bg-blue-500/30 transition-all cursor-pointer">&#9432; Very low + Low ≤15%</button>
+            <div id="lowrisk-info" class="slide-popup hidden">
+              <div class="slide-popup-backdrop"></div>
+              <div class="slide-popup-content slide-popup-content--wide">
+                <button class="slide-popup-close">&times;</button>
+                <p class="text-neutral-300 text-sm leading-relaxed p-4">Pacientes com probabilidade <span class="text-blue-400 font-semibold">very low e low (≤15%)</span> representam aproximadamente <span class="text-cyan-400 font-bold">85%</span> dos indivíduos com sintomas novos suspeitos de SCC. A maioria pode ser tratada <span class="text-green-400 font-semibold">conservadoramente sem necessidade de testes adicionais</span>, pois não possuem estenoses ou apresentam DAC não obstrutiva com incidência muito baixa de eventos no seguimento de longo prazo.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide: CCTA vs Functional Imaging ESC 2024 -->
+        <section class="slide flex flex-col items-center justify-center h-full px-4 md:px-8 py-8 md:py-4 overflow-y-auto" data-slide="32">
+          <div class="max-w-5xl mx-auto w-full flex flex-col items-center">
+            <img src="/ccta-vs-functional-esc.png" alt="CCTA vs Functional Imaging — ESC 2024" class="max-h-[85vh] w-auto rounded-xl shadow-2xl" />
+          </div>
+        </section>
+
+        <!-- Slide 9: Step 4 — Terapia Inicial -->
+        <section class="slide flex flex-col items-center justify-start md:justify-center h-full px-4 md:px-8 py-6 md:py-8 overflow-y-auto" data-slide="33">
+          <div class="max-w-5xl mx-auto w-full">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 bg-emerald-500/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                <span class="text-lg font-bold text-emerald-300">4</span>
+              </div>
+              <h2 class="text-3xl md:text-4xl font-bold">Step 4 — Terapia Inicial</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4 mb-5">
+              <!-- Prognosis -->
+              <div class="bg-neutral-900/50 border border-emerald-500/20 rounded-2xl p-5">
+                <h3 class="text-lg font-semibold text-emerald-300 mb-3">Para Melhorar Prognóstico</h3>
+                <ul class="text-neutral-300 text-sm space-y-2">
+                  <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">&#9654;</span> <strong>Estilo de vida:</strong> cessação tabagismo, atividade física, dieta, controle peso</li>
+                  <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">&#9654;</span> <strong>AAS/antiagregante</strong> em pacientes com DAC confirmada</li>
+                  <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">&#9654;</span> <strong>Estatina de alta potência</strong> — meta LDL-C &lt;55 mg/dL</li>
+                  <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">&#9654;</span> <strong>IECA/BRA</strong> se HAS, DM, FEVE reduzida</li>
+                  <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">&#9654;</span> <strong>Vacinação:</strong> influenza, pneumococo</li>
+                </ul>
+              </div>
+
+              <!-- Symptoms -->
+              <div class="bg-neutral-900/50 border border-emerald-500/20 rounded-2xl p-5">
+                <h3 class="text-lg font-semibold text-emerald-300 mb-3">Para Alívio de Sintomas</h3>
+                <ul class="text-neutral-300 text-sm space-y-2">
+                  <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">&#9654;</span> <strong>1ª linha:</strong> Betabloqueador ou BCC</li>
+                  <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">&#9654;</span> <strong>2ª linha:</strong> Nitrato de longa duração, nicorandil, ranolazina, trimetazidina</li>
+                  <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">&#9654;</span> <strong>SOS:</strong> Nitrato sublingual para crises</li>
+                  <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">&#9654;</span> Combinar antianginosos de classes diferentes</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Revascularization -->
+            <div class="bg-neutral-900/50 border border-emerald-500/20 rounded-2xl p-5">
+              <h3 class="text-lg font-semibold text-emerald-300 mb-3">Revascularização</h3>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <h4 class="text-sm font-medium text-emerald-400 mb-2">Para alívio sintomático:</h4>
+                  <p class="text-neutral-300 text-sm">Quando a terapia medicamentosa otimizada (GDMT) falha em controlar os sintomas</p>
+                </div>
+                <div>
+                  <h4 class="text-sm font-medium text-emerald-400 mb-2">Para melhora prognóstica:</h4>
+                  <p class="text-neutral-300 text-sm">Em pacientes com DAC obstrutiva de alto risco (TCE, DA proximal, multiarterial com disfunção de VE)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 25: Novidades ESC 2024 -->
+        <section class="slide flex flex-col items-center justify-start md:justify-center h-full px-2 md:px-4 py-6 md:py-8 overflow-y-auto" data-slide="34">
+          <div class="max-w-6xl mx-auto w-full">
+            <h2 class="text-xl md:text-3xl font-bold mb-4 md:mb-6 text-center">O que Mudou? ESC 2024 vs 2019</h2>
+            <div class="overflow-x-auto comparison-table-container rounded-2xl">
+              <table class="comparison-table w-full text-sm">
+                <thead>
+                  <tr>
+                    <th class="px-3 py-3 text-left font-semibold">Tópico</th>
+                    <th class="px-3 py-3 text-left font-semibold">ESC 2019</th>
+                    <th class="px-3 py-3 text-left font-semibold">ESC 2024</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-row-std">
+                    <td class="px-3 py-2.5 font-medium text-blue-400">Terminologia</td>
+                    <td class="px-3 py-2.5 text-xs">Angina típica / atípica</td>
+                    <td class="px-3 py-2.5 text-xs text-green-400 font-medium">Symptom Score (0-3)</td>
+                  </tr>
+                  <tr class="table-row-std">
+                    <td class="px-3 py-2.5 font-medium text-blue-400">CCTA</td>
+                    <td class="px-3 py-2.5 text-xs">Classe I, NE B</td>
+                    <td class="px-3 py-2.5 text-xs text-green-400 font-medium">Classe I, NE A (evidência reforçada)</td>
+                  </tr>
+                  <tr class="table-row-highlight">
+                    <td class="px-3 py-2.5 font-medium text-cyan-400">PET</td>
+                    <td class="px-3 py-2.5 text-xs">Opção funcional</td>
+                    <td class="px-3 py-2.5 text-xs text-green-400 font-medium">Explicitamente preferido sobre SPECT</td>
+                  </tr>
+                  <tr class="table-row-std">
+                    <td class="px-3 py-2.5 font-medium text-blue-400">CACS</td>
+                    <td class="px-3 py-2.5 text-xs">Sem recomendação formal</td>
+                    <td class="px-3 py-2.5 text-xs text-green-400 font-medium">IIa para reclassificação</td>
+                  </tr>
+                  <tr class="table-row-std">
+                    <td class="px-3 py-2.5 font-medium text-blue-400">QFR</td>
+                    <td class="px-3 py-2.5 text-xs">Não recomendado</td>
+                    <td class="px-3 py-2.5 text-xs text-green-400 font-medium">Classe I (NOVO)</td>
+                  </tr>
+                  <tr class="table-row-std">
+                    <td class="px-3 py-2.5 font-medium text-blue-400">TE diagnóstico</td>
+                    <td class="px-3 py-2.5 text-xs">Opção aceitável</td>
+                    <td class="px-3 py-2.5 text-xs text-red-400 font-medium">Classe III se imagem disponível</td>
+                  </tr>
+                  <tr class="table-row-std">
+                    <td class="px-3 py-2.5 font-medium text-blue-400">ICFT (INOCA)</td>
+                    <td class="px-3 py-2.5 text-xs">Mencionado brevemente</td>
+                    <td class="px-3 py-2.5 text-xs text-green-400 font-medium">Protocolo padronizado, Classe I</td>
+                  </tr>
+                  <tr class="table-row-std">
+                    <td class="px-3 py-2.5 font-medium text-blue-400">FFR sistemático</td>
+                    <td class="px-3 py-2.5 text-xs">Sem posição clara</td>
+                    <td class="px-3 py-2.5 text-xs text-red-400 font-medium">Classe III (todos os vasos)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 26: Algoritmo Integrado -->
+        <section class="slide flex flex-col items-center justify-start md:justify-center h-full px-4 md:px-8 py-6 md:py-8 overflow-y-auto" data-slide="35">
+          <div class="max-w-5xl mx-auto w-full">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center">Algoritmo: Paciente Sintomático com Suspeita de SCC</h2>
+            <div class="space-y-3">
+              <!-- Step 1 -->
+              <div class="bg-neutral-900/50 border border-blue-500/30 rounded-xl p-4 flex items-center gap-4">
+                <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">1</div>
+                <div>
+                  <p class="font-semibold text-blue-300">Avaliação Clínica Inicial</p>
+                  <p class="text-neutral-400 text-sm">Anamnese + exame físico + ECG + labs → Calcular probabilidade clínica (RF-CL)</p>
+                </div>
+              </div>
+              <!-- Step 2 -->
+              <div class="flex justify-center">
+                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+              </div>
+              <!-- Branches -->
+              <div class="grid grid-cols-2 md:grid-cols-5 gap-2">
+                <div class="bg-green-500/10 border border-green-500/30 rounded-lg p-3 text-center">
+                  <p class="text-green-400 font-bold text-xs mb-1">≤5%</p>
+                  <p class="text-neutral-400 text-xs">Sem testes adicionais</p>
+                </div>
+                <div class="bg-yellow-500/10 border border-yellow-500/40 rounded-lg p-3 text-center">
+                  <p class="text-yellow-400 font-bold text-xs mb-1">5-15%</p>
+                  <p class="text-neutral-400 text-xs">CACS ± TE</p>
+                </div>
+                <div class="bg-cyan-500/10 border border-cyan-500/30 rounded-lg p-3 text-center">
+                  <p class="text-cyan-400 font-bold text-xs mb-1">5-50%</p>
+                  <p class="text-neutral-400 text-xs">CCTA</p>
+                </div>
+                <div class="bg-blue-500/10 border border-blue-500/30 rounded-lg p-3 text-center">
+                  <p class="text-blue-400 font-bold text-xs mb-1">15-85%</p>
+                  <p class="text-neutral-400 text-xs">Imagem Funcional</p>
+                </div>
+                <div class="col-span-2 md:col-span-1 bg-red-500/10 border border-red-500/30 rounded-lg p-3 text-center">
+                  <p class="text-red-400 font-bold text-xs mb-1">>85%</p>
+                  <p class="text-neutral-400 text-xs">ICA direta</p>
+                </div>
+              </div>
+              <!-- Step 3 -->
+              <div class="flex justify-center">
+                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+              </div>
+              <!-- Post-test -->
+              <div class="bg-neutral-900/50 border border-cyan-500/30 rounded-xl p-4">
+                <p class="font-semibold text-cyan-300 text-center mb-2">Pós-Teste</p>
+                <div class="grid md:grid-cols-3 gap-3 text-center">
+                  <div class="bg-green-500/10 rounded-lg p-2">
+                    <p class="text-green-400 text-xs font-medium">DAC excluída</p>
+                    <p class="text-neutral-500 text-xs">TMO + seguimento</p>
+                  </div>
+                  <div class="bg-amber-500/10 rounded-lg p-2">
+                    <p class="text-amber-400 text-xs font-medium">Resultado inconclusivo</p>
+                    <p class="text-neutral-500 text-xs">Teste adicional</p>
+                  </div>
+                  <div class="bg-red-500/10 rounded-lg p-2">
+                    <p class="text-red-400 text-xs font-medium">DAC confirmada / alto risco</p>
+                    <p class="text-neutral-500 text-xs">ICA ± revascularização</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 27: CCTA vs Funcional -->
+        <section class="slide flex flex-col items-center justify-start md:justify-center h-full px-4 md:px-8 py-6 md:py-8 overflow-y-auto" data-slide="36">
+          <div class="max-w-5xl mx-auto w-full">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">CCTA vs Imagem Funcional: Quando Preferir?</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="bg-neutral-900/50 border-2 border-cyan-500/50 rounded-2xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7"/></svg>
+                  </div>
+                  <h3 class="text-xl font-bold text-cyan-400">CCTA Preferível</h3>
+                </div>
+                <ul class="text-neutral-300 text-sm space-y-3">
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Probabilidade baixa-moderada (>5-50%)
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Informação sobre DAC não obstrutiva desejada
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Alta qualidade de imagem esperada (ritmo sinusal, baixo IMC)
+                  </li>
+                </ul>
+              </div>
+              <div class="bg-neutral-900/50 border-2 border-blue-500/50 rounded-2xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                  </div>
+                  <h3 class="text-xl font-bold text-blue-400">Funcional Preferível</h3>
+                </div>
+                <ul class="text-neutral-300 text-sm space-y-3">
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Probabilidade moderada-alta (>15-85%)
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Informação sobre isquemia e viabilidade
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Calcificação extensa, FA, DRC
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    Jovens com suspeita de INOCA
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 28: Estudos-Chave -->
+        <section class="slide flex flex-col items-center justify-start md:justify-center h-full px-4 md:px-8 py-6 md:py-8 overflow-y-auto" data-slide="37">
+          <div class="max-w-5xl mx-auto w-full">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Estudos-Chave</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div class="bg-neutral-900/50 border border-blue-500/30 rounded-2xl p-5">
+                <h4 class="font-bold text-blue-400 mb-2">ISCHEMIA</h4>
+                <p class="text-neutral-400 text-sm">Revascularização vs TMO em isquemia moderada-importante: sem diferença em morte CV / IAM em 3.2 anos</p>
+              </div>
+              <div class="bg-neutral-900/50 border border-cyan-500/30 rounded-2xl p-5">
+                <h4 class="font-bold text-cyan-400 mb-2">SCOT-HEART</h4>
+                <p class="text-neutral-400 text-sm">CCTA reduziu morte CV / IAM: 3.9% → 2.3% em 5 anos (NNT = 63)</p>
+              </div>
+              <div class="bg-neutral-900/50 border border-blue-500/30 rounded-2xl p-5">
+                <h4 class="font-bold text-blue-400 mb-2">FAME-2</h4>
+                <p class="text-neutral-400 text-sm">FFR ≤0.8 + ICP superior ao tratamento clínico isolado em redução de revascularização urgente</p>
+              </div>
+              <div class="bg-neutral-900/50 border border-green-500/30 rounded-2xl p-5">
+                <h4 class="font-bold text-green-400 mb-2">FAVOR III China</h4>
+                <p class="text-neutral-400 text-sm">QFR-guided PCI vs angiografia visual: eventos 5.8% vs 8.8% em 2 anos (p=0.008)</p>
+              </div>
+              <div class="bg-neutral-900/50 border border-purple-500/30 rounded-2xl p-5 md:col-span-2 lg:col-span-1">
+                <h4 class="font-bold text-purple-400 mb-2">DEFINE-FLAIR</h4>
+                <p class="text-neutral-400 text-sm">iFR não inferior a FFR para guiar revascularização: MACE 6.8% vs 7.0% em 1 ano</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 29: Take-Home Messages -->
+        <section class="slide flex flex-col items-center justify-start md:justify-center h-full px-4 md:px-8 py-6 md:py-8 overflow-y-auto" data-slide="38">
+          <div class="max-w-5xl mx-auto w-full">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-300 to-cyan-300 bg-clip-text text-transparent">Mensagens Finais</h2>
+            <div class="space-y-3 mb-8">
+              <div class="flex items-start gap-4 bg-neutral-900/50 rounded-xl p-4 border-l-4 border-blue-500">
+                <span class="text-2xl font-bold text-blue-400 w-8 flex-shrink-0">1</span>
+                <p class="text-neutral-300 text-sm">A <span class="text-blue-400 font-semibold">probabilidade clínica pré-teste</span> é o ponto de partida — use o modelo RF-CL (ESC 2024)</p>
+              </div>
+              <div class="flex items-start gap-4 bg-neutral-900/50 rounded-xl p-4 border-l-4 border-cyan-500">
+                <span class="text-2xl font-bold text-cyan-400 w-8 flex-shrink-0">2</span>
+                <p class="text-neutral-300 text-sm"><span class="text-cyan-400 font-semibold">CCTA</span> é preferível para probabilidade baixa-moderada; <span class="text-blue-400 font-semibold">imagem funcional</span> para moderada-alta</p>
+              </div>
+              <div class="flex items-start gap-4 bg-neutral-900/50 rounded-xl p-4 border-l-4 border-blue-500">
+                <span class="text-2xl font-bold text-blue-400 w-8 flex-shrink-0">3</span>
+                <p class="text-neutral-300 text-sm"><span class="text-blue-400 font-semibold">PET-CT</span> é o padrão-ouro para perfusão e único método não invasivo com quantificação absoluta de fluxo</p>
+              </div>
+              <div class="flex items-start gap-4 bg-neutral-900/50 rounded-xl p-4 border-l-4 border-green-500">
+                <span class="text-2xl font-bold text-green-400 w-8 flex-shrink-0">4</span>
+                <p class="text-neutral-300 text-sm"><span class="text-green-400 font-semibold">CACS = 0</span> tem VPN &gt;95% para DAC obstrutiva</p>
+              </div>
+              <div class="flex items-start gap-4 bg-neutral-900/50 rounded-xl p-4 border-l-4 border-cyan-500">
+                <span class="text-2xl font-bold text-cyan-400 w-8 flex-shrink-0">5</span>
+                <p class="text-neutral-300 text-sm"><span class="text-cyan-400 font-semibold">INOCA</span> não é diagnóstico de exclusão — investigue disfunção microvascular</p>
+              </div>
+              <div class="flex items-start gap-4 bg-neutral-900/50 rounded-xl p-4 border-l-4 border-blue-500">
+                <span class="text-2xl font-bold text-blue-400 w-8 flex-shrink-0">6</span>
+                <p class="text-neutral-300 text-sm"><span class="text-blue-400 font-semibold">FFR/iFR</span> são mandatórios antes de ICP em lesões intermediárias</p>
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="inline-flex flex-wrap justify-center gap-3 text-sm text-neutral-500">
+                <span class="px-3 py-1 bg-neutral-800 rounded-full">Diretriz SBC 2025</span>
+                <span class="px-3 py-1 bg-neutral-800 rounded-full">ESC Guidelines 2024</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 30: Referências -->
+        <section class="slide flex flex-col items-center justify-start h-full px-4 md:px-8 py-6 md:py-8 overflow-y-auto" data-slide="39">
+          <div class="max-w-4xl mx-auto w-full">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Referências</h2>
+            <div class="space-y-4 text-sm text-neutral-300">
+              <div class="bg-neutral-900/50 border border-blue-500/20 rounded-xl p-4">
+                <p class="text-blue-300 font-semibold mb-1">Diretriz SBC 2025</p>
+                <p class="text-neutral-400">Cesar LAM, Gowdak LHW, Pavanello R, Ferreira JFM, Mioto BM, Poppi NT, et al. Diretriz de Síndrome Coronariana Crônica – 2025. <span class="text-neutral-300 italic">Arq Bras Cardiol.</span> 2025;122(9):e20250619.</p>
+              </div>
+              <div class="bg-neutral-900/50 border border-cyan-500/20 rounded-xl p-4">
+                <p class="text-cyan-300 font-semibold mb-1">ESC Guidelines 2024</p>
+                <p class="text-neutral-400">Vrints C, Andreotti F, Koskinas KC, Rossello X, et al. 2024 ESC Guidelines for the management of chronic coronary syndromes. <span class="text-neutral-300 italic">Eur Heart J.</span> 2024;00:1–123. doi:10.1093/eurheartj/ehae177</p>
+              </div>
+              <div class="bg-neutral-900/50 border border-neutral-700 rounded-xl p-4">
+                <p class="text-blue-300 font-semibold mb-2">Estudos-Chave Citados</p>
+                <ul class="space-y-2 text-neutral-400 text-xs">
+                  <li><span class="text-neutral-300">SCOT-HEART Investigators.</span> Coronary CT Angiography and 5-Year Risk of Myocardial Infarction. <span class="italic">N Engl J Med.</span> 2018;379:924-933.</li>
+                  <li><span class="text-neutral-300">Maron DJ, Hochman JS, Reynolds HR, et al.</span> Initial Invasive or Conservative Strategy for Stable Coronary Disease (ISCHEMIA). <span class="italic">N Engl J Med.</span> 2020;382:1395-1407.</li>
+                  <li><span class="text-neutral-300">De Bruyne B, Pijls NHJ, Kalesan B, et al.</span> Fractional Flow Reserve-Guided PCI versus Medical Therapy in Stable Coronary Disease (FAME 2). <span class="italic">N Engl J Med.</span> 2012;367:991-1001.</li>
+                  <li><span class="text-neutral-300">Xu B, Tu S, Qiao S, et al.</span> Diagnostic Accuracy of Angiography-Based Quantitative Flow Ratio for Online Assessment of Coronary Stenosis (FAVOR III China). <span class="italic">JAMA.</span> 2021;326(24):2492-2502.</li>
+                  <li><span class="text-neutral-300">Davies JE, Sen S, Dehbi HM, et al.</span> Use of the Instantaneous Wave-free Ratio or Fractional Flow Reserve in PCI (DEFINE-FLAIR). <span class="italic">N Engl J Med.</span> 2017;376:1824-1834.</li>
+                  <li><span class="text-neutral-300">Hachamovitch R, Hayes SW, Friedman JD, et al.</span> Comparison of the short-term survival benefit associated with revascularization compared with medical therapy in patients with no prior coronary artery disease undergoing stress myocardial perfusion single photon emission computed tomography. <span class="italic">Circulation.</span> 2003;107(23):2900-2907.</li>
+                  <li><span class="text-neutral-300">Sharir T, Germano G, Kavanagh PB, et al.</span> Incremental prognostic value of post-stress left ventricular ejection fraction and volume by gated myocardial perfusion single photon emission computed tomography. <span class="italic">Circulation.</span> 1999;100(10):1035-1042.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="mt-6 text-center">
+              <p class="text-neutral-600 text-xs">Instituto Dante Pazzanese de Cardiologia — Medicina Nuclear</p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+    </div>
+  </main>
+</Layout>
+
+<style is:global>
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    pointer-events: none;
+    overflow-y: auto;
+    padding-top: 2rem;
+    padding-bottom: 6rem;
+  }
+
+  .slide.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  /* Fullscreen background fix */
+  #presentation:fullscreen,
+  #presentation:-webkit-full-screen {
+    background-color: #0a0a0a;
+  }
+
+  .presentation-light #presentation:fullscreen,
+  .presentation-light #presentation:-webkit-full-screen {
+    background-color: #fafafa !important;
+  }
+
+  /* ===== FULLSCREEN - SCALE ENTIRE CONTENT UNIFORMLY ===== */
+  #presentation:fullscreen .slide,
+  #presentation:-webkit-full-screen .slide {
+    transform: scale(1.08);
+    transform-origin: center center;
+  }
+
+  /* Dark Mode (default) */
+  .presentation-dark {
+    background-color: #0a0a0a;
+    color: #ffffff;
+  }
+
+  .presentation-dark .slide::-webkit-scrollbar { width: 6px; }
+  .presentation-dark .slide::-webkit-scrollbar-track { background: transparent; }
+  .presentation-dark .slide::-webkit-scrollbar-thumb { background: #475569; border-radius: 3px; }
+
+  /* Light Mode */
+  .presentation-light {
+    background-color: #fafafa !important;
+    color: #171717 !important;
+  }
+
+  .presentation-light .slide::-webkit-scrollbar-thumb { background: #d4d4d4; }
+
+  .slide img {
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  /* Light mode - backgrounds */
+  .presentation-light .bg-neutral-950,
+  .presentation-light .bg-neutral-900,
+  .presentation-light .bg-zinc-900 { background-color: #fafafa !important; }
+
+  .presentation-light .bg-neutral-900\/50,
+  .presentation-light .bg-neutral-900\/90,
+  .presentation-light .bg-zinc-800\/50 { background-color: #f5f5f5 !important; }
+
+  .presentation-light .bg-neutral-800,
+  .presentation-light .bg-neutral-800\/50,
+  .presentation-light .bg-zinc-800 { background-color: #e5e5e5 !important; }
+
+  /* Light mode - text colors */
+  .presentation-light .text-white { color: #171717 !important; }
+  .presentation-light .text-neutral-300,
+  .presentation-light .text-zinc-100 { color: #404040 !important; }
+  .presentation-light .text-neutral-400,
+  .presentation-light .text-zinc-400 { color: #525252 !important; }
+  .presentation-light .text-neutral-500,
+  .presentation-light .text-zinc-500 { color: #737373 !important; }
+  .presentation-light .text-neutral-600 { color: #525252 !important; }
+
+  /* Light mode - borders */
+  .presentation-light .border-neutral-700,
+  .presentation-light .border-neutral-800,
+  .presentation-light .border-zinc-700\/50 { border-color: #d4d4d4 !important; }
+
+  /* Light mode - accent colors */
+  .presentation-light .text-red-400 { color: #dc2626 !important; }
+  .presentation-light .text-red-300 { color: #ef4444 !important; }
+  .presentation-light .text-green-400,
+  .presentation-light .text-green-300 { color: #16a34a !important; }
+  .presentation-light .text-blue-400,
+  .presentation-light .text-blue-300 { color: #2563eb !important; }
+  .presentation-light .text-cyan-400,
+  .presentation-light .text-cyan-300 { color: #0891b2 !important; }
+  .presentation-light .text-amber-400,
+  .presentation-light .text-amber-300,
+  .presentation-light .text-amber-200 { color: #d97706 !important; }
+  .presentation-light .text-purple-400,
+  .presentation-light .text-purple-300 { color: #9333ea !important; }
+  .presentation-light .text-violet-400,
+  .presentation-light .text-violet-300 { color: #7c3aed !important; }
+  .presentation-light .text-emerald-400,
+  .presentation-light .text-emerald-300 { color: #059669 !important; }
+  .presentation-light .text-pink-400,
+  .presentation-light .text-pink-300 { color: #db2777 !important; }
+  .presentation-light .text-yellow-400,
+  .presentation-light .text-yellow-300 { color: #ca8a04 !important; }
+  .presentation-light .text-orange-400,
+  .presentation-light .text-orange-300 { color: #ea580c !important; }
+  .presentation-light .text-rose-100,
+  .presentation-light .text-rose-200,
+  .presentation-light .text-rose-300,
+  .presentation-light .text-rose-400 { color: #e11d48 !important; }
+  .presentation-light .text-rose-50 { color: #be123c !important; }
+
+  /* Light mode - gradient text fix */
+  .presentation-light .bg-clip-text.text-transparent {
+    background: linear-gradient(to right, #171717, #2563eb, #0891b2) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+  }
+
+  /* Light mode - colored backgrounds */
+  .presentation-light .bg-red-500\/20,
+  .presentation-light .bg-red-500\/10 { background-color: rgba(220, 38, 38, 0.1) !important; }
+
+  .presentation-light .bg-green-500\/20,
+  .presentation-light .bg-green-500\/10,
+  .presentation-light .bg-green-500\/30 { background-color: rgba(22, 163, 74, 0.1) !important; }
+
+  .presentation-light .bg-blue-500\/20,
+  .presentation-light .bg-blue-500\/10,
+  .presentation-light .bg-blue-500\/30 { background-color: rgba(37, 99, 235, 0.1) !important; }
+
+  .presentation-light .bg-cyan-500\/20,
+  .presentation-light .bg-cyan-500\/10,
+  .presentation-light .bg-cyan-500\/30 { background-color: rgba(8, 145, 178, 0.1) !important; }
+
+  .presentation-light .bg-amber-500\/20,
+  .presentation-light .bg-amber-500\/10 { background-color: rgba(217, 119, 6, 0.1) !important; }
+
+  .presentation-light .bg-purple-500\/20,
+  .presentation-light .bg-purple-500\/10 { background-color: rgba(147, 51, 234, 0.1) !important; }
+
+  .presentation-light .bg-violet-500\/20,
+  .presentation-light .bg-violet-500\/10,
+  .presentation-light .bg-violet-500\/15,
+  .presentation-light .bg-violet-500\/30 { background-color: rgba(124, 58, 237, 0.1) !important; }
+
+  .presentation-light .bg-emerald-500\/20,
+  .presentation-light .bg-emerald-500\/10,
+  .presentation-light .bg-emerald-500\/30 { background-color: rgba(5, 150, 105, 0.1) !important; }
+
+  .presentation-light .bg-yellow-500\/20 { background-color: rgba(202, 138, 4, 0.1) !important; }
+  .presentation-light .bg-orange-500\/20 { background-color: rgba(234, 88, 12, 0.1) !important; }
+
+  /* Light mode - colored borders */
+  .presentation-light .border-red-500,
+  .presentation-light .border-red-500\/30,
+  .presentation-light .border-red-500\/20 { border-color: rgba(220, 38, 38, 0.3) !important; }
+
+  .presentation-light .border-green-500,
+  .presentation-light .border-green-500\/30,
+  .presentation-light .border-green-500\/40 { border-color: rgba(22, 163, 74, 0.3) !important; }
+
+  .presentation-light .border-blue-500\/30,
+  .presentation-light .border-blue-500\/20,
+  .presentation-light .border-blue-500\/50 { border-color: rgba(37, 99, 235, 0.3) !important; }
+
+  .presentation-light .border-cyan-500,
+  .presentation-light .border-cyan-500\/30,
+  .presentation-light .border-cyan-500\/20,
+  .presentation-light .border-cyan-500\/40 { border-color: rgba(8, 145, 178, 0.3) !important; }
+
+  .presentation-light .border-amber-500\/30 { border-color: rgba(217, 119, 6, 0.3) !important; }
+
+  .presentation-light .border-violet-500\/30,
+  .presentation-light .border-violet-500\/40,
+  .presentation-light .border-violet-500\/50 { border-color: rgba(124, 58, 237, 0.3) !important; }
+
+  .presentation-light .border-emerald-500\/20,
+  .presentation-light .border-emerald-500\/40 { border-color: rgba(5, 150, 105, 0.3) !important; }
+
+  .presentation-light .border-yellow-500\/40 { border-color: rgba(202, 138, 4, 0.3) !important; }
+  .presentation-light .border-orange-500\/40 { border-color: rgba(234, 88, 12, 0.3) !important; }
+
+  /* Light mode - border-l-4 colored borders */
+  .presentation-light .border-l-4.border-blue-500 { border-left-color: #2563eb !important; }
+  .presentation-light .border-l-4.border-cyan-500 { border-left-color: #0891b2 !important; }
+  .presentation-light .border-l-4.border-green-500 { border-left-color: #16a34a !important; }
+  .presentation-light .border-l-4.border-red-500 { border-left-color: #dc2626 !important; }
+  .presentation-light .border-l-4.border-amber-500 { border-left-color: #d97706 !important; }
+  .presentation-light .border-l-4.border-violet-500 { border-left-color: #7c3aed !important; }
+
+  /* Light mode - gradients */
+  .presentation-light .bg-gradient-to-br.from-blue-500\/10,
+  .presentation-light .bg-gradient-to-r.from-blue-500\/10 {
+    background: linear-gradient(to bottom right, rgba(37, 99, 235, 0.08), transparent) !important;
+  }
+
+  .presentation-light .bg-gradient-to-r.from-cyan-500\/10 {
+    background: linear-gradient(to right, rgba(8, 145, 178, 0.08), transparent) !important;
+  }
+
+  .presentation-light .bg-gradient-to-r.from-violet-500\/10 {
+    background: linear-gradient(to right, rgba(124, 58, 237, 0.08), transparent) !important;
+  }
+
+  .presentation-light .bg-gradient-to-r.from-emerald-500\/10 {
+    background: linear-gradient(to right, rgba(5, 150, 105, 0.08), transparent) !important;
+  }
+
+  /* Light mode - navigation */
+  .presentation-light #progress-bar {
+    background: linear-gradient(to right, #2563eb, #0891b2) !important;
+  }
+
+  .presentation-light button:hover {
+    background-color: #e5e5e5 !important;
+  }
+
+  .presentation-light .fixed.bg-neutral-900\/90 {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border-color: #d4d4d4 !important;
+    color: #171717 !important;
+  }
+
+  .presentation-light a.fixed.bg-neutral-900\/90 {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border-color: #d4d4d4 !important;
+  }
+
+  .presentation-light button.fixed {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border-color: #d4d4d4 !important;
+    color: #171717 !important;
+  }
+
+  .presentation-light button.fixed:hover {
+    background-color: #f5f5f5 !important;
+  }
+
+  .presentation-light .hover\:bg-neutral-700:hover {
+    background-color: #e5e5e5 !important;
+  }
+
+  .presentation-light svg {
+    stroke: currentColor;
+  }
+
+  .presentation-light .fixed svg {
+    color: #171717;
+  }
+
+  .presentation-light a.fixed svg {
+    color: #0891b2;
+  }
+
+  /* Slide Popup Overlay */
+  .slide-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .slide-popup.hidden { display: none; }
+  .slide-popup-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+  }
+  .slide-popup-content {
+    position: relative;
+    z-index: 101;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+  }
+  .slide-popup-content--wide {
+    background: rgba(23, 23, 23, 0.95);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    border-radius: 1rem;
+    max-width: 800px;
+    width: 90vw;
+  }
+  .slide-popup-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.75rem;
+    background: none;
+    border: none;
+    color: #a1a1aa;
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 102;
+    transition: color 0.2s;
+  }
+  .slide-popup-close:hover { color: #fff; }
+
+  /* Fullscreen auto-hide */
+  .fs-hidden {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: opacity 0.4s ease !important;
+  }
+  .fs-visible {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transition: opacity 0.3s ease !important;
+  }
+
+  /* Light mode - popups */
+  .presentation-light .slide-popup-backdrop {
+    background: rgba(255, 255, 255, 0.9) !important;
+  }
+  .presentation-light .slide-popup-content--wide {
+    background: rgba(250, 250, 250, 0.98) !important;
+    border-color: rgba(147, 51, 234, 0.25) !important;
+  }
+  .presentation-light .slide-popup-close { color: #737373 !important; }
+  .presentation-light .slide-popup-close:hover { color: #171717 !important; }
+  .presentation-light .slide-popup-content--wide .bg-neutral-800\/80,
+  .presentation-light .slide-popup-content--wide .bg-neutral-800\/50 {
+    background-color: #f0f0f0 !important;
+  }
+  .presentation-light .slide-popup-content--wide .text-neutral-200,
+  .presentation-light .slide-popup-content--wide .text-neutral-300 {
+    color: #262626 !important;
+  }
+  .presentation-light .slide-popup-content--wide .text-neutral-400 {
+    color: #404040 !important;
+  }
+
+  /* Light mode - slide 1 */
+  .presentation-light [data-slide="1"] {
+    background: linear-gradient(135deg, #f8fafc, #eff6ff, #ecfeff) !important;
+  }
+  .presentation-light [data-slide="1"] .bg-blue-500\/5,
+  .presentation-light [data-slide="1"] .bg-cyan-500\/5 { opacity: 0.3 !important; }
+  .presentation-light .ring-offset-neutral-900 { --tw-ring-offset-color: #fafafa !important; }
+  .presentation-light .border-neutral-800\/60 { border-color: #d4d4d4 !important; }
+  .presentation-light .bg-neutral-800\/80 { background-color: #e5e5e5 !important; }
+  .presentation-light .border-neutral-700\/50 { border-color: #d4d4d4 !important; }
+  .presentation-light .border-blue-500\/25 { border-color: rgba(37, 99, 235, 0.3) !important; }
+  .presentation-light .border-blue-500\/40 { border-color: rgba(37, 99, 235, 0.35) !important; }
+  .presentation-light .border-purple-500\/40 { border-color: rgba(147, 51, 234, 0.35) !important; }
+  .presentation-light [data-slide="1"] .bg-clip-text.text-transparent {
+    background: linear-gradient(135deg, #1e3a5f, #1d4ed8, #0e7490) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+  }
+  .presentation-light .bg-neutral-900\/95 { background-color: #f5f5f5 !important; }
+
+  /* ===== MOBILE RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .fixed.bottom-6 {
+      bottom: 1rem !important;
+      padding: 0.5rem 1rem !important;
+    }
+
+    .slide {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+
+    .slide h1 { font-size: 2rem !important; }
+    .slide h2 { font-size: 1.5rem !important; margin-bottom: 1rem !important; }
+    .slide h3 { font-size: 1rem !important; }
+
+    .grid.md\:grid-cols-2,
+    .grid.md\:grid-cols-3,
+    .grid.md\:grid-cols-4 {
+      grid-template-columns: 1fr !important;
+    }
+
+    .rounded-2xl { border-radius: 12px !important; }
+    .p-6 { padding: 1rem !important; }
+    .p-8 { padding: 1.25rem !important; }
+    .text-3xl { font-size: 1.5rem !important; }
+    .text-4xl { font-size: 1.75rem !important; }
+  }
+
+  @media (max-width: 480px) {
+    .slide h1 { font-size: 1.5rem !important; }
+    .slide h2 { font-size: 1.25rem !important; }
+  }
+</style>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const prevBtn = document.getElementById('prev-btn') as HTMLButtonElement;
+  const nextBtn = document.getElementById('next-btn') as HTMLButtonElement;
+  const slideInput = document.getElementById('slide-input') as HTMLInputElement;
+  const totalSlidesSpan = document.getElementById('total-slides');
+  const progressBar = document.getElementById('progress-bar');
+  const fullscreenBtn = document.getElementById('fullscreen-btn');
+  const presentation = document.getElementById('presentation');
+
+  const totalSlides = slides.length;
+
+  function getSlideFromHash() {
+    const hash = window.location.hash;
+    const match = hash.match(/^#slide-(\d+)$/);
+    if (match) {
+      const num = parseInt(match[1], 10);
+      if (num >= 1 && num <= totalSlides) return num;
+    }
+    return 1;
+  }
+
+  let currentSlide = getSlideFromHash();
+
+  function updateSlide() {
+    window.history.replaceState(null, '', `#slide-${currentSlide}`);
+    slides.forEach((slide, index) => {
+      if (index + 1 === currentSlide) {
+        slide.classList.add('active');
+      } else {
+        slide.classList.remove('active');
+      }
+    });
+
+    if (slideInput) slideInput.value = String(currentSlide);
+    if (totalSlidesSpan) totalSlidesSpan.textContent = String(totalSlides);
+    if (progressBar) progressBar.style.width = `${(currentSlide / totalSlides) * 100}%`;
+    if (prevBtn) prevBtn.disabled = currentSlide === 1;
+    if (nextBtn) nextBtn.disabled = currentSlide === totalSlides;
+  }
+
+  prevBtn?.addEventListener('click', () => {
+    if (currentSlide > 1) { currentSlide--; updateSlide(); }
+  });
+
+  nextBtn?.addEventListener('click', () => {
+    if (currentSlide < totalSlides) { currentSlide++; updateSlide(); }
+  });
+
+  slideInput?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      const num = parseInt(slideInput.value, 10);
+      if (!isNaN(num) && num >= 1 && num <= totalSlides) {
+        currentSlide = num;
+        updateSlide();
+      } else {
+        slideInput.value = String(currentSlide);
+      }
+      slideInput.blur();
+    } else if (e.key === 'Escape') {
+      slideInput.value = String(currentSlide);
+      slideInput.blur();
+    }
+  });
+
+  slideInput?.addEventListener('focus', () => { slideInput.select(); });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (document.activeElement === slideInput) return;
+
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+      e.preventDefault();
+      if (currentSlide < totalSlides) { currentSlide++; updateSlide(); }
+    } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+      e.preventDefault();
+      if (currentSlide > 1) { currentSlide--; updateSlide(); }
+    } else if (e.key === 'Home') {
+      e.preventDefault(); currentSlide = 1; updateSlide();
+    } else if (e.key === 'End') {
+      e.preventDefault(); currentSlide = totalSlides; updateSlide();
+    } else if (e.key === 'f' || e.key === 'F') {
+      toggleFullscreen();
+    }
+  });
+
+  // Fullscreen
+  function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+      presentation?.requestFullscreen();
+    } else {
+      document.exitFullscreen();
+    }
+  }
+
+  fullscreenBtn?.addEventListener('click', toggleFullscreen);
+
+  // Zoom and Pan
+  const slidesContainer = document.getElementById('slides-container');
+  let zoomLevel = 1;
+  let panX = 0;
+  let panY = 0;
+  let isDragging = false;
+  let startX = 0;
+  let startY = 0;
+
+  function updateTransform() {
+    if (slidesContainer) {
+      slidesContainer.style.transform = `translate(${panX}px, ${panY}px) scale(${zoomLevel})`;
+      slidesContainer.style.transformOrigin = 'center center';
+      slidesContainer.style.cursor = zoomLevel > 1 ? 'grab' : 'default';
+    }
+  }
+
+  function zoomIn() { if (zoomLevel < 3) { zoomLevel = Math.min(3, zoomLevel + 0.1); updateTransform(); } }
+  function zoomOut() { if (zoomLevel > 0.5) { zoomLevel = Math.max(0.5, zoomLevel - 0.1); if (zoomLevel <= 1) { panX = 0; panY = 0; } updateTransform(); } }
+  function resetZoom() { zoomLevel = 1; panX = 0; panY = 0; updateTransform(); }
+
+  document.addEventListener('wheel', (e) => {
+    if (e.ctrlKey) { e.preventDefault(); e.deltaY < 0 ? zoomIn() : zoomOut(); }
+  }, { passive: false });
+
+  slidesContainer?.addEventListener('mousedown', (e) => {
+    if (zoomLevel > 1) { isDragging = true; startX = e.clientX - panX; startY = e.clientY - panY; slidesContainer.style.cursor = 'grabbing'; }
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (isDragging && zoomLevel > 1) { panX = e.clientX - startX; panY = e.clientY - startY; updateTransform(); }
+  });
+
+  document.addEventListener('mouseup', () => {
+    if (isDragging) { isDragging = false; if (slidesContainer) slidesContainer.style.cursor = zoomLevel > 1 ? 'grab' : 'default'; }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (document.activeElement === slideInput) return;
+    if (e.key === '+' || e.key === '=') { e.preventDefault(); zoomIn(); }
+    else if (e.key === '-') { e.preventDefault(); zoomOut(); }
+    else if (e.key === '0') { e.preventDefault(); resetZoom(); }
+  });
+
+  // Theme Toggle
+  const themeBtn = document.getElementById('theme-btn');
+  const themeIconDark = document.getElementById('theme-icon-dark');
+  const themeIconLight = document.getElementById('theme-icon-light');
+  const mainElement = document.getElementById('main-presentation');
+
+  function setTheme(isLight: boolean) {
+    if (isLight) {
+      mainElement?.classList.remove('presentation-dark');
+      mainElement?.classList.add('presentation-light');
+      themeIconDark?.classList.add('hidden');
+      themeIconLight?.classList.remove('hidden');
+      localStorage.setItem('presentation-theme', 'light');
+    } else {
+      mainElement?.classList.remove('presentation-light');
+      mainElement?.classList.add('presentation-dark');
+      themeIconDark?.classList.remove('hidden');
+      themeIconLight?.classList.add('hidden');
+      localStorage.setItem('presentation-theme', 'dark');
+    }
+  }
+
+  const savedTheme = localStorage.getItem('presentation-theme');
+  if (savedTheme === 'light') setTheme(true);
+
+  themeBtn?.addEventListener('click', () => {
+    const isCurrentlyLight = mainElement?.classList.contains('presentation-light');
+    setTheme(!isCurrentlyLight);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (document.activeElement === slideInput) return;
+    if (e.key === 't' || e.key === 'T') {
+      const isCurrentlyLight = mainElement?.classList.contains('presentation-light');
+      setTheme(!isCurrentlyLight);
+    }
+  });
+
+  // Touch support for mobile
+  let touchStartX = 0;
+  let touchStartY = 0;
+
+  document.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  });
+
+  document.addEventListener('touchend', (e) => {
+    const touchEndX = e.changedTouches[0].clientX;
+    const touchEndY = e.changedTouches[0].clientY;
+    const deltaX = touchEndX - touchStartX;
+    const deltaY = touchEndY - touchStartY;
+
+    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+      if (deltaX < 0 && currentSlide < totalSlides) { currentSlide++; updateSlide(); }
+      else if (deltaX > 0 && currentSlide > 1) { currentSlide--; updateSlide(); }
+    }
+  });
+
+  // Popup buttons - open
+  document.querySelectorAll('[id^="btn-"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.id.replace('btn-', '');
+      const popup = document.getElementById(targetId);
+      popup?.classList.remove('hidden');
+    });
+  });
+
+  // Close popups on backdrop click or close button
+  document.querySelectorAll('.slide-popup-backdrop, .slide-popup-close').forEach(el => {
+    el.addEventListener('click', () => {
+      el.closest('.slide-popup')?.classList.add('hidden');
+    });
+  });
+
+  // Close popup on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.slide-popup:not(.hidden)').forEach(p => p.classList.add('hidden'));
+    }
+  });
+
+  // Fullscreen auto-hide UI
+  const fsUiElements = document.querySelectorAll('.fs-ui');
+  let fsHideTimeout: ReturnType<typeof setTimeout> | null = null;
+  let isFullscreen = false;
+
+  function hideUI() {
+    if (!isFullscreen) return;
+    fsUiElements.forEach(el => { el.classList.add('fs-hidden'); el.classList.remove('fs-visible'); });
+  }
+
+  function showUI() {
+    fsUiElements.forEach(el => { el.classList.remove('fs-hidden'); el.classList.add('fs-visible'); });
+    if (isFullscreen) {
+      if (fsHideTimeout) clearTimeout(fsHideTimeout);
+      fsHideTimeout = setTimeout(hideUI, 2500);
+    }
+  }
+
+  document.addEventListener('fullscreenchange', () => {
+    isFullscreen = !!document.fullscreenElement;
+    if (isFullscreen) {
+      fsHideTimeout = setTimeout(hideUI, 2500);
+    } else {
+      if (fsHideTimeout) clearTimeout(fsHideTimeout);
+      fsUiElements.forEach(el => { el.classList.remove('fs-hidden', 'fs-visible'); });
+    }
+  });
+
+  document.addEventListener('mousemove', () => {
+    if (isFullscreen) showUI();
+  });
+
+  // Initialize
+  updateSlide();
+</script>
